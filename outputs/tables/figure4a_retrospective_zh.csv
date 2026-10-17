@@ -1,0 +1,6 @@
+﻿section,point,evidence
+progress,最终主 proxy gap 提升到 0.020669 量级,0.0207; 79.5%
+mechanism,优势集中在 reward-tail/high-rating,linear/positive reward-norm 支持，RMSE/sigmoid 不支持强胜出。
+probe,no-network fidelity probe 已拒绝,primary delta -0.0055
+probe,exponential-sampling fidelity probe 已拒绝,primary delta -0.2115; reward delta -945.50
+next,停止广义调参,除 source-gated diagnostic 外，不再开启新的 local sweep。

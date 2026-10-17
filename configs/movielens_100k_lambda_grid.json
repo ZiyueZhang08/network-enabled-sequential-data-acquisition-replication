@@ -1,0 +1,33 @@
+{
+  "dataset": {
+    "name": "movielens-100k",
+    "raw_dir": "data/raw/ml-100k"
+  },
+  "output_prefix": "movielens_100k_lambda_grid",
+  "policy": "du_net",
+  "lambda_grid": [0.05, 0.15, 0.25, 0.35, 0.6],
+  "seeds": [0],
+  "split": {
+    "test_ratio": 0.2,
+    "initial_fraction_of_train": 0.01
+  },
+  "mf": {
+    "rank": 12,
+    "epochs": 6,
+    "learning_rate": 0.035,
+    "regularization": 0.04
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.35,
+    "diffusion_prob": 0.005,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.35,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8]
+  }
+}

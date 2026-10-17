@@ -1,0 +1,2 @@
+fold,comparator,cycles_observed,positive_standard_gap_cycles,positive_standard_gap_share,positive_reward_gap_cycles,positive_reward_gap_share,mean_standard_gap_all_cycles,mean_reward_gap_all_cycles
+u1,linucb_concat,21,21,1.0,0,0.0,0.01830639140046056,-81.27360792474603

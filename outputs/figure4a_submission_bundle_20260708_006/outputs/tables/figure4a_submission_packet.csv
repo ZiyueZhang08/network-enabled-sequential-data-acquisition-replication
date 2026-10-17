@@ -1,0 +1,6 @@
+﻿item,value,evidence,decision
+primary_gap,0.0207,DU-Net 0.9811 vs MF-centered Linear UCB proxy 1.0018,Primary paper-like proxy is directionally consistent with Figure 4a.
+paper_gap_share,79.5%,Local gap 0.0207 vs paper visual gap estimate 0.026,"Strong partial reproduction, not exact replication."
+myopic_gap,0.0210,DU-Net 0.9811 vs Myopic 1.0021,Sanity comparator does not overturn the DU-Net proxy advantage.
+conventional_rmse_caveat,-0.0077,DU-Net RMSE 1.2102 vs Linear UCB proxy RMSE 1.2025,Must report that conventional RMSE still favors the comparator.
+source_request,reports\author_source_request_email.md,Copy-ready request uses the frozen 0.0207 result and current caveats.,Use this as the next external action if exact replication is required.

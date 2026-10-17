@@ -1,0 +1,11 @@
+monitor_item,status,evidence,next_action
+scientific_status,strong_partial_reproduction,absolute scale not close; reward-weighted Linear-minus-DU gap recovers 31.9% of the paper visual gap,Report Linear-UCB-consistent partial result; do not claim exact Figure 4a.
+public_source_rescan,blocked_by_missing_source,"The rescan found comparator dependency context but no author code, supplement, exact metric, split/config, or DU-Net backend.",Do not run another proxy sweep; keep the next diagnostic gated on primary source or approved dependency.
+local_source_inventory,clear,0 actionable local candidate(s); Only known paper/data/Monti/local-config artifacts are present; no new source-backed rerun trigger.,"The trigger gate now uses the local source artifact inventory, including PDFs and archives."
+public_web_recovery,not_triggered,Exact title/DU-Net/author web queries did not recover a public DU-Net author repository or supplement in this check.,Treat external source recovery as unavailable for now.
+rerun_gate,blocked_by_missing_source,All rerun triggers are currently absent.,No further local proxy sweep; wait for primary source or approved faithful dependency.
+inspection_protocol,ready_but_idle,blocked_by_missing_source,Keep protocol ready; no candidate is present.
+author_request,ready_to_send,Use this email to request the source-backed trigger; do not run another local proxy sweep while waiting.,Use the prepared email/request packet to obtain source-backed trigger materials.
+next_executable_run,blocked,"Run MovieLens Figure 4a seeds 0-2 only, comparing DU-Net-style, MF-centered Linear UCB, and Myopic under the same recovered setup.",Run only after the rerun gate changes from blocked to inspection-cleared.
+promotion_rule,defined,Promote only if at least one primary blocker improves and no new contradiction is introduced.,Promote to 20 seeds only if the 3-seed diagnostic improves or explains the active blocker.
+queue_state,last_done=73; next=74,last=Build and run one-command source trigger intake check; next=Wait for primary source or approved dependency trigger,Resume only if author code supplement split files exact metric definition or approved validated external mechanisms become available.

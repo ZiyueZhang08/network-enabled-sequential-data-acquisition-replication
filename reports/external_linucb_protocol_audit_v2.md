@@ -1,0 +1,34 @@
+# External Linear UCB Protocol Audit v2
+
+Scope: Phase 3 package/protocol availability for reconstructing the paper's Linear UCB comparator.
+
+## Result
+
+`contextualbandits` is installed and its `LinUCB` class passes a small smoke test. `lrbandit` could not be installed from PyPI because no matching distribution was found. No external package is promoted to `paper_linear_ucb_reconstructed`: the paper still does not expose feature construction, arm mapping, alpha, regularization, reward transform, or update protocol.
+
+## Candidate Table
+
+| package | candidate | status | version | signature | smoke_test | protocol_fit | exactness_decision | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| contextualbandits | LinUCB | installed | 0.3.30 | (nchoices, alpha=1.0, lambda_=1.0, fit_intercept=True, use_float=True, method='sm', ucb_from_empty=True, beta_prior=None, smoothing=None, noise_to_smooth=True, assume_unique_reward=False, random_state=None, njobs=1) | pass; decision_function_shape=(4, 3) | partial_fixed_arms_only | proxy_candidate_only | Implements fixed-arm contextual LinUCB. The paper comparator may be item-pair candidate scoring, so using this package requires a nontrivial arm mapping that is not source-verified. |
+| contextualbandits | AdaptiveGreedy | installed | 0.3.30 | (base_algorithm, nchoices, window_size=500, percentile=30, decay=0.9998, decay_type='percentile', initial_thr='auto', beta_prior='auto', smoothing=None, noise_to_smooth=True, batch_train=False, refit_buffer=None, deep_copy_buffer=True, assume_unique_reward=False, active_choice=None, f_grad_norm='auto', case_one_class='auto', random_state=None, njobs=-1) | not_run | not_linear_ucb_exact | diagnostic_only | Useful contextual-bandit comparator family, but not the named Linear UCB baseline. |
+| contextualbandits | BootstrappedUCB | installed | 0.3.30 | (base_algorithm, nchoices, nsamples=10, percentile=80, beta_prior='auto', smoothing=None, noise_to_smooth=True, batch_train=False, refit_buffer=None, deep_copy_buffer=True, assume_unique_reward=False, batch_sample_method='gamma', random_state=None, njobs_arms=-1, njobs_samples=1) | not_run | not_linear_ucb_exact | diagnostic_only | Useful contextual-bandit comparator family, but not the named Linear UCB baseline. |
+| lrbandit | package | pypi_no_matching_distribution |  |  | not_run | unavailable | fail | Escalated pip install reported no matching PyPI distribution for `lrbandit`. |
+| local | linucb_concat | implemented |  | src.acquisition policy=linucb_concat | covered_by_tests_and_v2_seed0 | dynamic_candidate_pool_proxy | proxy_candidate_only | Same acquisition loop/candidate removal as DU-Net, but author feature map and alpha/reg are unrecovered. |
+| local | linucb_mf_interaction | implemented |  | src.acquisition policy=linucb_mf_interaction | covered_by_tests_and_v2_seed0 | dynamic_candidate_pool_proxy | proxy_candidate_only | MF interaction uncertainty proxy; not promoted to paper Linear UCB. |
+| local | linucb_bias_interaction | implemented |  | src.acquisition policy=linucb_bias_interaction | covered_by_tests_and_v2_seed0 | dynamic_candidate_pool_proxy | proxy_candidate_only | Bias+interaction ridge UCB proxy; v2 seed0 row-level generated. |
+
+## Installed/Implemented Candidates
+
+| package | candidate | status | protocol_fit | exactness_decision | smoke_test |
+| --- | --- | --- | --- | --- | --- |
+| contextualbandits | LinUCB | installed | partial_fixed_arms_only | proxy_candidate_only | pass; decision_function_shape=(4, 3) |
+| contextualbandits | AdaptiveGreedy | installed | not_linear_ucb_exact | diagnostic_only | not_run |
+| contextualbandits | BootstrappedUCB | installed | not_linear_ucb_exact | diagnostic_only | not_run |
+| local | linucb_concat | implemented | dynamic_candidate_pool_proxy | proxy_candidate_only | covered_by_tests_and_v2_seed0 |
+| local | linucb_mf_interaction | implemented | dynamic_candidate_pool_proxy | proxy_candidate_only | covered_by_tests_and_v2_seed0 |
+| local | linucb_bias_interaction | implemented | dynamic_candidate_pool_proxy | proxy_candidate_only | covered_by_tests_and_v2_seed0 |
+
+## Decision
+
+The v2 exact gate remains `proxy_only` for Linear UCB. `contextualbandits.online.LinUCB` can be used for a future comparator-range experiment only after an explicit dynamic-candidate adapter is defined and clearly labeled as non-author-exact.

@@ -1,0 +1,5 @@
+figure,metric,DU-Net local,Linear local,DU-Net paper,Linear paper,local_gap_linear_minus_du,paper_gap_linear_minus_du,ranking_match,scale_match,gate
+Figure 4a,standard_mask_rmse executable proxy,1.0707261618549548,1.1063891359597142,1.788,1.814,0.03566297410475938,0.026000000000000023,yes,no,metric_unresolved
+Figure 4a,pdf_literal_norm_rmse,0.0075711772984147,0.0078233526066823,1.788,1.814,0.00025217530826760013,0.026000000000000023,yes,no,metric_unresolved
+Figure 4b,cumulative_reward,1246.3862959130831,1393.680246352064,1325.0,1390.0,147.2939504389808,65.0,yes,partial,partial_recovery_gap_too_large
+Figure 4b,cumulative_reward vs mf_interaction,1246.3862959130831,1206.3700962567325,1325.0,1390.0,-40.016199656350636,65.0,not_author_linear_ucb,diagnostic_only,comparator_proxy_only

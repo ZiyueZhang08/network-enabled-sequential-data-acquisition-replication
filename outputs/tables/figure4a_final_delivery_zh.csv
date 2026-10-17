@@ -1,0 +1,12 @@
+﻿section,evidence,decision
+交付结论,当前结果应交付为 strong partial reproduction，而不是 exact Figure 4a replication。,冻结当前 best candidate，不再做无来源的新调参分支。
+论文对照,论文 Figure 4a 目标是 MovieLens、20 acquisition cycles、batch 100、20 random initializations，并显示 DU-Net 优于 Linear UCB。,本地协议已覆盖 20 seeds / 20 cycles / batch 100 的核心对照。
+主结果,DU-Net primary=0.9811，MF-centered Linear UCB proxy=1.0018，Linear-minus-DU gap=0.0207，达到论文视觉 gap 的 79.5%。,方向与论文一致，且超过本地 +0.020 成功门槛。
+Myopic 对照,Myopic primary=1.0021，Myopic-minus-DU gap=0.0210。,Myopic 不改变主结论；DU-Net 在主 proxy 下仍优于 sanity comparator。
+seed 稳定性,DU-Net 对 Linear UCB proxy 赢 19/20 seeds；对 Myopic 赢 18/20 seeds。,主 proxy 优势不是单 seed 偶然波动。
+机制解释,rating-5 RMSE gap=0.0213，high>=4 RMSE gap=0.0131，low<=3 RMSE gap=-0.0193。,优势集中在高 reward 尾部；低分区域和普通 RMSE 必须作为 caveat 报告。
+必要 caveat,conventional RMSE: DU-Net=1.2102，Linear UCB proxy=1.2025；sigmoid w-RMSE: DU-Net=0.9092，Linear UCB proxy=0.9088。,不能声称所有 RMSE 口径都复现论文优势；只能声称主 reward-tail proxy 下方向一致。
+no-network probe,primary delta=-0.0055，reward delta=-11.25，decision=reject_primary_and_reward_regression。,拒绝晋级到 20-seed；它改善部分 RMSE 检查但削弱主结果。
+exp-sampling probe,primary delta=-0.2115，reward delta=-945.50，decision=reject_reward_tail_collapse。,拒绝晋级到 20-seed；指数采样 tau=1 会造成 reward-tail collapse。
+计划调整,当前剩余差距主要来自 exact w-RMSE、MovieLens split/mask、DU-Net backend、paper Linear UCB protocol，而不是 seed 数不足。,停止 broad tuning；后续只接受 source-gated 最小诊断。
+下一步,"若拿到精确 metric/split/backend/Linear UCB 信息，先跑 seeds 0,1,2；只有通过 gate 后才扩展到 20 seeds。",现在进入最终报告交付与证据索引维护。

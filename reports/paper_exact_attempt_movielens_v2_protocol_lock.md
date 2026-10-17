@@ -1,0 +1,59 @@
+# paper_exact_attempt_movielens_v2 Protocol Lock
+
+This lock freezes the next exact-reproduction attempt. It is not a tuning branch: performance cannot promote a diagnostic branch to the mainline.
+
+## Phase 0 Decision
+
+- `schur_loglambda_tuned_full_pool_softmax_tau1_literal` is the only DU-Net exact-attempt mainline.
+- `schur_loglambda_tuned_full_pool_softmax_tau0p3` is calibrated robustness evidence only.
+- `schur_tuned_topk` is a deterministic selection ablation only.
+- `lambda0p3_diagnostic` is a reward/RMSE diagnostic only.
+- Linear UCB rows are comparator candidates until an author/source-defensible protocol is recovered.
+
+## Frozen Config
+
+- Config: `configs/paper_exact_attempt_movielens_v2.json`
+- Seeds: `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]`
+- Split: `{'mode': 'movielens_u1_fallback_table1_density', 'num_users': 943, 'num_items': 1681, 'initial_size': 1364}`
+- MF: `{'rank': 20, 'epochs': 20, 'learning_rate': 0.015, 'regularization': 0.06, 'algorithm': 'svdpp'}`
+- Acquisition cycles/batch: `20` / `100`
+- Entropy: `schur_conditional_variance`
+- DLS scope: `full`
+- Tuning metric/frequency: `standard_mask_rmse` every `5` cycles
+
+## Variant Roles
+
+| variant | policy | claim_role | selection | tau | lambda_entropy | exact_attempt_role |
+| --- | --- | --- | --- | --- | --- | --- |
+| schur_loglambda_tuned_full_pool_softmax_tau1_literal | paper_faithful_dunet | mainline | exp | 1 | 1 | only Figure 4 exact-attempt mainline |
+| linucb_concat | linucb_concat | linear_ucb_proxy | topk | 1 | 1 | comparator candidate; not paper Linear UCB until source-verified |
+| linucb_mf_interaction | linucb_mf_interaction | linear_ucb_proxy | topk | 1 | 1 | comparator candidate; not paper Linear UCB until source-verified |
+| linucb_bias_interaction | linucb_bias_interaction | linear_ucb_proxy | topk | 1 | 1 | comparator candidate; not paper Linear UCB until source-verified |
+| schur_loglambda_tuned_full_pool_softmax_tau0p3 | paper_faithful_dunet | calibrated_softmax_robustness | exp | 0.3 | 1 | robustness branch; not promoted to mainline |
+| schur_tuned_topk | paper_faithful_dunet | deterministic_ablation | topk | 1 | 1 | deterministic ablation; not promoted to mainline |
+| lambda0p3_diagnostic | paper_faithful_dunet | lambda_entropy_diagnostic | exp | 1 | 0.3 | reward/RMSE diagnostic; not promoted to mainline |
+
+## Gate Status
+
+- Pass-like gates: `5`
+- Hard fail/pending gates: `3`
+
+| gate | phase | status | strict_condition | current_evidence | blocking_condition | next_artifact |
+| --- | --- | --- | --- | --- | --- | --- |
+| Protocol role lock | 0 | pass | Exactly one exact-attempt mainline; robustness, top-k, and lambda branches cannot be promoted by performance. | mainline_count=1; diagnostics_locked=True; config=configs\paper_exact_attempt_movielens_v2.json |  | reports/paper_exact_attempt_movielens_v2_protocol_lock.md |
+| Tau=1 full-pool exponential sampling | 0/6 | pass_clean_room | tau=1 literal softmax is the only DU-Net mainline selection rule. | mainline overrides selection=exp, selection_temperature=1.0; full candidate pool selection is in run_policy. | Author did not publish every normalization/numerical detail, so this is clean-room exactness, not source exactness. | same-config Figure 4a/4b gate |
+| Schur conditional entropy | 0/4 | pass_clean_room_source_caveat | Use Schur conditional variance, no tuned entropy transform. | entropy_mode=schur_conditional_variance; entropy_score_transform=none; shortlist-vs-full seeds=0 1 2; cycles=0 5 10 15 20; min_top100_overlap=0.97; min_selected_batch_overlap=0.97; max_selected_changed_count=6; max_abs_one_step_rmse_diff=5.31685e-05; lambda_noise grid=0.1 0.3 1 3 10; seeds=0 1 2; min_top100_overlap_vs_base=0.99; min_selected_batch_overlap_vs_base=0.99; max_selected_changed_count_vs_base=2 | Author all-candidate/source-grounded lambda-noise convention remains unpublished. | reports/paper_exact_attempt_movielens_v2_schur_shortlist_vs_full_audit.md; reports/paper_exact_attempt_movielens_v2_lambda_noise_sensitivity_audit.md |
+| Gaussian DLS | 0/4 | source_blocked_proxy_diagnostic_complete | DLS pipeline must match paper backend and embedding source. | scope=full; neighbor_mode=graph_edges; sigma_grid=[0.1, 0.2, 0.4, 0.8, 1.6]; official_elph_import_available=False; support_stack=torch_geometric=False dgl=False ogb=False torch=True networkx=True sklearn=True; MovieLens graph=symmetrized_top20_similarity_over_gcmc_user_metadata_features; users=943; feature_dim=23; edges=15404; degree_mean=32.6702; elph_role_proxy top20_overlap_with_metadata=0.464634; pairwise_dist_corr=0.324388; graph_edge_hit_rate=0.315111; 3seed elph_role_proxy seed_count=3; delta_standard_rmse=-0.00388958; delta_reward=8.50786; delta_reward_tail_rmse=-0.00704358; exact_elph_reconstructed=no | Paper ELPH/backend parameters are unrecovered; local ELPH-style proxy changes results but cannot count as exact. | reports/paper_exact_attempt_movielens_v2_elph_feasibility.md |
+| Table-1-aligned MovieLens protocol | 0/2 | pass_shape_fail_mask | 943 users, 1681 items, 1364 initial observations, 20000 test rows, exact author masks. | split={'mode': 'movielens_u1_fallback_table1_density', 'num_users': 943, 'num_items': 1681, 'initial_size': 1364}; split prior=outputs/tables/split_mask_search_audit_v3.csv; u1-u5 fold sensitivity folds=5/5; comparators=2; min_seeds=5; min_standard_win_rate=1; concat_reward_win_rate_mean=0; mf_reward_win_rate_min=0.6 | Exact author initial/candidate/test masks and seed protocol not recovered. | reports/split_mask_search_audit_v3.md; reports/paper_exact_attempt_movielens_v2_fold_sensitivity_5seeds.md |
+| w-RMSE metric exactness | 1 | fail_v4_no_reconstruction | Endpoint scale, gap, direction, curve shape, and text-defensible formula must all match. | best=reward_tail_proxy vs linucb_mf_interaction; scale_distance=0.265494; gap_distance=0.0647771; seed_count=20; paper_wrmse_reconstructed=no; v1 metric prior=outputs/tables/paper_exact_attempt_movielens_v1_metric_reconstruction_v3_comparison.csv | Paper formula and Figure 4a y-axis conflict; exact weights/normalization unpublished. | reports/metric_reconstruction_audit_v4.md |
+| Row-level completeness | 1 | pass | The metric-gate-required v2 methods have final-cycle row-level predictions for seeds 0..19; diagnostic branches are tracked but cannot promote or block Figure 4a. | metric_required=schur_loglambda_tuned_full_pool_softmax_tau1_literal:20/20 complete_20seed; linucb_concat:20/20 complete_20seed; linucb_mf_interaction:20/20 complete_20seed; linucb_bias_interaction:20/20 complete_20seed; diagnostic_tracked=schur_loglambda_tuned_full_pool_softmax_tau0p3:1/20 partial; schur_tuned_topk:1/20 partial; lambda0p3_diagnostic:1/20 partial; v1 seed0 prior=outputs/tables/paper_exact_attempt_movielens_v1_row_level_completion_v3.csv |  | outputs/tables/row_level_completeness_v2.csv |
+| Linear UCB exactness | 3 | proxy_only | Feature map, alpha/reg, reward transform, update protocol, and package implementation must be source-defensible. | linear_proxy_count=3; prior=outputs/tables/external_linucb_protocol_audit_v2.csv; alpha/reg grid=24/24; alphas=0.005 0.01 0.02 0.05 0.1 0.3 0.8 1; regs=0.1 1 10; min_seeds=3; best_reward_tail=alpha0.1/reg10/1.1764; best_reward=alpha0.01/reg1/1555.45; current_alpha0.8_reg1 reward_tail=1.32979, reward=1231.72; reward_tail_spread=0.198289; reward_spread=386.104; paper_linear_ucb_reconstructed=no | Paper names Linear UCB but does not expose exact protocol; local rows remain comparator candidates. | reports/external_linucb_protocol_audit_v2.md; reports/linucb_alpha_reg_sensitivity_v2.md |
+| Tuning frequency/objective exactness | 5 | source_blocked_not_closed | Retuning cadence, inner objective, held-out construction, lambda/sigma/p grid or optimizer, and tie-breaks must match the author protocol. | retuning_frequency:source_blocked_not_closed; inner_objective:source_blocked_not_closed; lambda_sigma_p_grid:source_blocked_not_closed; metric_gate_interaction:blocked_by_metric_gate; joint_figure4_objective:not_jointly_closed; prior=outputs/tables/paper_exact_attempt_movielens_v2_tuning_frequency_objective_audit.csv | The paper does not expose enough tuning-protocol detail; current v2 uses every-5-cycle standard_mask_rmse tuning as a clean-room fixed choice. | reports/paper_exact_attempt_movielens_v2_tuning_frequency_objective_audit.md |
+| Figure 4a same-config reproduction | 6 | fail_v4_metric_gate | Same v2 config must match Figure 4a DU-Net and Linear UCB curves under reconstructed metric. | best=reward_tail_proxy vs linucb_mf_interaction; scale_distance=0.265494; gap_distance=0.0647771; seed_count=20; paper_wrmse_reconstructed=no; digitization_precision_v2 Figure 4b_gap=65; Figure 4a_gap=0.026; Figure 4a best_metric=reward_tail_proxy_rmse best_comparator=linucb_mf_interaction gap_error=0.00168421 endpoint_error=0.478123 statuses=not_explained_by_digitization_stress:15,gap_within_stress_but_endpoint_scale_not:6; Figure 4b best_metric=cumulative_reward best_comparator=linucb_concat gap_error=82.294 endpoint_error=41.147 statuses=not_explained_by_digitization_stress:3; source=visual_digitization_only_not_author_data | Depends on metric exactness; row-level completeness is closed for metric-gate-required methods. | outputs/tables/metric_curve_alignment_v4.csv; reports/figure4_digitization_precision_v2.md |
+| Figure 4b same-config reproduction | 6 | fail_reward_gap_magnitude | Same v2 config must match cumulative reward direction, endpoint, and gap. | same-config v2 reward computed; best_gap_comparator=linucb_concat; local_gap=147.294; paper_gap=65; gap_abs_error=82.294; curve_rmse=72.2662; endpoint_abs_error_mean=41.147; digitization_precision_v2 Figure 4b_gap=65; Figure 4a_gap=0.026; Figure 4a best_metric=reward_tail_proxy_rmse best_comparator=linucb_mf_interaction gap_error=0.00168421 endpoint_error=0.478123 statuses=not_explained_by_digitization_stress:15,gap_within_stress_but_endpoint_scale_not:6; Figure 4b best_metric=cumulative_reward best_comparator=linucb_concat gap_error=82.294 endpoint_error=41.147 statuses=not_explained_by_digitization_stress:3; source=visual_digitization_only_not_author_data | Same-config reward is computed, but gap/curve magnitude and Linear UCB protocol exactness remain unresolved. | reports/figure4_digitization_precision_v2.md; final v2 exact gate report |
+
+## Claim Boundary
+
+A future `perfect/exact reproduction` claim requires every strict gate to pass in the same v2 configuration. Until then, the defensible claim remains maximum-effort paper-only clean-room reproduction with explicit source-blocked gates.
+
+Use `reports/paper_exact_attempt_movielens_v2_source_recovery_packet.md` as the recovery handoff before launching any new local proxy or tuning branch.

@@ -1,0 +1,4 @@
+protocol,variant,paired_seed_count,primary_gap,primary_gap_ci95,primary_seed_wins,primary_win_rate,rmse_gap,mild_gap,medium_gap,reward_gap,rule_pass,decision
+official_u1_rng_table1_init017,graph_late_lambda_half_start16_p000,20,0.0012438576984206474,0.004478031143327205,10,0.5,0.0009494310180977572,0.0010124464603512573,0.0010524751200904126,-13.6,False,most faithful diagnostic; gate failed
+official_u1_rng_table1_init017,graph_late_lambda_half_start16_p001,20,0.0019219410234200373,0.004801398605712382,14,0.7,-0.00044768829114051335,5.6162207582988175e-05,0.0003713066934276976,-8.6,True,promote as fidelity/performance compromise
+official_u1_rng_table1_init017,graph_late_lambda_half_start16,20,0.0062083085483028546,0.004653153386126674,15,0.75,-0.001362616856919374,2.938037889756995e-05,0.0009049692744025562,-19.25,False,not promoted

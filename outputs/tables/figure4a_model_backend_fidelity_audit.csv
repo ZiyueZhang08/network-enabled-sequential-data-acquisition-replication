@@ -1,0 +1,13 @@
+category,check,paper_value,current_value,current_to_paper,diagnosis
+preprocessing,users,943,943,1.0,Current loader matches Table 1 user count.
+preprocessing,items,1681,1682,1.0005948839976204,"Current loader keeps one extra MovieLens item; five sparsest remapped item ids are 1672,1681,1670,1669,1668."
+preprocessing,initial_density_seed0,0.00086,0.0005043735491379626,0.5864808710906542,Current default initial density is smaller than the paper Table 1 density.
+preprocessing,test_density_seed0,0.0126,0.012609338728449064,1.000741168924529,Current random 20% test density matches the paper closely.
+preprocessing,matrix_size_entries,1585183,1586126,1.0005948839976204,The one-item mismatch changes total matrix size by only about 0.06%.
+rating_distribution,initial_mean_rating,,3.513125,,20-seed mean initial mean rating; CI95=0.0141.
+rating_distribution,candidate_mean_rating,,3.5291818181818178,,20-seed mean candidate mean rating; CI95=0.0009.
+rating_distribution,test_mean_rating,,3.5332149999999998,,20-seed mean test mean rating; CI95=0.0035.
+backend_probe_initial_only,pct_predictions_clipped_low,,0.0,,Initial-only SVD++ probe across seeds 0-2; not a final policy metric.
+backend_probe_initial_only,pct_predictions_clipped_high,,0.0,,Initial-only SVD++ probe across seeds 0-2; not a final policy metric.
+backend_probe_initial_only,raw_rmse,,1.0902358343633398,,Initial-only SVD++ probe across seeds 0-2; not a final policy metric.
+backend_probe_initial_only,clipped_rmse,,1.0902358343633398,,Initial-only SVD++ probe across seeds 0-2; not a final policy metric.

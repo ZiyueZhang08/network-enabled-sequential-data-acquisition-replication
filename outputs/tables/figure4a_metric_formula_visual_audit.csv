@@ -1,0 +1,6 @@
+metric_interpretation,formula_or_source,du_net,linear_ucb,linear_minus_du,scale_vs_paper_du,direction_matches_paper,interpretation
+paper_visual_target,Figure 4a visual estimate,1.788,1.814,0.026,1.000000,True,Reference target only; values are visual estimates from Figure 4a.
+page28_literal_cardinality_outside_sqrt,1/|Omega_test| * sqrt(||Omega_test o (Y-Yhat)||_2^2),0.008208,0.008174,-0.000034,0.004591,False,"Literal reading with |Omega_test|=20000 produces near-zero scale, so it cannot explain the Figure 4a y-axis."
+standard_rmse_indicator_mask,sqrt(mean((Y-Yhat)^2)) on test entries,1.1608,1.1560,-0.0048,0.649217,False,"This is the most plausible executable reading of the page-28 formula, but it reverses DU-Net vs Linear UCB locally."
+local_reward_weighted_proxy,sqrt(sum(local_reward_weights * error^2) / sum(local_reward_weights)),0.8250,0.8333,0.0083,0.461409,True,"Best local directional match, but it is not the page-28 formula and remains far below the paper scale."
+sigmoid_reward_weighted_proxy,sqrt(sum(sigmoid(Y-3) * error^2) / sum(sigmoid(Y-3))),0.8977,0.8975,-0.000199,0.502069,False,Paper-like reward weighting is a near tie and does not recover robust DU-Net superiority.

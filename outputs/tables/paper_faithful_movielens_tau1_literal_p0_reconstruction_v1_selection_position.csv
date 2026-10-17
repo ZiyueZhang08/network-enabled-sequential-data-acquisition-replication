@@ -1,0 +1,4 @@
+version,status,seed_count,standard_mask_rmse,pdf_literal_norm_rmse,cumulative_reward,claim_role
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,literal paper-style mainline,20,1.0707261618549548,0.0075711772984147,1246.3862959130831,mainline
+schur_loglambda_tuned_full_pool_softmax_tau0p3,calibrated robustness / best-RMSE robustness,20,1.0700251024710896,0.0075662200599713,1245.7012521851211,supporting
+schur_tuned_topk,deterministic ablation,20,1.0888613924061763,0.0076994127434263,1250.5567086261208,supporting

@@ -1,0 +1,35 @@
+{
+  "dataset": {"name": "douban", "raw_dir": "data/raw/gcmc/douban"},
+  "output_prefix": "douban_svdpp_logdet_shrinkage_stage2_reg_3seeds",
+  "seeds": [0, 1, 2],
+  "split": {"test_ratio": 0.0, "initial_fraction_of_train": 0.01, "use_predefined_split": true},
+  "mf": {"rank": 8, "epochs": 2, "learning_rate": 0.025, "regularization": 0.04, "algorithm": "svdpp"},
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.1,
+    "diffusion_prob": 0.01,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "observational_logdet",
+    "entropy_logdet_regularization": 1.0,
+    "entropy_coverage_weight": 0.0,
+    "dls_shrinkage": 0.7,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8],
+    "diffusion_normalization": "none",
+    "graph_embedding_method": "spectral"
+  },
+  "variants": [
+    {"label": "s07_l010_r01", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.7, "lambda_entropy": 0.10, "entropy_logdet_regularization": 0.1}},
+    {"label": "s07_l010_r1", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.7, "lambda_entropy": 0.10, "entropy_logdet_regularization": 1.0}},
+    {"label": "s07_l010_r10", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.7, "lambda_entropy": 0.10, "entropy_logdet_regularization": 10.0}},
+    {"label": "s05_l015_r01", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.5, "lambda_entropy": 0.15, "entropy_logdet_regularization": 0.1}},
+    {"label": "s05_l015_r1", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.5, "lambda_entropy": 0.15, "entropy_logdet_regularization": 1.0}},
+    {"label": "s05_l015_r10", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.5, "lambda_entropy": 0.15, "entropy_logdet_regularization": 10.0}},
+    {"label": "s03_l010_r01", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.3, "lambda_entropy": 0.10, "entropy_logdet_regularization": 0.1}},
+    {"label": "s03_l010_r1", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.3, "lambda_entropy": 0.10, "entropy_logdet_regularization": 1.0}},
+    {"label": "s03_l010_r10", "policy": "du_net_logdet_shrinkage_dls", "acquisition_overrides": {"dls_shrinkage": 0.3, "lambda_entropy": 0.10, "entropy_logdet_regularization": 10.0}}
+  ]
+}

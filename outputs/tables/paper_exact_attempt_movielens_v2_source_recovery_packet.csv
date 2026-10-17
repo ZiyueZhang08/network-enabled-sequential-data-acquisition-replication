@@ -1,0 +1,5 @@
+item,status,evidence,next_action
+current_exact_gate_state,blocked_by_source_or_numeric_targets,passed=Eq.3.6 entropy; Selection; Row-level completeness; failed=Metric exactness; Split/mask exactness; Linear UCB exactness; DLS/ELPH; Tuning exactness; Figure 4a; Figure 4b,Use the source recovery request table; do not run another local proxy sweep without a trigger.
+p0_request_count,5,official_code_or_supplement_bundle; exact_figure4a_metric_or_numeric_curve; author_movielens_split_masks_seed_protocol; paper_linear_ucb_protocol; du_net_backend_elph_tuning_protocol,Prioritize P0 source requests before any new tuning branch.
+trigger_playbook_count,5,metric_only; split_or_mask; linear_ucb_adapter; du_net_backend_or_elph; full_source_bundle,Run only the matching playbook branch after source inspection clears a trigger.
+execution_decision,ready_but_blocked,v2 source recovery packet is current with final exact gate and ELPH feasibility evidence.,Wait for author/source/numeric materials or explicit approved dependency trigger.

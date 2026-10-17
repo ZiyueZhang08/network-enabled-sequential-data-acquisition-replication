@@ -1,0 +1,5 @@
+figure,metric,tau1_du_net,linear_ucb,paper_du_net_visual,paper_linear_ucb_visual,local_gap_linear_minus_tau1,paper_gap_linear_minus_du,match
+Figure 4a,standard_mask_rmse executable proxy,1.0707261618549548,1.1063891359597142,1.788,1.814,0.03566297410475938,0.026,direction_yes_scale_no
+Figure 4b,cumulative_reward,1246.3862959130831,1393.680246352064,1325.0,1390.0,147.2939504389808,65.0,ranking_yes_magnitude_partial
+Figure 4b,cumulative_reward_lambda0p3_diagnostic,1245.7012521851211,1393.680246352064,1325.0,1390.0,147.9789941669428,65.0,diagnostic_only
+Figure 4a,standard_mask_rmse_vs_mf_interaction,1.0707261618549548,1.0874219101410705,1.788,1.814,0.01669574828611564,0.026,proxy_direction_yes

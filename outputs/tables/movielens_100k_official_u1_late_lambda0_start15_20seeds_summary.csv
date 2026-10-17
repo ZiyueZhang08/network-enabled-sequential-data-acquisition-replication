@@ -1,0 +1,2 @@
+variant,policy,cumulative_reward,cumulative_reward_ci95,rmse,rmse_ci95,w_rmse,w_rmse_ci95,sigmoid_reward_w_rmse,sigmoid_reward_w_rmse_ci95,linear_reward_norm_w_rmse,linear_reward_norm_w_rmse_ci95,positive_reward_norm_w_rmse,positive_reward_norm_w_rmse_ci95,observed_size,observed_size_ci95
+late_lambda0_start15,du_net,2733.05,22.04385551815433,1.1982991860030263,0.005923422576339144,0.8185801427435478,0.006997171058322526,0.9066121128417851,0.0018648639095431964,0.9900749930037476,0.011880883470976562,0.9359849435261912,0.011442103918174554,2800.0,0.0

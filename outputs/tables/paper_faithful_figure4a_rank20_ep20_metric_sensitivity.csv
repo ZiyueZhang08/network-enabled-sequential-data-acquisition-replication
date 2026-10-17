@@ -1,0 +1,11 @@
+comparator,comparator_label,metric,metric_label,direction,du_value,comparator_value,du_minus_comparator,favors_du
+linucb_concat,Linear UCB concat,standard_mask_rmse,Standard RMSE,lower,1.0824046969691676,1.1063891359597144,-0.023984438990546808,True
+linucb_concat,Linear UCB concat,pdf_literal_norm_rmse,PDF-literal norm RMSE,lower,0.0076537570121506,0.0078233526066823,-0.0001695955945317006,True
+linucb_concat,Linear UCB concat,reward_tail_proxy_rmse,Reward-tail proxy RMSE,lower,1.2932985947033142,1.2160324710682453,0.0772661236350689,False
+linucb_concat,Linear UCB concat,w_rmse,Local weighted RMSE,lower,1.0174812650952618,0.9655244892743134,0.051956775820948375,False
+linucb_concat,Linear UCB concat,cumulative_reward,Cumulative reward,higher,1344.2022925915358,1393.680246352064,-49.47795376052818,False
+linucb_mf_interaction,Linear UCB MF,standard_mask_rmse,Standard RMSE,lower,1.0824046969691676,1.0874219101410705,-0.005017213171902846,True
+linucb_mf_interaction,Linear UCB MF,pdf_literal_norm_rmse,PDF-literal norm RMSE,lower,0.0076537570121506,0.0076892340667157,-3.5477054565100606e-05,True
+linucb_mf_interaction,Linear UCB MF,reward_tail_proxy_rmse,Reward-tail proxy RMSE,lower,1.2932985947033142,1.3367190258264885,-0.043420431123174286,True
+linucb_mf_interaction,Linear UCB MF,w_rmse,Local weighted RMSE,lower,1.0174812650952618,1.0482635496361026,-0.030782284540840754,True
+linucb_mf_interaction,Linear UCB MF,cumulative_reward,Cumulative reward,higher,1344.2022925915358,1206.3700962567325,137.83219633480326,True

@@ -1,0 +1,127 @@
+method,seed,cycle,metric,definition,value,rows
+lambda0p3_diagnostic,0,20,standard_rmse,sqrt(mean(err_clipped^2)),1.0696314665516453,20000
+lambda0p3_diagnostic,0,20,pdf_literal,sqrt(sum(err_clipped^2)) / N,0.007563436633691802,20000
+lambda0p3_diagnostic,0,20,plain_l2,sqrt(sum(err_clipped^2)),151.26873267383604,20000
+lambda0p3_diagnostic,0,20,centered_rating_rmse,sqrt(mean(((rating-3)-(pred-3))^2)),1.0696314665516453,20000
+lambda0p3_diagnostic,0,20,raw_unclipped_rmse,sqrt(mean(err_raw^2)),1.0696405883812374,20000
+lambda0p3_diagnostic,0,20,clipped_rmse,sqrt(mean(err_clipped^2)),1.0696314665516453,20000
+lambda0p3_diagnostic,0,20,rating_0_1_normalized_rmse,sqrt(mean((err_clipped/4)^2)),0.26740786663791133,20000
+lambda0p3_diagnostic,0,20,rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=rating,0.9834624329581908,20000
+lambda0p3_diagnostic,0,20,sqrt_mean_squared_weighted_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=rating,3.6555144057625975,20000
+lambda0p3_diagnostic,0,20,normalized_rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=normalized_rating,0.9834624329581909,20000
+lambda0p3_diagnostic,0,20,sqrt_mean_squared_weighted_normalized_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=normalized_rating,1.0338285601296975,20000
+lambda0p3_diagnostic,0,20,sigmoid_reward_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=sigmoid_reward,0.9615723228384945,20000
+lambda0p3_diagnostic,0,20,sqrt_mean_squared_weighted_sigmoid_reward_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=sigmoid_reward,0.6315323480461426,20000
+lambda0p3_diagnostic,0,20,max_rating_minus_3_eps_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=max_rating_minus_3_eps,1.0509838379503338,20000
+lambda0p3_diagnostic,0,20,sqrt_mean_squared_weighted_max_rating_minus_3_eps_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=max_rating_minus_3_eps,1.3401566193495276,20000
+lambda0p3_diagnostic,0,20,item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=item_popularity,1.0312736174989023,20000
+lambda0p3_diagnostic,0,20,sqrt_mean_squared_weighted_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=item_popularity,7.9197715082928255,20000
+lambda0p3_diagnostic,0,20,inverse_item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=inverse_item_popularity,1.115709115983037,20000
+lambda0p3_diagnostic,0,20,sqrt_mean_squared_weighted_inverse_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=inverse_item_popularity,0.5935348400500993,20000
+lambda0p3_diagnostic,0,20,user_degree_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=user_degree,1.0578146441986664,20000
+lambda0p3_diagnostic,0,20,sqrt_mean_squared_weighted_user_degree_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=user_degree,36.03122661859872,20000
+linucb_concat,0,20,standard_rmse,sqrt(mean(err_clipped^2)),1.0979806734602375,20000
+linucb_concat,0,20,pdf_literal,sqrt(sum(err_clipped^2)) / N,0.007763895798155064,20000
+linucb_concat,0,20,plain_l2,sqrt(sum(err_clipped^2)),155.27791596310126,20000
+linucb_concat,0,20,centered_rating_rmse,sqrt(mean(((rating-3)-(pred-3))^2)),1.0979806734602375,20000
+linucb_concat,0,20,raw_unclipped_rmse,sqrt(mean(err_raw^2)),1.0980243293040142,20000
+linucb_concat,0,20,clipped_rmse,sqrt(mean(err_clipped^2)),1.0979806734602375,20000
+linucb_concat,0,20,rating_0_1_normalized_rmse,sqrt(mean((err_clipped/4)^2)),0.2744951683650594,20000
+linucb_concat,0,20,rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=rating,0.9695638266888698,20000
+linucb_concat,0,20,sqrt_mean_squared_weighted_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=rating,3.5020941297860904,20000
+linucb_concat,0,20,normalized_rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=normalized_rating,0.9695638266888699,20000
+linucb_concat,0,20,sqrt_mean_squared_weighted_normalized_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=normalized_rating,0.9904392459589044,20000
+linucb_concat,0,20,sigmoid_reward_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=sigmoid_reward,0.9393521423487986,20000
+linucb_concat,0,20,sqrt_mean_squared_weighted_sigmoid_reward_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=sigmoid_reward,0.5992629096536968,20000
+linucb_concat,0,20,max_rating_minus_3_eps_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=max_rating_minus_3_eps,0.9836517561498126,20000
+linucb_concat,0,20,sqrt_mean_squared_weighted_max_rating_minus_3_eps_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=max_rating_minus_3_eps,1.243088336076193,20000
+linucb_concat,0,20,item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=item_popularity,1.007801341718624,20000
+linucb_concat,0,20,sqrt_mean_squared_weighted_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=item_popularity,13.874402932528138,20000
+linucb_concat,0,20,inverse_item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=inverse_item_popularity,1.1559123473087736,20000
+linucb_concat,0,20,sqrt_mean_squared_weighted_inverse_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=inverse_item_popularity,0.7253747480986154,20000
+linucb_concat,0,20,user_degree_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=user_degree,1.0743580431547788,20000
+linucb_concat,0,20,sqrt_mean_squared_weighted_user_degree_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=user_degree,35.987701893219274,20000
+linucb_mf_interaction,0,20,standard_rmse,sqrt(mean(err_clipped^2)),1.0864036624965485,20000
+linucb_mf_interaction,0,20,pdf_literal,sqrt(sum(err_clipped^2)) / N,0.007682033968572107,20000
+linucb_mf_interaction,0,20,plain_l2,sqrt(sum(err_clipped^2)),153.64067937144213,20000
+linucb_mf_interaction,0,20,centered_rating_rmse,sqrt(mean(((rating-3)-(pred-3))^2)),1.0864036624965485,20000
+linucb_mf_interaction,0,20,raw_unclipped_rmse,sqrt(mean(err_raw^2)),1.086428815920318,20000
+linucb_mf_interaction,0,20,clipped_rmse,sqrt(mean(err_clipped^2)),1.0864036624965485,20000
+linucb_mf_interaction,0,20,rating_0_1_normalized_rmse,sqrt(mean((err_clipped/4)^2)),0.27160091562413713,20000
+linucb_mf_interaction,0,20,rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=rating,0.9974638318860536,20000
+linucb_mf_interaction,0,20,sqrt_mean_squared_weighted_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=rating,3.7068165870767094,20000
+linucb_mf_interaction,0,20,normalized_rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=normalized_rating,0.9974638318860537,20000
+linucb_mf_interaction,0,20,sqrt_mean_squared_weighted_normalized_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=normalized_rating,1.0483375058900732,20000
+linucb_mf_interaction,0,20,sigmoid_reward_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=sigmoid_reward,0.9748242731260502,20000
+linucb_mf_interaction,0,20,sqrt_mean_squared_weighted_sigmoid_reward_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=sigmoid_reward,0.6401126789908866,20000
+linucb_mf_interaction,0,20,max_rating_minus_3_eps_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=max_rating_minus_3_eps,1.0662608851785889,20000
+linucb_mf_interaction,0,20,sqrt_mean_squared_weighted_max_rating_minus_3_eps_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=max_rating_minus_3_eps,1.3613867743472627,20000
+linucb_mf_interaction,0,20,item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=item_popularity,1.0543252905148162,20000
+linucb_mf_interaction,0,20,sqrt_mean_squared_weighted_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=item_popularity,13.19347602913488,20000
+linucb_mf_interaction,0,20,inverse_item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=inverse_item_popularity,1.1350824446180467,20000
+linucb_mf_interaction,0,20,sqrt_mean_squared_weighted_inverse_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=inverse_item_popularity,0.6600788362632314,20000
+linucb_mf_interaction,0,20,user_degree_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=user_degree,1.0725099303980945,20000
+linucb_mf_interaction,0,20,sqrt_mean_squared_weighted_user_degree_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=user_degree,36.36634672759824,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,standard_rmse,sqrt(mean(err_clipped^2)),1.0666978560227458,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,pdf_literal,sqrt(sum(err_clipped^2)) / N,0.007542692874708351,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,plain_l2,sqrt(sum(err_clipped^2)),150.85385749416702,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,centered_rating_rmse,sqrt(mean(((rating-3)-(pred-3))^2)),1.0666978560227458,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,raw_unclipped_rmse,sqrt(mean(err_raw^2)),1.0667245249035,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,clipped_rmse,sqrt(mean(err_clipped^2)),1.0666978560227458,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,rating_0_1_normalized_rmse,sqrt(mean((err_clipped/4)^2)),0.26667446400568645,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=rating,0.9933837495964085,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sqrt_mean_squared_weighted_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=rating,3.7176256103180516,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,normalized_rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=normalized_rating,0.9933837495964085,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sqrt_mean_squared_weighted_normalized_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=normalized_rating,1.0513944428060893,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sigmoid_reward_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=sigmoid_reward,0.9739160523524409,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sqrt_mean_squared_weighted_sigmoid_reward_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=sigmoid_reward,0.6437931850982568,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,max_rating_minus_3_eps_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=max_rating_minus_3_eps,1.0721124395738806,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sqrt_mean_squared_weighted_max_rating_minus_3_eps_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=max_rating_minus_3_eps,1.3686280110848899,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=item_popularity,1.0368684139557154,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sqrt_mean_squared_weighted_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=item_popularity,7.583484461446984,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,inverse_item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=inverse_item_popularity,1.108405603153673,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sqrt_mean_squared_weighted_inverse_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=inverse_item_popularity,0.5866525079720926,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,user_degree_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=user_degree,1.0533281972340838,20000
+schur_loglambda_tuned_full_pool_softmax_tau0p3,0,20,sqrt_mean_squared_weighted_user_degree_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=user_degree,35.683118425910756,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,standard_rmse,sqrt(mean(err_clipped^2)),1.0696314665516453,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,pdf_literal,sqrt(sum(err_clipped^2)) / N,0.007563436633691802,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,plain_l2,sqrt(sum(err_clipped^2)),151.26873267383604,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,centered_rating_rmse,sqrt(mean(((rating-3)-(pred-3))^2)),1.0696314665516453,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,raw_unclipped_rmse,sqrt(mean(err_raw^2)),1.0696405883812374,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,clipped_rmse,sqrt(mean(err_clipped^2)),1.0696314665516453,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,rating_0_1_normalized_rmse,sqrt(mean((err_clipped/4)^2)),0.26740786663791133,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=rating,0.9834624329581908,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sqrt_mean_squared_weighted_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=rating,3.6555144057625975,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,normalized_rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=normalized_rating,0.9834624329581909,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sqrt_mean_squared_weighted_normalized_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=normalized_rating,1.0338285601296975,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sigmoid_reward_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=sigmoid_reward,0.9615723228384945,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sqrt_mean_squared_weighted_sigmoid_reward_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=sigmoid_reward,0.6315323480461426,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,max_rating_minus_3_eps_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=max_rating_minus_3_eps,1.0509838379503338,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sqrt_mean_squared_weighted_max_rating_minus_3_eps_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=max_rating_minus_3_eps,1.3401566193495276,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=item_popularity,1.0312736174989023,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sqrt_mean_squared_weighted_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=item_popularity,7.9197715082928255,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,inverse_item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=inverse_item_popularity,1.115709115983037,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sqrt_mean_squared_weighted_inverse_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=inverse_item_popularity,0.5935348400500993,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,user_degree_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=user_degree,1.0578146441986664,20000
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,0,20,sqrt_mean_squared_weighted_user_degree_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=user_degree,36.03122661859872,20000
+schur_tuned_topk,0,20,standard_rmse,sqrt(mean(err_clipped^2)),1.097890145926837,20000
+schur_tuned_topk,0,20,pdf_literal,sqrt(sum(err_clipped^2)) / N,0.007763255671827547,20000
+schur_tuned_topk,0,20,plain_l2,sqrt(sum(err_clipped^2)),155.26511343655093,20000
+schur_tuned_topk,0,20,centered_rating_rmse,sqrt(mean(((rating-3)-(pred-3))^2)),1.097890145926837,20000
+schur_tuned_topk,0,20,raw_unclipped_rmse,sqrt(mean(err_raw^2)),1.0979290268669155,20000
+schur_tuned_topk,0,20,clipped_rmse,sqrt(mean(err_clipped^2)),1.097890145926837,20000
+schur_tuned_topk,0,20,rating_0_1_normalized_rmse,sqrt(mean((err_clipped/4)^2)),0.2744725364817093,20000
+schur_tuned_topk,0,20,rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=rating,0.9846257668271953,20000
+schur_tuned_topk,0,20,sqrt_mean_squared_weighted_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=rating,3.606312489101844,20000
+schur_tuned_topk,0,20,normalized_rating_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=normalized_rating,0.9846257668271954,20000
+schur_tuned_topk,0,20,sqrt_mean_squared_weighted_normalized_rating_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=normalized_rating,1.0199135974156066,20000
+schur_tuned_topk,0,20,sigmoid_reward_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=sigmoid_reward,0.9572757762967974,20000
+schur_tuned_topk,0,20,sqrt_mean_squared_weighted_sigmoid_reward_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=sigmoid_reward,0.6196270305873316,20000
+schur_tuned_topk,0,20,max_rating_minus_3_eps_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=max_rating_minus_3_eps,1.0278023038902107,20000
+schur_tuned_topk,0,20,sqrt_mean_squared_weighted_max_rating_minus_3_eps_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=max_rating_minus_3_eps,1.3081397101858787,20000
+schur_tuned_topk,0,20,item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=item_popularity,1.0485764485983005,20000
+schur_tuned_topk,0,20,sqrt_mean_squared_weighted_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=item_popularity,24.20708012480676,20000
+schur_tuned_topk,0,20,inverse_item_popularity_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=inverse_item_popularity,1.1491104852036755,20000
+schur_tuned_topk,0,20,sqrt_mean_squared_weighted_inverse_item_popularity_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=inverse_item_popularity,0.7320719264778388,20000
+schur_tuned_topk,0,20,user_degree_weighted_rmse,sqrt(sum(w*err_clipped^2)/sum(w)); w=user_degree,1.0764429780537277,20000
+schur_tuned_topk,0,20,sqrt_mean_squared_weighted_user_degree_weighted_rmse,sqrt(mean((w*err_clipped)^2)); w=user_degree,36.06512365153301,20000

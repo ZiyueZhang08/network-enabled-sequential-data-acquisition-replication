@@ -1,0 +1,8 @@
+method,gate_role,required_for_metric_gate,available_seed_count,available_seeds,missing_seeds,available_cycles,test_row_count,required_seed_count,row_level_scope,status
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,metric_gate_required,True,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,20,400000,20,final_cycle_only,complete_20seed
+linucb_concat,metric_gate_required,True,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,20,400000,20,final_cycle_only,complete_20seed
+linucb_mf_interaction,metric_gate_required,True,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,20,400000,20,final_cycle_only,complete_20seed
+linucb_bias_interaction,metric_gate_required,True,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,20,400000,20,final_cycle_only,complete_20seed
+schur_loglambda_tuned_full_pool_softmax_tau0p3,diagnostic_tracked,False,1,0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,20,20000,20,final_cycle_only,partial
+schur_tuned_topk,diagnostic_tracked,False,1,0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,20,20000,20,final_cycle_only,partial
+lambda0p3_diagnostic,diagnostic_tracked,False,1,0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,20,20000,20,final_cycle_only,partial

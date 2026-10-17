@@ -1,0 +1,71 @@
+{
+  "dataset": {"name": "flixster", "raw_dir": "data/raw/gcmc/flixster"},
+  "output_prefix": "flixster_svdpp_logistic_bandit_scale_3seeds",
+  "variants": [
+    {"label": "myopic", "policy": "myopic"},
+    {"label": "du_net", "policy": "du_net"},
+    {"label": "graph_social", "policy": "graph_social"},
+    {
+      "label": "logistic_ucb_a0005",
+      "policy": "logistic_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.0005}
+    },
+    {
+      "label": "logistic_ucb_a001",
+      "policy": "logistic_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.001}
+    },
+    {
+      "label": "logistic_ucb_a0025",
+      "policy": "logistic_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.0025}
+    },
+    {
+      "label": "logistic_ucb_a005",
+      "policy": "logistic_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.005}
+    },
+    {
+      "label": "logistic_ts_n002",
+      "policy": "logistic_thompson_sampling",
+      "acquisition_overrides": {"thompson_noise": 0.002}
+    },
+    {
+      "label": "logistic_ts_n005",
+      "policy": "logistic_thompson_sampling",
+      "acquisition_overrides": {"thompson_noise": 0.005}
+    },
+    {
+      "label": "logistic_ts_n010",
+      "policy": "logistic_thompson_sampling",
+      "acquisition_overrides": {"thompson_noise": 0.010}
+    }
+  ],
+  "seeds": [0, 1, 2],
+  "split": {"test_ratio": 0.0, "initial_fraction_of_train": 0.01, "use_predefined_split": true},
+  "mf": {"rank": 8, "epochs": 2, "learning_rate": 0.025, "regularization": 0.04, "algorithm": "svdpp"},
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.05,
+    "diffusion_prob": 0.0,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "ucb_alpha": 0.8,
+    "ucb_regularization": 1.0,
+    "oful_delta": 0.05,
+    "oful_noise_scale": 1.0,
+    "oful_param_bound": 1.0,
+    "oful_beta_scale": 1.0,
+    "thompson_noise": 0.08,
+    "logistic_bandit_temperature": 1.0,
+    "finite_bandit_epsilon": 0.1,
+    "finite_bandit_explore_fraction": 0.25,
+    "adaptive_greedy_min_epsilon": 0.02,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8]
+  }
+}

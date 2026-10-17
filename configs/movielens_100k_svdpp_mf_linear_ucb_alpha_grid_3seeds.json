@@ -1,0 +1,65 @@
+{
+  "dataset": {
+    "name": "movielens-100k",
+    "raw_dir": "data/raw/ml-100k"
+  },
+  "output_prefix": "movielens_100k_svdpp_mf_linear_ucb_alpha_grid_3seeds",
+  "variants": [
+    {"label": "myopic", "policy": "myopic"},
+    {"label": "du_net", "policy": "du_net"},
+    {"label": "graph_social", "policy": "graph_social"},
+    {
+      "label": "mf_linear_ucb_a000",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.0}
+    },
+    {
+      "label": "mf_linear_ucb_a002",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.02}
+    },
+    {
+      "label": "mf_linear_ucb_a005",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.05}
+    },
+    {
+      "label": "mf_linear_ucb_a010",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.1}
+    },
+    {
+      "label": "mf_linear_ucb_a020",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.2}
+    }
+  ],
+  "seeds": [0, 1, 2],
+  "split": {
+    "test_ratio": 0.2,
+    "initial_fraction_of_train": 0.01
+  },
+  "mf": {
+    "rank": 12,
+    "epochs": 6,
+    "learning_rate": 0.025,
+    "regularization": 0.04,
+    "algorithm": "svdpp"
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.25,
+    "diffusion_prob": 0.005,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8],
+    "ucb_alpha": 0.05,
+    "ucb_regularization": 1.0,
+    "thompson_noise": 0.08
+  }
+}

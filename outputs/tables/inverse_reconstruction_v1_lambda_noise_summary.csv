@@ -1,0 +1,6 @@
+lambda_noise,seeds,min_top100_overlap,min_selected_batch_overlap,max_selected_changed_count,mean_selected_rating,mean_selected_entropy,status
+0.1,3,0.99,0.99,2,3.6966666666666668,0.006078106110106766,cycle0_low_effect
+0.3,3,1.0,1.0,0,3.6999999999999997,0.006123523908998633,cycle0_low_effect
+1.0,3,1.0,1.0,0,3.6999999999999997,0.006140637750042667,cycle0_low_effect
+3.0,3,1.0,1.0,0,3.6999999999999997,0.0061455841806802,cycle0_low_effect
+10.0,3,1.0,1.0,0,3.6999999999999997,0.006147321519819099,cycle0_low_effect

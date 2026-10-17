@@ -1,0 +1,5 @@
+metric,du_net,mf_linear_ucb_a002,myopic,linear_gap_favoring_du,myopic_gap_favoring_du,interpretation
+w_rmse,0.811118,0.816637,0.821812,0.005519,0.010694,DU-Net better if comparator minus DU-Net is positive.
+rmse,1.200927,1.196095,1.194896,-0.004833,-0.006032,DU-Net better if comparator minus DU-Net is positive.
+sigmoid_reward_w_rmse,0.905640,0.904768,0.905932,-0.000872,0.000292,DU-Net better if comparator minus DU-Net is positive.
+cumulative_reward,2697.333333,2744.000000,2729.000000,-46.666667,-31.666667,DU-Net better if DU-Net minus comparator is positive.

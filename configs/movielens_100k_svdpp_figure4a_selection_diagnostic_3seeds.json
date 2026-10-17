@@ -1,0 +1,93 @@
+{
+  "dataset": {
+    "name": "movielens-100k",
+    "raw_dir": "data/raw/ml-100k"
+  },
+  "output_prefix": "movielens_100k_svdpp_figure4a_selection_diagnostic_3seeds",
+  "variants": [
+    {
+      "label": "myopic_topk",
+      "policy": "myopic"
+    },
+    {
+      "label": "myopic_exp_tau1",
+      "policy": "myopic",
+      "acquisition_overrides": {
+        "selection": "exp",
+        "selection_temperature": 1.0
+      }
+    },
+    {
+      "label": "du_net_topk_current",
+      "policy": "du_net"
+    },
+    {
+      "label": "du_net_exp_tau1",
+      "policy": "du_net",
+      "acquisition_overrides": {
+        "selection": "exp",
+        "selection_temperature": 1.0
+      }
+    },
+    {
+      "label": "du_net_exp_tau05",
+      "policy": "du_net",
+      "acquisition_overrides": {
+        "selection": "exp",
+        "selection_temperature": 0.5
+      }
+    },
+    {
+      "label": "du_net_dynamic_sigma_exp_tau1",
+      "policy": "du_net_dynamic_sigma",
+      "acquisition_overrides": {
+        "selection": "exp",
+        "selection_temperature": 1.0
+      }
+    },
+    {
+      "label": "mf_linear_ucb_a002_topk",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {
+        "ucb_alpha": 0.02
+      }
+    },
+    {
+      "label": "mf_linear_ucb_a002_exp_tau1",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {
+        "ucb_alpha": 0.02,
+        "selection": "exp",
+        "selection_temperature": 1.0
+      }
+    }
+  ],
+  "seeds": [0, 1, 2],
+  "split": {
+    "test_ratio": 0.2,
+    "initial_fraction_of_train": 0.01
+  },
+  "mf": {
+    "rank": 12,
+    "epochs": 6,
+    "learning_rate": 0.025,
+    "regularization": 0.04,
+    "algorithm": "svdpp"
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.25,
+    "diffusion_prob": 0.005,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8],
+    "ucb_alpha": 0.8,
+    "ucb_regularization": 1.0,
+    "thompson_noise": 0.08
+  }
+}

@@ -1,0 +1,5 @@
+method,seed_count,available_seeds,missing_seeds,cycle_count,available_cycles,missing_cycles,status
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,21,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20,,complete_20seed_21cycle
+linucb_concat,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,21,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20,,complete_20seed_21cycle
+linucb_mf_interaction,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,21,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20,,complete_20seed_21cycle
+lambda0p3_diagnostic,20,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,,21,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20,,complete_20seed_21cycle

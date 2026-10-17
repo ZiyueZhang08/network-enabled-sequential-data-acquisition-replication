@@ -1,0 +1,6 @@
+cycle,seeds,min_top100_overlap,min_selected_batch_overlap,max_selected_changed_count,max_abs_one_step_rmse_diff,mean_abs_rating_diff,selection,status
+0,3,1.0,1.0,0,0.0,0.0,shortlist20k_vs_all_candidate_tiled,screen_pass_low_effect
+5,3,1.0,1.0,0,0.0,0.0,shortlist20k_vs_all_candidate_tiled,screen_pass_low_effect
+10,3,0.97,0.97,6,5.17833035893478e-05,0.013333333333333334,shortlist20k_vs_all_candidate_tiled,screen_pass_low_effect
+15,3,0.98,0.98,4,5.316846843328449e-05,0.013333333333333334,shortlist20k_vs_all_candidate_tiled,screen_pass_low_effect
+20,3,0.99,0.99,2,6.457792520064842e-06,0.0166666666666666,shortlist20k_vs_all_candidate_tiled,screen_pass_low_effect

@@ -1,0 +1,9 @@
+check,status,evidence,decision
+current_scientific_status,strong_partial_reproduction,Figure 4a direction is recovered only in local reward-weighted and high-rating regions; exact scale/full-RMSE ordering is not recovered.,Keep reporting as strong partial reproduction.
+artifact_integrity,pass,69 pass; 0 fail,Handoff set is internally consistent.
+paper_faithful_trigger,blocked_by_missing_source,All rerun triggers are currently absent.,Do not start a new experimental branch while blocked.
+figure4a_reward_weighted_distance,direction_matches,gap=0.008300; paper_gap_ratio=31.9%; scale_ratio=46.1%,Direction is useful; absolute scale remains non-matching.
+figure4a_full_rmse_blocker,direction_does_not_match,gap=-0.004800; direction_matches=False,Exact Figure 4a claim remains blocked.
+missing_source_items,missing,author_code_or_supplement; exact_figure4a_metric; exact_split_and_preprocessing; du_net_backend_config,Use the source request packet rather than inventing more local proxy rows.
+minimal_protocol,blocked,"Run MovieLens Figure 4a only, seeds 0-2, comparing DU-Net-style, MF-centered Linear UCB, and Myopic.",Protocol is defined but blocked until a source-backed trigger appears.
+continuation_decision,do_not_run_experiment,next_queue_item=69,Continue waiting for primary source or approved dependency trigger.

@@ -1,0 +1,11 @@
+category,item,paper_value,current_value,ratio_current_to_paper,interpretation
+dataset,users,943,943,1.0,User count matches the paper.
+dataset,items,1681,1682,1.0005948839976204,Current MovieLens loader keeps one more item than the paper table.
+split,initial_count,1363.25738,800,0.5868297591757765,Current initial set is materially smaller than the paper Table 1 density implies.
+split,test_count,19973.305800000002,20000,1.001336493831682,Current random 20% test size is essentially the paper's test density.
+split,initial_density,0.00086,0.0005043735491379626,0.5864808710906542,"Current config uses 1% of observed train ratings, not Table-1-matching matrix density."
+split,test_density,0.0126,0.012609338728449064,1.000741168924529,"Test density aligns closely, so test-size scale is not the main issue."
+metric,DU-Net local weighted_rmse,1.788,0.8263996483125895,0.46219219704283526,Current weighted_rmse uses positive-rating weights and is not directly comparable to the PDF Figure 4a scale.
+metric,DU-Net local plain rmse,1.788,1.160634163944908,0.6491242527656085,Plain RMSE is closer than current weighted_rmse but still well below the PDF visual estimate.
+metric,Linear UCB local weighted_rmse,1.814,0.8332899175106852,0.4593659964226489,Best MF-centered Linear UCB preserves paper ordering but not paper absolute scale.
+metric,Linear UCB local plain rmse,1.814,1.1560264441927364,0.6372802889706375,Plain RMSE remains below the PDF visual estimate.

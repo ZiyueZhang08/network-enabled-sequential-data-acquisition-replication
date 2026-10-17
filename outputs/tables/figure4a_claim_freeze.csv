@@ -1,0 +1,10 @@
+﻿claim_type,claim,evidence,condition
+allowed,Local DU-Net is better than the MF-centered Linear UCB proxy under the primary linear reward-norm proxy.,Linear-minus-DU primary gap 0.0207; share 79.5% of paper visual gap.,Must call Linear UCB a proxy and report metric caveats.
+allowed,"The result is a strong partial reproduction, not an exact Figure 4a reproduction.","Exact metric, split, backend, and Linear UCB protocol remain unrecovered.",Must not claim exact replication.
+allowed,Conventional RMSE and sigmoid-weighted checks do not support the same strong DU-Net win.,RMSE gap -0.0077; sigmoid gap -0.0004.,Must be shown beside the primary proxy.
+allowed,The no-network MovieLens fidelity probe was rejected.,Primary delta -0.0055; reward delta -11.25.,Keep the frozen candidate unchanged.
+allowed,The exponential-sampling fidelity probe was rejected.,Primary delta -0.2115; reward delta -945.50.,Do not run a temperature grid without source-backed sampling details.
+forbidden,Exact Figure 4a replication achieved.,"Remaining gap to paper visual target, metric contradiction, and source blockers remain.",Only revisit with source-faithful metric/split/backend evidence.
+forbidden,The local MF-centered Linear UCB is the exact paper Linear UCB.,"Paper feature map, regularization, alpha schedule, and update protocol remain unrecovered.",Only change after source protocol recovery.
+forbidden,No-network should replace the frozen DU-Net candidate.,The four-seed probe worsened the primary metric and reward.,Do not promote without a new passing gate.
+forbidden,Exponential sampling should replace top-k selection.,The four-seed probe collapsed reward and the primary reward-tail metric.,Do not promote without source-backed sampling details and a passing gate.

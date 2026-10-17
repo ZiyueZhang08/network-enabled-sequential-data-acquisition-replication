@@ -1,0 +1,7 @@
+claim_area,status,du_net,linear_ucb,linear_minus_du,claim
+paper_target,visual_estimate,1.788,1.814,0.026,Paper Figure 4a visually favors DU-Net over Linear UCB.
+local_reward_weighted,direction_matches,0.8250,0.8333,0.0083,"Local reward-weighted w-RMSE recovers the paper direction, but not the paper scale."
+local_full_rmse,direction_does_not_match,1.1608,1.1560,-0.0048,"Full-test conventional RMSE favors Linear UCB, so this is not an exact Figure 4a reproduction."
+local_high_rating_region,mechanism_support,0.6587,0.6671,0.0084,"High-rating test regions favor DU-Net, supporting the reward-region mechanism."
+local_low_rating_region,mechanism_limit,1.5773,1.5650,-0.0123,"Low-rating test regions favor Linear UCB, explaining the full-test RMSE reversal."
+sigmoid_reward_weighted,near_tie,0.8977,0.8975,-0.000199,Paper-like sigmoid weighting is effectively tied at 20 seeds.

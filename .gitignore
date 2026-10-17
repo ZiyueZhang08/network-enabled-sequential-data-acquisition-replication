@@ -1,0 +1,41 @@
+# Python and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# External data, local masks, and large prediction artifacts
+data/raw/
+data/processed/
+outputs/row_level_predictions/
+outputs/masks/
+outputs/logs/
+outputs/tables/*predictions*.csv
+outputs/tables/*predictions*.csv.gz
+outputs/tables/*predictions*.parquet
+
+# Local agents, credentials, and run state
+.agents/
+.omx/
+.env
+.env.*
+*.pem
+*.key
+tmp/
+*.pid
+*.out
+*.err
+*.log
+
+# Paper copies are linked from the README instead
+/Network-Enabled Sequential Data Acquisition*.pdf
+/Network-Enabled Sequential Data Acquisition.md
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

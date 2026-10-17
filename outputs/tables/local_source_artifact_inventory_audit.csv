@@ -1,0 +1,7 @@
+artifact,classification,size_bytes,last_write_time,actionable_trigger_candidate,interpretation
+data\raw\gcmc\douban\training_test_dataset.mat,known_monti_split_artifact,2778554,2026-07-03T03:58:28,no,"Monti/GCMC artifact already audited; useful for Flixster/Douban, not exact MovieLens Figure 4a."
+data\raw\gcmc\flixster\training_test_dataset.mat,known_monti_split_artifact,2776221,2026-07-03T03:58:05,no,"Monti/GCMC artifact already audited; useful for Flixster/Douban, not exact MovieLens Figure 4a."
+data\raw\ml-100k.zip,known_dataset_archive,4924029,2026-07-02T23:00:26,no,MovieLens raw dataset archive; not source/supplement/config evidence.
+Network-Enabled Sequential Data Acquisition (1).pdf,known_paper_pdf,2303248,2026-07-06T22:57:43,no,Primary paper PDF already audited; not a supplement or author code package.
+configs/*,local_reproduction_config_summary,,,no,112 local reproduction config file(s) are intentionally excluded from trigger candidacy.
+execution_decision,no_new_actionable_source_artifact,,,no,Only known paper/data/Monti/local-config artifacts are present; no new source-backed rerun trigger.

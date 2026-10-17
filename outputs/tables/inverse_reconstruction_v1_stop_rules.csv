@@ -1,0 +1,4 @@
+stop_rule,status,evidence,required_next
+best_attainable_paper_only_reconstruction,not_met,"metric, Linear UCB, mask, and DU-Net latent-variable gates are represented, but at least one remains source-blocked or queued.",run queued mask screens and promote only defensible candidates
+near_perfect_empirical_reconstruction,not_met,metric_closed=False; linucb_closed=False; masks_screened=False; same_config_confirmed=False,top 5 joint candidates require 20-seed confirmation under the same config
+exact_replication,not_claimable,"author metric code, exact masks, Linear UCB protocol, and numeric Figure 4 data are still absent",recover source artifacts or keep exactness claim disabled

@@ -1,0 +1,19 @@
+order,purpose,artifact,use_when
+1,Submission packet,reports/figure4a_submission_packet.md,"Need the top-level submit/request packet with metrics, guardrails, and next action."
+2,Final conclusion,reports/figure4a_final_package.md,"Need the headline result, final table, and caveated conclusion."
+3,Latest metric reconciliation,reports/figure4a_latest_metric_reconciliation.md,"Need the cross-metric caveat for primary, sigmoid, and conventional RMSE."
+4,No-network fidelity,reports/figure4a_no_network_fidelity_probe.md,Need to explain why MovieLens no-diffusion/no-network was not promoted.
+5,Exp-sampling fidelity,reports/figure4a_exp_fidelity_probe.md,Need to explain why exponential batch sampling was not promoted.
+6,Final Chinese delivery,reports/figure4a_final_delivery_zh.md,"Need the final Chinese handoff wording, reflection, and next step."
+7,Delivery quality gate,reports/figure4a_delivery_quality_gate.md,Need to verify no stale early-gap wording or mojibake remains in curated handoff reports.
+8,Chinese status,reports/figure4a_current_status_zh.md,Need a concise Chinese progress summary.
+9,Allowed/forbidden claims,reports/figure4a_claim_freeze.md,Need to avoid overstating the reproduction.
+10,Artifact readiness,reports/figure4a_readiness_audit.md,Need to verify all final deliverables exist.
+11,Source recovery,reports/figure4a_source_recovery_packet.md,Need author/source request details and unresolved blockers.
+12,Author request email,reports/author_source_request_email.md,Need copy-ready wording to request source-backed Figure 4a details.
+13,Reopen protocol,reports/figure4a_next_trigger_protocol.md,Need to decide whether a new experiment is allowed.
+14,No-author-source closure,reports/figure4a_no_author_source_closure.md,Need the final decision after confirming author source code is unavailable.
+15,Report-ready wording,reports/figure4a_report_ready_section_zh.md,Need a directly usable Chinese report paragraph with caveats.
+16,Evidence appendix,reports/figure4a_evidence_appendix_zh.md,Need claim-to-evidence mapping for the final report.
+17,Retrospective,reports/figure4a_retrospective_zh.md,Need to understand why local sweeps stopped and what was learned.
+18,Artifact checksums,reports/figure4a_artifact_checksums.md,Need to verify final handoff files have not changed unexpectedly.

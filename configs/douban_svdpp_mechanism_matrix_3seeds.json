@@ -1,0 +1,64 @@
+{
+  "dataset": {"name": "douban", "raw_dir": "data/raw/gcmc/douban"},
+  "output_prefix": "douban_svdpp_mechanism_matrix_3seeds",
+  "policies": [
+    "du_net",
+    "du_net_no_dls",
+    "du_net_shrinkage_dls",
+    "du_net_logdet_entropy",
+    "du_net_logdet_shrinkage_dls",
+    "du_net_logdet_shrinkage_exp_tau05"
+  ],
+  "policy_overrides": {
+    "du_net_shrinkage_dls": {
+      "dls_shrinkage": 0.6
+    },
+    "du_net_logdet_entropy": {
+      "entropy_mode": "observational_logdet",
+      "lambda_entropy": 0.2,
+      "entropy_logdet_regularization": 1.0
+    },
+    "du_net_logdet_shrinkage_dls": {
+      "entropy_mode": "observational_logdet",
+      "lambda_entropy": 0.2,
+      "entropy_logdet_regularization": 1.0,
+      "dls_shrinkage": 0.6
+    },
+    "du_net_logdet_shrinkage_exp_tau05": {
+      "entropy_mode": "observational_logdet",
+      "lambda_entropy": 0.2,
+      "entropy_logdet_regularization": 1.0,
+      "dls_shrinkage": 0.6,
+      "selection": "exp",
+      "selection_temperature": 0.5
+    }
+  },
+  "seeds": [0, 1, 2],
+  "split": {
+    "test_ratio": 0.0,
+    "initial_fraction_of_train": 0.01,
+    "use_predefined_split": true
+  },
+  "mf": {
+    "rank": 8,
+    "epochs": 2,
+    "learning_rate": 0.025,
+    "regularization": 0.04,
+    "algorithm": "svdpp"
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.05,
+    "diffusion_prob": 0.01,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8],
+    "diffusion_normalization": "none",
+    "graph_embedding_method": "spectral"
+  }
+}

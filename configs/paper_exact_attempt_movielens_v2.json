@@ -1,0 +1,114 @@
+{
+  "dataset": {
+    "name": "movielens-100k",
+    "raw_dir": "data/raw/ml-100k",
+    "network_mode": "gcmc_features",
+    "network_embedding_mode": "user_features"
+  },
+  "output_prefix": "paper_exact_attempt_movielens_v2",
+  "freeze_name": "paper_exact_attempt_movielens_v2",
+  "source_result_prefix": "paper_faithful_movielens_schur_loglambda_tuned_full_pool_softmax_tau1_literal_v1",
+  "freeze_note": "Exact-reproduction v2 protocol lock. Tau=1 literal full-pool exponential sampling is the only exact-attempt mainline; tau0.3, top-k, and lambda=0.3 are diagnostics; Linear UCB rows are comparator-range candidates unless source-verified.",
+  "variants": [
+    {
+      "label": "schur_loglambda_tuned_full_pool_softmax_tau1_literal",
+      "policy": "paper_faithful_dunet",
+      "claim_role": "mainline",
+      "acquisition_overrides": {
+        "selection": "exp",
+        "selection_temperature": 1.0
+      }
+    },
+    {
+      "label": "linucb_concat",
+      "policy": "linucb_concat",
+      "claim_role": "linear_ucb_proxy",
+      "acquisition_overrides": {
+        "selection": "topk"
+      }
+    },
+    {
+      "label": "linucb_mf_interaction",
+      "policy": "linucb_mf_interaction",
+      "claim_role": "linear_ucb_proxy",
+      "acquisition_overrides": {
+        "selection": "topk"
+      }
+    },
+    {
+      "label": "linucb_bias_interaction",
+      "policy": "linucb_bias_interaction",
+      "claim_role": "linear_ucb_proxy",
+      "acquisition_overrides": {
+        "selection": "topk"
+      }
+    },
+    {
+      "label": "schur_loglambda_tuned_full_pool_softmax_tau0p3",
+      "policy": "paper_faithful_dunet",
+      "claim_role": "calibrated_softmax_robustness",
+      "acquisition_overrides": {
+        "selection": "exp",
+        "selection_temperature": 0.3
+      }
+    },
+    {
+      "label": "schur_tuned_topk",
+      "policy": "paper_faithful_dunet",
+      "claim_role": "deterministic_ablation",
+      "acquisition_overrides": {
+        "selection": "topk"
+      }
+    },
+    {
+      "label": "lambda0p3_diagnostic",
+      "policy": "paper_faithful_dunet",
+      "claim_role": "lambda_entropy_diagnostic",
+      "acquisition_overrides": {
+        "selection": "exp",
+        "selection_temperature": 1.0,
+        "lambda_entropy": 0.3
+      }
+    }
+  ],
+  "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "split": {
+    "mode": "movielens_u1_fallback_table1_density",
+    "num_users": 943,
+    "num_items": 1681,
+    "initial_size": 1364
+  },
+  "mf": {
+    "rank": 20,
+    "epochs": 20,
+    "learning_rate": 0.015,
+    "regularization": 0.06,
+    "algorithm": "svdpp"
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 1.0,
+    "diffusion_prob": 0.0,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "dls_neighbor_mode": "graph_edges",
+    "paper_dls_scope": "full",
+    "selection": "topk",
+    "selection_temperature": 1.0,
+    "rating_midpoint": 3.0,
+    "entropy_mode": "schur_conditional_variance",
+    "entropy_score_transform": "none",
+    "entropy_logdet_regularization": 1.0,
+    "paper_entropy_correction_weight": 1.0,
+    "paper_entropy_shortlist_size": 20000,
+    "paper_entropy_batch_size": 4096,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8, 1.6],
+    "adaptive_lambda_grid": [0.0, 0.1, 1.0, 3.0, 10.0, 30.0, 100.0, 300.0],
+    "adaptive_diffusion_prob_grid": [0.0],
+    "paper_tuning_frequency": 5,
+    "paper_tuning_metric": "standard_mask_rmse",
+    "ucb_alpha": 0.8,
+    "ucb_regularization": 1.0
+  }
+}

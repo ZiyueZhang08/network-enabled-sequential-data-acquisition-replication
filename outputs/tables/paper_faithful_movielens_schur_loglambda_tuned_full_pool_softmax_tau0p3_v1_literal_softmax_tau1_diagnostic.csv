@@ -1,0 +1,4 @@
+selection,tau,seed_count,standard_mask_rmse,cumulative_reward,rmse_gap_vs_concat,reward_gap_vs_concat,concat_reference,collapse,role
+top-k,n/a,20,1.088861392406177,1250.5567086261208,0.017527743553537478,-143.12353772594315,20-seed mean,no,deterministic ablation
+full-pool softmax,0.3,20,1.0700251024710896,1245.7012521851213,0.036364033488624825,-147.97899416694258,20-seed mean,no,stochastic main
+full-pool softmax,1.0,3,1.0722835848605374,1245.938344746792,0.026314263831957563,-140.55921153739746,seed-matched 0-2,no,literal-softmax diagnostic

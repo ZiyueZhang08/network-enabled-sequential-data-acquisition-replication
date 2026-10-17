@@ -1,0 +1,15 @@
+risk,category,next_action,estimated_effort,expected_impact
+20-seed row-level metric recomputation,A,"Generate final-cycle, then optionally all-cycle row-level predictions for all required methods.",high compute; hours to overnight single-process,"Closes partial evidence for metric candidates, but cannot fix a wrong paper formula by itself."
+u1-u5 and random-mask sensitivity,A,Promote existing u1-u5 3-seed evidence only if expanded to 20 seeds or paired with author mask recovery.,medium to high,Reduces mask-overfitting concern; does not recover exact masks.
+all-candidate Schur vs 20k shortlist,A,Run a small all-candidate diagnostic and compare selected batches and endpoints.,medium to high memory/CPU,Can close shortlist approximation risk for current implementation.
+lambda_noise sensitivity,A,Grid or estimate eta^2/sigma^2 from residual variance and rating-noise assumptions.,medium,Tests whether backend/noise convention explains reward/RMSE tradeoff.
+alpha sensitivity for local Linear UCB,A,Broaden alpha/regularization diagnostics beyond the current 3-seed grid if comparator remains important.,medium,Clarifies comparator range; does not identify author Linear UCB.
+Figure 4 digitization precision,A,Use WebPlotDigitizer/manual axis calibration on the paper PDF crops and regenerate target CSVs.,low to medium,Improves target precision; still not author numeric data.
+contextualbandits/lrbandit adapters,B,Install/test minimal adapters only as external comparator candidates.,medium plus dependency risk,May widen comparator range; not exact without paper linkage.
+ELPH backend implementation,B,Implement or vendor a documented ELPH-like graph embedding only if paper/backend evidence appears.,high,Could affect DLS inputs materially; current exactness remains blocked.
+tiled all-candidate Schur production path,B,Optimize the all-candidate Schur computation if diagnostics show shortlist changes decisions.,high,Needed only if shortlist materially changes selection.
+estimated noise ratio backend,B,Add a source-grounded eta^2/sigma^2 estimator and freeze it in config.,medium,"Could align Eq.3.6 convention, but paper does not expose enough details."
+author exact MovieLens masks,C,Obtain initial/candidate/test masks or generation scripts.,requires source,Required for exact replication.
+author exact w-RMSE code or numeric Figure 4a table,C,"Obtain metric code, weights, normalization, aggregation, and Figure 4 numeric data.",requires source,Required to resolve the formula/plot contradiction.
+author Linear UCB protocol,C,"Obtain feature map, alpha, regularization, reward transform, and update protocol.",requires source,Required before naming any comparator paper_linear_ucb_reconstructed.
+author DU-Net backend/ELPH parameters,C,"Obtain backend details for DLS input graph/embedding, sigma/noise/tuning, and any approximation.",requires source,Required for perfect source-faithful DU-Net reproduction.

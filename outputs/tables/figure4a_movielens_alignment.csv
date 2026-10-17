@@ -1,0 +1,8 @@
+source,method,variant,w_rmse,w_rmse_ci95,cumulative_reward,cumulative_reward_ci95,note,w_rmse_gap_vs_du_net,w_rmse_ratio_vs_du_net
+paper_figure4a_visual_estimate,DU-Net,du_net,1.788,,,,Paper Figure 4a visual endpoint estimate at epoch 20.,0.0,1.0
+paper_figure4a_visual_estimate,Linear UCB,linear_ucb,1.814,,,,Paper Figure 4a visual endpoint estimate; best non-DU curve by w-RMSE.,0.026000000000000023,1.0145413870246085
+paper_figure4a_visual_estimate,Myopic,myopic,1.823,,,,Paper Figure 4a visual endpoint estimate for reward-only sampling.,0.03499999999999992,1.0195749440715882
+current_20seed,DU-Net,du_net,0.8263996483125895,0.004952011221548023,2714.55,20.302040441917732,Current main MovieLens Figure-4a-style DU-Net result.,0.0,1.0
+current_20seed,MF-centered Linear UCB,mf_linear_ucb_a002,0.8332899175106852,0.004762553763969552,2717.65,18.98814971723708,Best local Linear-UCB-style adapter from the new 20-seed Figure 4a comparison run.,0.006890269198095655,1.0083376961887203
+current_20seed,Myopic,myopic,0.8348286351114969,0.0058738659443423324,2717.9,26.013183362125805,Reward-only baseline from the current main MovieLens 20-seed result.,0.008428986798907356,1.0101996495474295
+current_20seed,Raw Linear UCB,linear_ucb,1.1999384214241051,0.011253729117396007,72.35,42.68649783072666,"Legacy raw feature adapter; retained as a negative control, not the preferred paper-aligned comparison.",0.3735387731115156,1.452007420228503

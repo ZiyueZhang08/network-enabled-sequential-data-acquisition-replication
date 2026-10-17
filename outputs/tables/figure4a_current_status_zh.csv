@@ -1,0 +1,11 @@
+﻿item,value
+stage,strong_partial_reproduction
+du_primary_linear_reward_norm_w_rmse,0.9811
+linear_ucb_proxy_primary,1.0018
+myopic_primary,1.0021
+linear_minus_du_primary_gap,0.0207
+paper_visual_gap_share,79.5%
+sigmoid_gap_linear_minus_du,-0.0004
+rmse_gap_linear_minus_du,-0.0077
+no_network_decision,reject_primary_and_reward_regression
+exp_sampling_decision,reject_reward_tail_collapse

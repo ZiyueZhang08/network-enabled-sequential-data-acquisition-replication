@@ -1,0 +1,81 @@
+{
+  "dataset": {"name": "flixster", "raw_dir": "data/raw/gcmc/flixster"},
+  "output_prefix": "flixster_svdpp_paper_bandit_gap_3seeds",
+  "variants": [
+    {"label": "myopic", "policy": "myopic"},
+    {"label": "du_net", "policy": "du_net"},
+    {"label": "graph_social", "policy": "graph_social"},
+    {
+      "label": "mf_oful_b0005",
+      "policy": "mf_oful",
+      "acquisition_overrides": {"oful_beta_scale": 0.0005}
+    },
+    {
+      "label": "logistic_ucb_a005",
+      "policy": "logistic_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.05}
+    },
+    {
+      "label": "logistic_ucb_a020",
+      "policy": "logistic_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.20}
+    },
+    {
+      "label": "logistic_ts_n008",
+      "policy": "logistic_thompson_sampling",
+      "acquisition_overrides": {"thompson_noise": 0.08}
+    },
+    {
+      "label": "finite_ucb_a005",
+      "policy": "finite_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.05}
+    },
+    {
+      "label": "finite_ucb_a020",
+      "policy": "finite_ucb",
+      "acquisition_overrides": {"ucb_alpha": 0.20}
+    },
+    {
+      "label": "epsilon_greedy_e010",
+      "policy": "epsilon_greedy",
+      "acquisition_overrides": {"finite_bandit_epsilon": 0.10}
+    },
+    {
+      "label": "adaptive_greedy_e010",
+      "policy": "adaptive_greedy",
+      "acquisition_overrides": {"finite_bandit_epsilon": 0.10, "adaptive_greedy_min_epsilon": 0.02}
+    },
+    {
+      "label": "explore_then_exploit_q025",
+      "policy": "explore_then_exploit",
+      "acquisition_overrides": {"finite_bandit_explore_fraction": 0.25}
+    }
+  ],
+  "seeds": [0, 1, 2],
+  "split": {"test_ratio": 0.0, "initial_fraction_of_train": 0.01, "use_predefined_split": true},
+  "mf": {"rank": 8, "epochs": 2, "learning_rate": 0.025, "regularization": 0.04, "algorithm": "svdpp"},
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.05,
+    "diffusion_prob": 0.0,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "ucb_alpha": 0.8,
+    "ucb_regularization": 1.0,
+    "oful_delta": 0.05,
+    "oful_noise_scale": 1.0,
+    "oful_param_bound": 1.0,
+    "oful_beta_scale": 1.0,
+    "thompson_noise": 0.08,
+    "logistic_bandit_temperature": 1.0,
+    "finite_bandit_epsilon": 0.1,
+    "finite_bandit_explore_fraction": 0.25,
+    "adaptive_greedy_min_epsilon": 0.02,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8]
+  }
+}

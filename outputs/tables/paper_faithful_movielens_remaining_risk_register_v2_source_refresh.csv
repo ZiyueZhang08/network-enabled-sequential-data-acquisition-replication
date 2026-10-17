@@ -1,0 +1,5 @@
+source_item,status,source_url,evidence
+target DU-Net paper public artifact search,not_found,,"Manual web refresh for exact phrases around DU-Net, Linear UCB, MovieLens, and network-enabled sequential data acquisition did not recover author code, masks, or Figure 4 point data."
+Monti et al. RMGCNN paper,paper_available_no_masks,https://arxiv.org/abs/1704.06803,"The arXiv page exposes the paper/PDF/TeX source, while the paper text gives real-data graph construction and benchmark RMSEs but not MovieLens masks or seed mappings for this clean-room Figure 4 protocol."
+MovieLens 100K official fallback,available,https://grouplens.org/datasets/movielens/100k/,MovieLens 100K official u1.base/u1.test
+local Monti mask scan,not_found,data/processed/movielens_monti_scan/scan_report.json,local exact 943x1681 candidate count: 0

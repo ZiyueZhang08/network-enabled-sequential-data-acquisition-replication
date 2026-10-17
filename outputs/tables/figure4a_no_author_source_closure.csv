@@ -1,0 +1,6 @@
+﻿item,status,evidence,decision
+current_result,strong_partial_reproduction,DU 0.9811 vs Linear proxy 1.0018; gap 0.0207; share 79.5%.,"Report as Linear-UCB-consistent under the primary proxy, not exact replication."
+metric_caveat,active,RMSE gap -0.0077; sigmoid gap -0.0004.,Always report these caveats beside the primary proxy.
+no_network_probe,rejected,Primary delta -0.0055; reward delta -11.25.,Do not promote no-network to 20 seeds.
+exp_sampling_probe,rejected,Primary delta -0.2115; reward delta -945.50.,Do not promote exponential sampling or open a temperature grid.
+rerun_gate,blocked_by_missing_source,"Exact w-RMSE, split/masks, DU-Net backend, and paper Linear UCB adapter remain missing.",Reopen only with source-backed details or an explicitly approved faithful dependency.

@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "name": "douban",
+    "raw_dir": "data/raw/gcmc/douban"
+  },
+  "output_prefix": "douban_svdpp_smoke",
+  "policies": [
+    "random",
+    "myopic",
+    "entropy",
+    "du_net"
+  ],
+  "seeds": [0],
+  "split": {
+    "test_ratio": 0.0,
+    "initial_fraction_of_train": 0.01,
+    "use_predefined_split": true
+  },
+  "mf": {
+    "rank": 8,
+    "epochs": 2,
+    "learning_rate": 0.025,
+    "regularization": 0.04,
+    "algorithm": "svdpp"
+  },
+  "acquisition": {
+    "cycles": 2,
+    "batch_size": 100,
+    "lambda_entropy": 0.25,
+    "diffusion_prob": 0.005,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8]
+  }
+}

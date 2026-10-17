@@ -1,0 +1,9 @@
+risk,status,evidence,next_action
+Tau1 literal softmax selection,closed,tau1 literal mainline is in the P0 bundle and one-config Figure 4 table,Do not tune selection temperature for the main claim unless the paper source says so.
+Schur / Eq3.6 formula implementation,closed_cleanroom,explicit observed-kernel Schur complement equivalence report plus unit test,Keep the explicit kernel helper as an audit path; production should stay on feature-space scoring.
+Figure 4a ranking,strong_pattern_recovery,tau1 DU-Net is lower than both clean-room Linear UCB proxies under executable standard RMSE,Stop broad hyperparameter search; only source-backed metric/split changes are justified.
+Figure 4b cumulative reward scale,partial,"ranking direction matches the supplied visual extraction, but local reward gap is too large",Treat as partial recovery until exact reward definition and comparator protocol are available.
+Exact Figure 4 metric normalization,unresolved,seed0 row-level audit is complete for tau1 DU-Net vs linucb_concat; direction matches but no metric candidate passes the scale/gap gate,Run remaining seeds only if exact metric recovery is still needed; otherwise keep metric exactness as unresolved.
+Exact MovieLens split/masks,unresolved,local mask scan found no Monti/DU-Net Figure 4 masks; fallback is official MovieLens u1 split,Keep fallback label unless a public mask artifact or author split is recovered.
+Author Linear UCB protocol,proxy_set,"concat, MF-interaction, and bias-interaction proxies are implemented; author feature/update protocol unavailable",Report Linear UCB as a proxy set and keep strongest proxy caveat visible.
+ELPH / exact author backend,open_source_dependent,local ELPH-style embeddings are dependency-free proxies and have not beaten the main spectral/user-feature backend,Do not promote ELPH proxy without source-backed backend details or a clean validation win.

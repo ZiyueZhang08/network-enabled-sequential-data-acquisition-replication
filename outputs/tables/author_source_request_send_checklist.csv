@@ -1,0 +1,6 @@
+step,status,evidence,next_action
+email_body,ready,status=ready_to_send; subject=Request for DU-Net Figure 4a MovieLens reproduction details; p0=4; p1=1,Use reports/author_source_request_email.md as the outbound message.
+frozen_bundle_identity,ready,zip=outputs\figure4a_submission_bundle_20260708_006.zip; sha256=44b81698b28e21d3a2dbace07a7b0c10a943a3c06f4f92cc9b95cb0a928b989b; submission_status=ready_for_caveated_submission; primary_gap=0.0207,Optionally attach or reference this exact bundle; do not rebuild it before sending.
+recipient_logging,external_action_required,"recipient, sent date, and message id are not local artifacts yet.","After sending, record recipient/date/message-id in the project notes or reply thread."
+waiting_state,waiting_for_external_response,No new source-backed Figure 4a material is present in the local workspace.,Do not run another local proxy sweep while waiting.
+response_intake,defined,"Accepted triggers: exact w-RMSE, MovieLens split/masks, DU-Net backend or tuning protocol, or paper Linear UCB protocol.","Inspect received material first; then run seeds 0,1,2 before any 20-seed promotion."

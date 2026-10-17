@@ -1,0 +1,2 @@
+variant,primary_delta_vs_frozen,reward_delta_vs_frozen,rmse_delta_vs_frozen,sigmoid_delta_vs_frozen,linear_gap_favoring_exp,myopic_gap_favoring_exp,primary_wins_vs_frozen,primary_wins_vs_linear,primary_wins_vs_myopic,seed_count,promote_to_20seed,decision
+graph_late_lambda_half_start16_exp_tau1,-0.21153155179300565,-945.5,0.10701373952469773,-0.002177004257451265,-0.2070224482187466,-0.19944269440935436,0,0,0,4,False,reject_reward_tail_collapse

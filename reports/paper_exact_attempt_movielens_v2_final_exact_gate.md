@@ -1,0 +1,51 @@
+# paper_exact_attempt_movielens_v2 Final Exact Gate
+
+Status: **maximal paper-only reproduction attempt; exact replication blocked**.
+
+This is the strict final gate report requested by the perfect-replication plan. It treats proxy evidence as evidence, not as exactness.
+
+- Passed gates: `3`
+- Failed/source-blocked gates: `7`
+- Locally closed gates: `3`
+
+## Hard Gate Table
+
+| Gate | Status | Protocol status | Evidence | Can be locally closed? | Final conclusion |
+| --- | --- | --- | --- | --- | --- |
+| Metric exactness | fail | fail_v4_no_reconstruction | best=reward_tail_proxy vs linucb_mf_interaction; scale_distance=0.265494; gap_distance=0.0647771; seed_count=20; paper_wrmse_reconstructed=no; v1 metric prior=outputs/tables/paper_exact_attempt_movielens_v1_metric_reconstruction_v3_comparison.csv | no, requires author metric formula or numeric Figure 4a data | Exact w-RMSE remains blocked. Blocker: Paper formula and Figure 4a y-axis conflict; exact weights/normalization unpublished. |
+| Split/mask exactness | fail | pass_shape_fail_mask | split={'mode': 'movielens_u1_fallback_table1_density', 'num_users': 943, 'num_items': 1681, 'initial_size': 1364}; split prior=outputs/tables/split_mask_search_audit_v3.csv; u1-u5 fold sensitivity folds=5/5; comparators=2; min_seeds=5; min_standard_win_rate... | no, requires author masks or seed/split artifacts | Shape is matched; exact mask provenance is not. Blocker: Exact author initial/candidate/test masks and seed protocol not recovered. |
+| Linear UCB exactness | fail | proxy_only | linear_proxy_count=3; prior=outputs/tables/external_linucb_protocol_audit_v2.csv; alpha/reg grid=24/24; alphas=0.005 0.01 0.02 0.05 0.1 0.3 0.8 1; regs=0.1 1 10; min_seeds=3; best_reward_tail=alpha0.1/reg10/1.1764; best_reward=alpha0.01/reg1/1555.45; curren... | no, requires author comparator feature/update/alpha protocol | Local Linear UCB rows remain comparator proxies. Blocker: Paper names Linear UCB but does not expose exact protocol; local rows remain comparator candidates. |
+| Eq.3.6 entropy | pass | pass_clean_room_source_caveat | entropy_mode=schur_conditional_variance; entropy_score_transform=none; shortlist-vs-full seeds=0 1 2; cycles=0 5 10 15 20; min_top100_overlap=0.97; min_selected_batch_overlap=0.97; max_selected_changed_count=6; max_abs_one_step_rmse_diff=5.31685e-05; lambda... | closed clean-room; source caveat remains for backend/noise details | Schur conditional entropy is locally closed as a clean-room implementation. Blocker: Author all-candidate/source-grounded lambda-noise convention remains unpublished. |
+| DLS/ELPH | fail | source_blocked_proxy_diagnostic_complete | scope=full; neighbor_mode=graph_edges; sigma_grid=[0.1, 0.2, 0.4, 0.8, 1.6]; official_elph_import_available=False; support_stack=torch_geometric=False dgl=False ogb=False torch=True networkx=True sklearn=True; MovieLens graph=symmetrized_top20_similarity_ov... | no, requires recovered paper ELPH/backend parameters | Proxy diagnostic is complete, but not exact ELPH. Blocker: Paper ELPH/backend parameters are unrecovered; local ELPH-style proxy changes results but cannot count as exact. |
+| Selection | pass | pass_clean_room | mainline overrides selection=exp, selection_temperature=1.0; full candidate pool selection is in run_policy. | closed clean-room | Tau=1 full-pool softmax is locked as the sole DU-Net mainline. Blocker: Author did not publish every normalization/numerical detail, so this is clean-room exactness, not source exactness. |
+| Row-level completeness | pass | pass | metric_required=schur_loglambda_tuned_full_pool_softmax_tau1_literal:20/20 complete_20seed; linucb_concat:20/20 complete_20seed; linucb_mf_interaction:20/20 complete_20seed; linucb_bias_interaction:20/20 complete_20seed; diagnostic_tracked=schur_loglambda_t... | closed locally | Required final-cycle row-level predictions are complete. |
+| Tuning exactness | fail | source_blocked_not_closed | retuning_frequency:source_blocked_not_closed; inner_objective:source_blocked_not_closed; lambda_sigma_p_grid:source_blocked_not_closed; metric_gate_interaction:blocked_by_metric_gate; joint_figure4_objective:not_jointly_closed; prior=outputs/tables/paper_ex... | no, requires author cadence/objective/grid/tie-break protocol | Local tuning is reproducible but not source-exact. Blocker: The paper does not expose enough tuning-protocol detail; current v2 uses every-5-cycle standard_mask_rmse tuning as a clean-room fixed choice. |
+| Figure 4a | fail | fail_v4_metric_gate | best=reward_tail_proxy vs linucb_mf_interaction; scale_distance=0.265494; gap_distance=0.0647771; seed_count=20; paper_wrmse_reconstructed=no; digitization_precision_v2 Figure 4b_gap=65; Figure 4a_gap=0.026; Figure 4a best_metric=reward_tail_proxy_rmse best... | no while metric and endpoint scale remain unresolved | Gap direction can be matched under proxies, but endpoint scale fails. Blocker: Depends on metric exactness; row-level completeness is closed for metric-gate-required methods. |
+| Figure 4b | fail | fail_reward_gap_magnitude | same-config v2 reward computed; best_gap_comparator=linucb_concat; local_gap=147.294; paper_gap=65; gap_abs_error=82.294; curve_rmse=72.2662; endpoint_abs_error_mean=41.147; digitization_precision_v2 Figure 4b_gap=65; Figure 4a_gap=0.026; Figure 4a best_met... | maybe only with recovered comparator/tuning/backend protocol | Reward direction can be positive for some comparators, but gap magnitude fails. Blocker: Same-config reward is computed, but gap/curve magnitude and Linear UCB protocol exactness remain unresolved. |
+
+## Same-Config Figure Gate
+
+| figure | metric | local_du_net | local_linear_ucb | paper_du_net | paper_linear_ucb | comparator | endpoint_error | gap_error | direction | curve_rmse |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Figure 4a | reward_tail_proxy_rmse | 1.30903 | 1.33672 | 1.788 | 1.814 | linucb_mf_interaction | 0.478123 | 0.00168421 | 1 | 0.48368 |
+| Figure 4b | cumulative_reward | 1246.39 | 1393.68 | 1325 | 1390 | linucb_concat | 41.147 | 82.294 | 1 | 72.2662 |
+
+## Final Conclusion
+
+The v2 attempt has reached a maximal paper-only state for the locally executable gates: row-level completion, fold robustness, shortlist safety, lambda-noise sensitivity, Linear UCB sensitivity, digitization precision, and ELPH proxy feasibility are all audited. It still cannot be called exact replication because metric, split/mask, author Linear UCB, author DLS/ELPH backend, tuning protocol, and Figure 4 endpoint/gap gates remain unresolved or source-blocked.
+
+## Source Recovery Packet
+
+- Status: `ready_but_blocked`
+- Evidence: passed=Eq.3.6 entropy; Selection; Row-level completeness; failed=Metric exactness; Split/mask exactness; Linear UCB exactness; DLS/ELPH; Tuning exactness; Figure 4a; Figure 4b; next_action=Use the source recovery request table; do not run another local proxy sweep without a trigger.
+- Recovery protocol: `reports\paper_exact_attempt_movielens_v2_source_recovery_packet.md`
+
+## Artifacts
+
+- `outputs\tables\paper_exact_attempt_movielens_v2_final_exact_gate.csv`
+- `outputs\tables\paper_exact_attempt_movielens_v2_same_config_figure_gate.csv`
+- `outputs\tables\paper_exact_attempt_movielens_v2_source_recovery_packet.csv`
+- `reports\paper_exact_attempt_movielens_v2_source_recovery_packet.md`
+- `outputs\tables\paper_exact_attempt_movielens_v2_gate_status.csv`
+- `outputs\tables\metric_curve_alignment_v4.csv`
+- `outputs\tables\figure4_digitization_precision_v2_targets.csv`

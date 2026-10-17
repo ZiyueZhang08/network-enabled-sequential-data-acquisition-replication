@@ -1,0 +1,6 @@
+metric,metric_label,mainline_tune_every_5_seed0_2,tune_every_cycle_seed0_2,tune_every_cycle_minus_mainline,direction
+standard_mask_rmse,standard RMSE,1.077852175967108,1.0813442693192528,0.0034920933521447317,lower_is_better
+pdf_literal_norm_rmse,PDF-literal RMSE,0.0076215658274301325,0.007646258656328558,2.4692828898425362e-05,lower_is_better
+w_rmse,local weighted RMSE,1.0287948959907027,1.0192815302594285,-0.00951336573127426,lower_is_better
+reward_tail_proxy_rmse,reward-tail RMSE,1.3101066061186548,1.2963412626397794,-0.01376534347887537,lower_is_better
+cumulative_reward,cumulative reward,1343.9084912936767,1349.5223156008624,5.613824307185723,higher_is_better

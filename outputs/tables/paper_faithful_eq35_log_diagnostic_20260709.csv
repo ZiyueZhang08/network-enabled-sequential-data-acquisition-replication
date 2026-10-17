@@ -1,0 +1,24 @@
+comparison,metric,value,interpretation
+log_du_minus_main_du,standard_mask_rmse,0.0019001650729031372,negative favors Eq3.5 log
+log_du_minus_main_du,pdf_literal_norm_rmse,1.343619608428371e-05,negative favors Eq3.5 log
+log_du_minus_main_du,cumulative_reward,5.142421917912316,positive favors Eq3.5 log
+log_du_minus_main_topk_comparators_linucb_concat,standard_mask_rmse,-0.02208427391764367,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_concat,pdf_literal_norm_rmse,-0.00015615939844742296,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_concat,w_rmse,0.0543892187812306,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_concat,reward_tail_proxy_rmse,0.07982417324276114,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_concat,cumulative_reward,-44.335531842615865,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_mf_interaction,standard_mask_rmse,-0.0031170480989994864,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_mf_interaction,pdf_literal_norm_rmse,-2.20408584808221e-05,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_mf_interaction,w_rmse,-0.028349841580558532,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_mf_interaction,reward_tail_proxy_rmse,-0.04086238151548183,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_main_topk_comparators_linucb_mf_interaction,cumulative_reward,142.97461825271557,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_concat,standard_mask_rmse,0.012512122632599043,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_concat,pdf_literal_norm_rmse,8.847406760552606e-05,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_concat,w_rmse,-0.022770166831997063,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_concat,reward_tail_proxy_rmse,-0.030964828606752093,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_concat,cumulative_reward,123.03504494174308,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_mf_interaction,standard_mask_rmse,0.0007395274082326875,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_mf_interaction,pdf_literal_norm_rmse,5.229248452392164e-06,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_mf_interaction,w_rmse,0.0020074658673852053,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_mf_interaction,reward_tail_proxy_rmse,0.0032130585786125376,negative favors DU for RMSE metrics; positive favors DU for reward
+log_du_minus_forced_exp_comparators_linucb_mf_interaction,cumulative_reward,68.96995312555805,negative favors DU for RMSE metrics; positive favors DU for reward

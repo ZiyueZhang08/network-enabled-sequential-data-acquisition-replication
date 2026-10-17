@@ -1,0 +1,7 @@
+url,category,pages,decision
+https://www.facebook.com/marketplace/,background_url,3,Platform background URL; not reproduction source.
+https://github.com/david-cortes/contextualbandits,benchmark_dependency,27,Contextual bandit comparator family; not DU-Net source or exact adapter.
+https://github.com/kwangsungjun/lrbandit,benchmark_dependency,"26,27",Low-rank bandit comparator context; not DU-Net source/config.
+https://ax.dev,general_url,3,General paper URL; no source/supplement role identified.
+https://paperswithcode.com,literature_index,24,Dataset/literature index context; not an author reproduction package.
+execution_decision,blocked_by_missing_source,,No embedded paper URL is an unclassified author source/supplement candidate.

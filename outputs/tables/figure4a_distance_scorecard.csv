@@ -1,0 +1,6 @@
+claim_area,status,du_net,linear_ucb,linear_minus_du,direction_matches_paper,paper_gap_ratio,du_scale_ratio_to_paper,du_absolute_gap_to_paper,relative_improvement,relative_improvement_vs_paper,conclusion
+local_reward_weighted,direction_matches,0.825000,0.833300,0.008300,True,0.319231,0.461409,-0.963000,0.009960,0.694929,"Best reportable Figure 4a comparison: direction matches and relative DU-Net advantage is meaningfully close, but scale does not match."
+local_full_rmse,direction_does_not_match,1.160800,1.156000,-0.004800,False,-0.184615,0.649217,-0.627200,-0.004152,-0.289699,Exact-reproduction blocker: full-test RMSE reverses the paper ordering.
+local_high_rating_region,mechanism_support,0.658700,0.667100,0.008400,True,0.323077,0.368400,-1.129300,0.012592,0.878521,Mechanism support: high-rating region matches the paper direction.
+local_low_rating_region,mechanism_limit,1.577300,1.565000,-0.012300,False,-0.473077,0.882159,-0.210700,-0.007859,-0.548346,Mechanism limit: low-rating region favors Linear UCB.
+sigmoid_reward_weighted,near_tie,0.897700,0.897500,-0.000199,False,-0.007654,0.502069,-0.890300,-0.000222,-0.015470,"Metric ambiguity check: effectively tied, not a stable DU-Net win."

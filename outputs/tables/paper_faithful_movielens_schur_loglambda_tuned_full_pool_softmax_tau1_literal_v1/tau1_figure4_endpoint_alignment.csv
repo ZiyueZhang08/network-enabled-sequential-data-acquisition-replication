@@ -1,0 +1,4 @@
+figure,local_metric,du_endpoint_local,linear_endpoint_local,du_endpoint_paper_visual,linear_endpoint_paper_visual,local_gap_linear_minus_du,paper_gap_linear_minus_du,gap_abs_error,direction_match
+Figure 4a,standard_mask_rmse,1.070726161854955,1.1063891359597144,1.788,1.814,0.03566297410475938,0.026000000000000023,0.009662974104759359,True
+Figure 4a,w_rmse,1.028977151643796,0.9655244892743134,1.788,1.814,-0.06345266236948255,0.026000000000000023,0.08945266236948257,False
+Figure 4b,cumulative_reward,1246.3862959130831,1393.680246352064,1325.0,1390.0,147.2939504389808,65.0,82.2939504389808,True

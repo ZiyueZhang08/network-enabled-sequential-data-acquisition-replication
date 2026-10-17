@@ -1,0 +1,4 @@
+run,variant,w_rmse,w_rmse_delta_vs_current,rmse,rmse_delta_vs_current,sigmoid_reward_w_rmse,cumulative_reward,reward_delta_vs_current,linear_minus_adaptive_w_rmse_gap,promote_to_3seed
+ungarded_adaptive_grid_1seed,du_net_adaptive_grid_seed0,0.8438934135484667,0.013496242227656219,1.1581886841594249,-0.008661783328820727,0.8977595906919144,2636.0,-107.0,0.00472801948590873,False
+guarded_adaptive_grid_1seed,du_net_adaptive_grid_guarded_seed0,0.8391722542666715,0.008775082945861046,1.1584469198615226,-0.008403547626723018,0.8965196335907119,2661.0,-82.0,0.009449178767703903,False
+reward_floor_adaptive_grid_1seed,du_net_adaptive_grid_reward_floor_seed0,0.8391722542666715,0.008775082945861046,1.1584469198615226,-0.008403547626723018,0.8965196335907119,2661.0,-82.0,0.009449178767703903,False

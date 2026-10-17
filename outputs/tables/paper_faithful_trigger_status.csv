@@ -1,0 +1,8 @@
+trigger,status,evidence,decision
+author_code_or_supplement,not_triggered,Inventory-aware scan found no new actionable PDF/archive/source/config candidate.,Inspect actionable local artifacts before deciding whether a faithful rerun is unlocked.
+exact_figure4a_metric_definition,not_triggered,Local PDF and extracted text still do not disambiguate w-RMSE weighting/normalization.,Keep the Figure 4a claim caveated.
+exact_split_or_config_files,not_triggered,No author split/config files are present beyond local reproduction configs.,Do not rerun 20 seeds under a guessed split.
+validated_external_mechanism_dependency,not_triggered,No explicit approval has been given to add a validated external Node2Vec/ELPH/DLS dependency.,Keep dependency-free proxy results frozen.
+public_web_recovery,not_triggered,Exact title/DU-Net/author web queries did not recover a public DU-Net author repository or supplement in this check.,Treat external source recovery as unavailable for now.
+local_source_inventory,clear,Inventory-aware scan found no new actionable PDF/archive/source/config candidate.,"The trigger gate now uses the local source artifact inventory, including PDFs and archives."
+rerun_decision,blocked_by_missing_source,All rerun triggers are currently absent.,No further local proxy sweep; wait for primary source or approved faithful dependency.

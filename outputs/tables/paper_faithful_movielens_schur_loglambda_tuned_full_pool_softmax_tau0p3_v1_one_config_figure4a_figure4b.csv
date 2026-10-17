@@ -1,0 +1,6 @@
+metric,softmax_dunet_style,linucb_concat,gap,interpretation
+standard RMSE,1.0700251024710896,1.1063891359597144,0.036364033488624825,strong Figure 4a recovery
+cumulative reward,1245.7012521851213,1393.680246352064,-147.97899416694258,reward-side caveat vs concat
+RMSE vs mf-interaction,1.0700251024710896,1.0874219101410705,0.01739680766998052,strongest clean-room comparator reduced
+reward vs mf-interaction,1245.7012521851213,1206.3700962567323,39.33115592838908,favorable against mf-interaction
+win rate vs concat,20.0,20.0,1.0,20/20 seed wins in standard RMSE

@@ -1,0 +1,127 @@
+figure,method,cycle,paper_metric,paper_value,digitization_source,digitization_status,local_value,local_ci95,seed_count,local_metric,paper_minus_local
+Figure 4a,DU-Net,0,w_rmse,1.925,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0809097435675736,0.01614729553505133,20,w_rmse,0.8440902564324264
+Figure 4a,DU-Net,1,w_rmse,1.885,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0762961838716971,0.01473057843179703,20,w_rmse,0.8087038161283029
+Figure 4a,DU-Net,2,w_rmse,1.862,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0697886941628243,0.012989820875837612,20,w_rmse,0.7922113058371758
+Figure 4a,DU-Net,3,w_rmse,1.846,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0637027436299062,0.012126767695826143,20,w_rmse,0.7822972563700938
+Figure 4a,DU-Net,4,w_rmse,1.836,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0594562578918165,0.012970700921630836,20,w_rmse,0.7765437421081836
+Figure 4a,DU-Net,5,w_rmse,1.828,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0555493418847837,0.01309496856399252,20,w_rmse,0.7724506581152164
+Figure 4a,DU-Net,6,w_rmse,1.82,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0525954545948673,0.013529938483680134,20,w_rmse,0.7674045454051328
+Figure 4a,DU-Net,7,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0509030938757657,0.013913542849809665,20,w_rmse,0.7630969061242343
+Figure 4a,DU-Net,8,w_rmse,1.809,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0481597073674405,0.013763284271213514,20,w_rmse,0.7608402926325595
+Figure 4a,DU-Net,9,w_rmse,1.806,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0457413839465264,0.01330406260512902,20,w_rmse,0.7602586160534737
+Figure 4a,DU-Net,10,w_rmse,1.804,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0438509693799216,0.012805844911519941,20,w_rmse,0.7601490306200784
+Figure 4a,DU-Net,11,w_rmse,1.802,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0417204409235261,0.01346854463731273,20,w_rmse,0.7602795590764739
+Figure 4a,DU-Net,12,w_rmse,1.8,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0392323954279603,0.013329865701032244,20,w_rmse,0.7607676045720397
+Figure 4a,DU-Net,13,w_rmse,1.798,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0375266441694584,0.013430675593372117,20,w_rmse,0.7604733558305417
+Figure 4a,DU-Net,14,w_rmse,1.796,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0354443626344711,0.012811501801538021,20,w_rmse,0.7605556373655289
+Figure 4a,DU-Net,15,w_rmse,1.794,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0330847805058077,0.012060189053562275,20,w_rmse,0.7609152194941924
+Figure 4a,DU-Net,16,w_rmse,1.792,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0334929152427328,0.011417999477408248,20,w_rmse,0.7585070847572672
+Figure 4a,DU-Net,17,w_rmse,1.791,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.032600190631856,0.01062481553547436,20,w_rmse,0.7583998093681439
+Figure 4a,DU-Net,18,w_rmse,1.79,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.032400620324521,0.01087215808162373,20,w_rmse,0.757599379675479
+Figure 4a,DU-Net,19,w_rmse,1.789,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.031095241639111,0.010961099810603848,20,w_rmse,0.7579047583608889
+Figure 4a,DU-Net,20,w_rmse,1.788,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.028977151643796,0.010301740431111086,20,w_rmse,0.759022848356204
+Figure 4a,Linear UCB,0,w_rmse,1.925,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0839265435542622,0.016120125265764982,20,w_rmse,0.8410734564457378
+Figure 4a,Linear UCB,1,w_rmse,1.91,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0774519530856108,0.01610772915518108,20,w_rmse,0.8325480469143891
+Figure 4a,Linear UCB,2,w_rmse,1.895,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0684645184383497,0.01570659376889739,20,w_rmse,0.8265354815616504
+Figure 4a,Linear UCB,3,w_rmse,1.88,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0577151839600152,0.016083604366076212,20,w_rmse,0.8222848160399847
+Figure 4a,Linear UCB,4,w_rmse,1.866,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0481142688868803,0.015491558545555194,20,w_rmse,0.8178857311131198
+Figure 4a,Linear UCB,5,w_rmse,1.855,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0374318739919928,0.014498052321334406,20,w_rmse,0.8175681260080072
+Figure 4a,Linear UCB,6,w_rmse,1.847,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0296482303842476,0.01406761428775454,20,w_rmse,0.8173517696157524
+Figure 4a,Linear UCB,7,w_rmse,1.841,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0247220352836863,0.012699480314431697,20,w_rmse,0.8162779647163136
+Figure 4a,Linear UCB,8,w_rmse,1.836,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0164035563519527,0.011729443009551751,20,w_rmse,0.8195964436480474
+Figure 4a,Linear UCB,9,w_rmse,1.832,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0097500393246714,0.012745449516743132,20,w_rmse,0.8222499606753286
+Figure 4a,Linear UCB,10,w_rmse,1.828,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0022100799171565,0.01199305815984863,20,w_rmse,0.8257899200828436
+Figure 4a,Linear UCB,11,w_rmse,1.825,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9977987215311505,0.011816838312560349,20,w_rmse,0.8272012784688495
+Figure 4a,Linear UCB,12,w_rmse,1.822,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9925707017264231,0.01123605239748489,20,w_rmse,0.8294292982735769
+Figure 4a,Linear UCB,13,w_rmse,1.82,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9874226841433067,0.011263423675716725,20,w_rmse,0.8325773158566934
+Figure 4a,Linear UCB,14,w_rmse,1.818,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9845837749821303,0.011313624562888331,20,w_rmse,0.8334162250178697
+Figure 4a,Linear UCB,15,w_rmse,1.817,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9802613146436892,0.011024681205013251,20,w_rmse,0.8367386853563108
+Figure 4a,Linear UCB,16,w_rmse,1.816,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9765967244948298,0.010828796502658153,20,w_rmse,0.8394032755051702
+Figure 4a,Linear UCB,17,w_rmse,1.815,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9732720939868083,0.010632333435695945,20,w_rmse,0.8417279060131917
+Figure 4a,Linear UCB,18,w_rmse,1.8145,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9707591730066698,0.01029813275447791,20,w_rmse,0.8437408269933302
+Figure 4a,Linear UCB,19,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9677242259805692,0.009750093834484112,20,w_rmse,0.8462757740194309
+Figure 4a,Linear UCB,20,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,0.9655244892743134,0.010246732495881337,20,w_rmse,0.8484755107256866
+Figure 4a,DU-Net,0,w_rmse,1.925,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.099542169560007,0.003246263177585507,20,standard_mask_rmse,0.8254578304399931
+Figure 4a,DU-Net,1,w_rmse,1.885,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0989422780448597,0.0029952709931278057,20,standard_mask_rmse,0.7860577219551403
+Figure 4a,DU-Net,2,w_rmse,1.862,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0965662314821298,0.0027791832967230252,20,standard_mask_rmse,0.7654337685178703
+Figure 4a,DU-Net,3,w_rmse,1.846,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0953286726975573,0.0029477454562893976,20,standard_mask_rmse,0.7506713273024428
+Figure 4a,DU-Net,4,w_rmse,1.836,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0927440667861934,0.0033140222081570535,20,standard_mask_rmse,0.7432559332138067
+Figure 4a,DU-Net,5,w_rmse,1.828,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0905592639663413,0.003181454255328033,20,standard_mask_rmse,0.7374407360336588
+Figure 4a,DU-Net,6,w_rmse,1.82,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0887119364780662,0.0032814175360103303,20,standard_mask_rmse,0.7312880635219339
+Figure 4a,DU-Net,7,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.08695580883227,0.00346569972928142,20,standard_mask_rmse,0.7270441911677301
+Figure 4a,DU-Net,8,w_rmse,1.809,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0852230458814647,0.003584931141742624,20,standard_mask_rmse,0.7237769541185353
+Figure 4a,DU-Net,9,w_rmse,1.806,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0843328255953124,0.0037265122112367997,20,standard_mask_rmse,0.7216671744046876
+Figure 4a,DU-Net,10,w_rmse,1.804,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.082806697479446,0.0038674338332570263,20,standard_mask_rmse,0.7211933025205541
+Figure 4a,DU-Net,11,w_rmse,1.802,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0813417358255633,0.0035280876589781295,20,standard_mask_rmse,0.7206582641744368
+Figure 4a,DU-Net,12,w_rmse,1.8,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0807701621960006,0.003751080712787656,20,standard_mask_rmse,0.7192298378039994
+Figure 4a,DU-Net,13,w_rmse,1.798,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0787651833565155,0.003416706272532347,20,standard_mask_rmse,0.7192348166434845
+Figure 4a,DU-Net,14,w_rmse,1.796,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0773988793882494,0.0032934947392020304,20,standard_mask_rmse,0.7186011206117506
+Figure 4a,DU-Net,15,w_rmse,1.794,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0760562009601493,0.0029842427835053806,20,standard_mask_rmse,0.7179437990398507
+Figure 4a,DU-Net,16,w_rmse,1.792,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0750108101905833,0.002911861751724445,20,standard_mask_rmse,0.7169891898094167
+Figure 4a,DU-Net,17,w_rmse,1.791,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.0743907217869375,0.0032220602377468982,20,standard_mask_rmse,0.7166092782130624
+Figure 4a,DU-Net,18,w_rmse,1.79,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.07302437647514,0.0029753204469924505,20,standard_mask_rmse,0.7169756235248601
+Figure 4a,DU-Net,19,w_rmse,1.789,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.071667868753304,0.003074443579919258,20,standard_mask_rmse,0.7173321312466958
+Figure 4a,DU-Net,20,w_rmse,1.788,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.070726161854955,0.0032595839549845367,20,standard_mask_rmse,0.717273838145045
+Figure 4a,Linear UCB,0,w_rmse,1.925,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1023960641696837,0.0032971238165531752,20,standard_mask_rmse,0.8226039358303163
+Figure 4a,Linear UCB,1,w_rmse,1.91,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1017699134783663,0.002888533381076657,20,standard_mask_rmse,0.8082300865216336
+Figure 4a,Linear UCB,2,w_rmse,1.895,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.101267058324619,0.0028953293794689015,20,standard_mask_rmse,0.7937329416753811
+Figure 4a,Linear UCB,3,w_rmse,1.88,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1016741006621869,0.0032095613412478556,20,standard_mask_rmse,0.778325899337813
+Figure 4a,Linear UCB,4,w_rmse,1.866,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1018887438657243,0.0034392249067406403,20,standard_mask_rmse,0.7641112561342758
+Figure 4a,Linear UCB,5,w_rmse,1.855,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1019419851162588,0.0034649383465758512,20,standard_mask_rmse,0.7530580148837411
+Figure 4a,Linear UCB,6,w_rmse,1.847,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1021345253819956,0.004049779628511878,20,standard_mask_rmse,0.7448654746180043
+Figure 4a,Linear UCB,7,w_rmse,1.841,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.101714073513658,0.004034793052963175,20,standard_mask_rmse,0.7392859264863421
+Figure 4a,Linear UCB,8,w_rmse,1.836,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1018743222192597,0.004206098195315963,20,standard_mask_rmse,0.7341256777807403
+Figure 4a,Linear UCB,9,w_rmse,1.832,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1023068280715569,0.0037200994970467837,20,standard_mask_rmse,0.7296931719284432
+Figure 4a,Linear UCB,10,w_rmse,1.828,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1021151912999576,0.004048401791231877,20,standard_mask_rmse,0.7258848087000425
+Figure 4a,Linear UCB,11,w_rmse,1.825,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1025794552769155,0.004258333865081957,20,standard_mask_rmse,0.7224205447230845
+Figure 4a,Linear UCB,12,w_rmse,1.822,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.103290905020577,0.004248180310578029,20,standard_mask_rmse,0.718709094979423
+Figure 4a,Linear UCB,13,w_rmse,1.82,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1032642891288835,0.004363333758991179,20,standard_mask_rmse,0.7167357108711165
+Figure 4a,Linear UCB,14,w_rmse,1.818,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1036104648079061,0.00434300092796195,20,standard_mask_rmse,0.7143895351920939
+Figure 4a,Linear UCB,15,w_rmse,1.817,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1053439859592962,0.004858559804388931,20,standard_mask_rmse,0.7116560140407038
+Figure 4a,Linear UCB,16,w_rmse,1.816,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1050876581075917,0.005034658680575138,20,standard_mask_rmse,0.7109123418924084
+Figure 4a,Linear UCB,17,w_rmse,1.815,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1049423471476723,0.005154920708282339,20,standard_mask_rmse,0.7100576528523277
+Figure 4a,Linear UCB,18,w_rmse,1.8145,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1057799897470528,0.0049101114111739725,20,standard_mask_rmse,0.7087200102529472
+Figure 4a,Linear UCB,19,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1050000382826792,0.005034655955112859,20,standard_mask_rmse,0.7089999617173208
+Figure 4a,Linear UCB,20,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data,1.1063891359597144,0.005066871031826871,20,standard_mask_rmse,0.7076108640402856
+Figure 4b,DU-Net,0,cumulative_reward,0.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,0.0,0.0,20,cumulative_reward,0.0
+Figure 4b,DU-Net,1,cumulative_reward,62.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,62.80643206460536,1.6482779610232499,20,cumulative_reward,-0.8064320646053602
+Figure 4b,DU-Net,2,cumulative_reward,128.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,125.60240586000165,2.3891823132843455,20,cumulative_reward,2.397594139998347
+Figure 4b,DU-Net,3,cumulative_reward,198.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,188.15938457503893,3.8047267404703837,20,cumulative_reward,9.840615424961072
+Figure 4b,DU-Net,4,cumulative_reward,270.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,250.5839834663072,4.954111955728242,20,cumulative_reward,19.41601653369281
+Figure 4b,DU-Net,5,cumulative_reward,345.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,312.9796707530651,6.150764082392169,20,cumulative_reward,32.02032924693492
+Figure 4b,DU-Net,6,cumulative_reward,420.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,375.35825343480656,6.064244072176563,20,cumulative_reward,44.64174656519344
+Figure 4b,DU-Net,7,cumulative_reward,495.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,437.052437471547,6.619457769884352,20,cumulative_reward,57.94756252845298
+Figure 4b,DU-Net,8,cumulative_reward,570.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,499.2996764248786,6.823062921867894,20,cumulative_reward,70.70032357512139
+Figure 4b,DU-Net,9,cumulative_reward,645.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,561.6517323277538,7.590379458955163,20,cumulative_reward,83.34826767224615
+Figure 4b,DU-Net,10,cumulative_reward,715.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,623.8375316448622,7.975487458581561,20,cumulative_reward,91.16246835513778
+Figure 4b,DU-Net,11,cumulative_reward,785.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,687.0696823372498,7.887303654740412,20,cumulative_reward,97.93031766275021
+Figure 4b,DU-Net,12,cumulative_reward,855.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,749.7905328124098,7.7984763880767405,20,cumulative_reward,105.20946718759023
+Figure 4b,DU-Net,13,cumulative_reward,925.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,812.3659062983852,7.96572539626125,20,cumulative_reward,112.6340937016148
+Figure 4b,DU-Net,14,cumulative_reward,990.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,874.9222399304615,8.303760970361441,20,cumulative_reward,115.0777600695385
+Figure 4b,DU-Net,15,cumulative_reward,1055.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,937.6765175908577,8.613632276235178,20,cumulative_reward,117.32348240914234
+Figure 4b,DU-Net,16,cumulative_reward,1120.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,999.2977676268067,9.502835218955735,20,cumulative_reward,120.70223237319328
+Figure 4b,DU-Net,17,cumulative_reward,1175.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1061.081012738359,10.113304388101875,20,cumulative_reward,113.91898726164095
+Figure 4b,DU-Net,18,cumulative_reward,1225.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1122.4399663298868,10.659479318882001,20,cumulative_reward,102.56003367011317
+Figure 4b,DU-Net,19,cumulative_reward,1275.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1184.6202139709103,11.466407167611358,20,cumulative_reward,90.3797860290897
+Figure 4b,DU-Net,20,cumulative_reward,1325.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1246.3862959130831,12.170378263084425,20,cumulative_reward,78.61370408691687
+Figure 4b,Linear UCB,0,cumulative_reward,0.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,0.0,0.0,20,cumulative_reward,0.0
+Figure 4b,Linear UCB,1,cumulative_reward,70.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,64.17730154532573,2.203444296435707,20,cumulative_reward,5.822698454674267
+Figure 4b,Linear UCB,2,cumulative_reward,142.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,130.81674549645535,3.2659277771571227,20,cumulative_reward,11.183254503544646
+Figure 4b,Linear UCB,3,cumulative_reward,215.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,199.09193570456986,4.363825972012018,20,cumulative_reward,15.908064295430137
+Figure 4b,Linear UCB,4,cumulative_reward,290.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,269.009068928715,5.250215806896986,20,cumulative_reward,20.99093107128499
+Figure 4b,Linear UCB,5,cumulative_reward,365.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,339.49804285278776,5.973458753149957,20,cumulative_reward,25.501957147212238
+Figure 4b,Linear UCB,6,cumulative_reward,440.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,409.5580727342742,5.910474803838001,20,cumulative_reward,30.44192726572578
+Figure 4b,Linear UCB,7,cumulative_reward,515.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,476.61787914330034,5.514107608876109,20,cumulative_reward,38.38212085669966
+Figure 4b,Linear UCB,8,cumulative_reward,590.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,546.8217048356513,5.247635044402593,20,cumulative_reward,43.1782951643487
+Figure 4b,Linear UCB,9,cumulative_reward,668.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,617.4163362984276,5.331608935413058,20,cumulative_reward,50.58366370157239
+Figure 4b,Linear UCB,10,cumulative_reward,746.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,689.1116628601374,5.904633507958002,20,cumulative_reward,56.88833713986264
+Figure 4b,Linear UCB,11,cumulative_reward,824.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,759.3627363635735,5.862239901338727,20,cumulative_reward,64.6372636364265
+Figure 4b,Linear UCB,12,cumulative_reward,902.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,830.7376108238061,6.066315596371083,20,cumulative_reward,71.26238917619389
+Figure 4b,Linear UCB,13,cumulative_reward,980.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,901.1814091275121,6.83016390750623,20,cumulative_reward,78.8185908724879
+Figure 4b,Linear UCB,14,cumulative_reward,1058.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,971.2461500959234,6.6157316241133275,20,cumulative_reward,86.75384990407656
+Figure 4b,Linear UCB,15,cumulative_reward,1136.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1041.8649820762853,7.505313333618075,20,cumulative_reward,94.13501792371471
+Figure 4b,Linear UCB,16,cumulative_reward,1214.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1112.8838464947228,7.815223848969005,20,cumulative_reward,101.11615350527723
+Figure 4b,Linear UCB,17,cumulative_reward,1290.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1183.8115776476302,7.939212756978112,20,cumulative_reward,106.1884223523698
+Figure 4b,Linear UCB,18,cumulative_reward,1362.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1254.3309488483342,8.105106815957486,20,cumulative_reward,107.66905115166583
+Figure 4b,Linear UCB,19,cumulative_reward,1378.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1323.8155216026905,8.760354780109079,20,cumulative_reward,54.184478397309476
+Figure 4b,Linear UCB,20,cumulative_reward,1390.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data,1393.680246352064,8.91684577530384,20,cumulative_reward,-3.680246352063932

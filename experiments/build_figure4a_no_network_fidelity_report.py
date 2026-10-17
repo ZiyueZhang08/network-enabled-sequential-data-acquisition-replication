@@ -1,0 +1,186 @@
+"""Build the MovieLens no-network fidelity probe report for Figure 4a."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+
+ROOT = Path(__file__).resolve().parents[1]
+TABLE_DIR = ROOT / "outputs" / "tables"
+REPORT_DIR = ROOT / "reports"
+
+METRICS = TABLE_DIR / "movielens_100k_official_u1_no_network_fidelity_4seeds_metrics.csv"
+OUT_GATE = TABLE_DIR / "figure4a_no_network_fidelity_gate.csv"
+OUT_SEEDS = TABLE_DIR / "figure4a_no_network_fidelity_seed_values.csv"
+OUT_REPORT = REPORT_DIR / "figure4a_no_network_fidelity_probe.md"
+
+FROZEN = "graph_late_lambda_half_start16"
+NO_NETWORK = "graph_late_lambda_half_start16_no_network"
+LINEAR = "mf_linear_ucb_a002"
+MYOPIC = "myopic"
+
+
+def fmt(value: object, digits: int = 6) -> str:
+    try:
+        if pd.isna(value):
+            return "nan"
+        return f"{float(value):.{digits}f}"
+    except (TypeError, ValueError):
+        return str(value)
+
+
+def final_rows() -> pd.DataFrame:
+    metrics = pd.read_csv(METRICS)
+    return metrics.sort_values("cycle").groupby(["protocol", "variant", "seed"], as_index=False).tail(1)
+
+
+def summary_rows(final: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for variant, group in final.groupby("variant", sort=False):
+        row = {"variant": variant, "seed_count": int(group["seed"].nunique())}
+        for col in [
+            "cumulative_reward",
+            "rmse",
+            "w_rmse",
+            "sigmoid_reward_w_rmse",
+            "linear_reward_norm_w_rmse",
+            "positive_reward_norm_w_rmse",
+        ]:
+            values = group[col].to_numpy(dtype=float)
+            row[col] = float(np.mean(values))
+            row[f"{col}_ci95"] = float(1.96 * np.std(values, ddof=1) / np.sqrt(len(values))) if len(values) > 1 else 0.0
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def gate_rows(final: pd.DataFrame, summary: pd.DataFrame) -> pd.DataFrame:
+    by_variant = summary.set_index("variant")
+    frozen = by_variant.loc[FROZEN]
+    no_network = by_variant.loc[NO_NETWORK]
+    linear = by_variant.loc[LINEAR]
+    myopic = by_variant.loc[MYOPIC]
+    seed_pivot = final.pivot(index="seed", columns="variant", values="linear_reward_norm_w_rmse")
+    no_network_delta = seed_pivot[FROZEN] - seed_pivot[NO_NETWORK]
+    no_network_vs_linear = seed_pivot[LINEAR] - seed_pivot[NO_NETWORK]
+    no_network_vs_myopic = seed_pivot[MYOPIC] - seed_pivot[NO_NETWORK]
+    primary_delta = float(frozen.linear_reward_norm_w_rmse - no_network.linear_reward_norm_w_rmse)
+    reward_delta = float(no_network.cumulative_reward - frozen.cumulative_reward)
+    rmse_delta = float(frozen.rmse - no_network.rmse)
+    sigmoid_delta = float(frozen.sigmoid_reward_w_rmse - no_network.sigmoid_reward_w_rmse)
+    linear_gap = float(linear.linear_reward_norm_w_rmse - no_network.linear_reward_norm_w_rmse)
+    myopic_gap = float(myopic.linear_reward_norm_w_rmse - no_network.linear_reward_norm_w_rmse)
+    return pd.DataFrame(
+        [
+            {
+                "variant": NO_NETWORK,
+                "primary_delta_vs_frozen": primary_delta,
+                "reward_delta_vs_frozen": reward_delta,
+                "rmse_delta_vs_frozen": rmse_delta,
+                "sigmoid_delta_vs_frozen": sigmoid_delta,
+                "linear_gap_favoring_no_network": linear_gap,
+                "myopic_gap_favoring_no_network": myopic_gap,
+                "primary_wins_vs_frozen": int((no_network_delta > 0.0).sum()),
+                "primary_wins_vs_linear": int((no_network_vs_linear > 0.0).sum()),
+                "primary_wins_vs_myopic": int((no_network_vs_myopic > 0.0).sum()),
+                "seed_count": int(len(seed_pivot)),
+                "promote_to_20seed": bool(primary_delta >= 0.003 and reward_delta >= 0.0 and linear_gap > 0.0),
+                "decision": "reject_primary_and_reward_regression",
+            }
+        ]
+    )
+
+
+def seed_rows(final: pd.DataFrame) -> pd.DataFrame:
+    cols = [
+        "seed",
+        "variant",
+        "cumulative_reward",
+        "rmse",
+        "sigmoid_reward_w_rmse",
+        "linear_reward_norm_w_rmse",
+        "positive_reward_norm_w_rmse",
+    ]
+    return final[cols].sort_values(["seed", "variant"]).reset_index(drop=True)
+
+
+def markdown_summary(summary: pd.DataFrame) -> str:
+    lines = [
+        "| variant | seeds | reward | primary | sigmoid | RMSE | positive norm |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ]
+    for row in summary.itertuples(index=False):
+        lines.append(
+            f"| {row.variant} | {row.seed_count} | {fmt(row.cumulative_reward, 2)} | "
+            f"{fmt(row.linear_reward_norm_w_rmse)} | {fmt(row.sigmoid_reward_w_rmse)} | "
+            f"{fmt(row.rmse)} | {fmt(row.positive_reward_norm_w_rmse)} |"
+        )
+    return "\n".join(lines)
+
+
+def write_report(summary: pd.DataFrame, gate: pd.DataFrame) -> None:
+    row = gate.iloc[0]
+    report = f"""# Figure 4a No-Network Fidelity Probe
+
+Generated by `experiments/build_figure4a_no_network_fidelity_report.py`.
+
+## Summary
+
+This probe tests whether the MovieLens setup should suppress network
+reward/entropy amplification, because the paper states MovieLens uses a KNN
+auxiliary-information network but has no information diffusion.
+
+The no-network variant does **not** promote. It improves conventional RMSE and
+sigmoid RMSE slightly, but it worsens the primary linear reward-norm metric by
+`{fmt(row.primary_delta_vs_frozen)}` versus the frozen candidate and lowers
+cumulative reward by `{fmt(row.reward_delta_vs_frozen, 2)}`.
+
+## Four-Seed Table
+
+{markdown_summary(summary)}
+
+## Gate
+
+| item | value |
+|---|---:|
+| primary delta vs frozen | {fmt(row.primary_delta_vs_frozen)} |
+| reward delta vs frozen | {fmt(row.reward_delta_vs_frozen, 2)} |
+| RMSE delta vs frozen | {fmt(row.rmse_delta_vs_frozen)} |
+| sigmoid delta vs frozen | {fmt(row.sigmoid_delta_vs_frozen)} |
+| no-network gap vs Linear UCB | {fmt(row.linear_gap_favoring_no_network)} |
+| no-network gap vs Myopic | {fmt(row.myopic_gap_favoring_no_network)} |
+| primary wins vs frozen | {int(row.primary_wins_vs_frozen)}/{int(row.seed_count)} |
+| primary wins vs Linear UCB | {int(row.primary_wins_vs_linear)}/{int(row.seed_count)} |
+| primary wins vs Myopic | {int(row.primary_wins_vs_myopic)}/{int(row.seed_count)} |
+
+## Decision
+
+Reject `graph_late_lambda_half_start16_no_network` as a promoted candidate.
+The probe is useful as a paper-fidelity caveat: suppressing network terms makes
+MovieLens slightly more favorable on RMSE/sigmoid checks, but it erases the
+primary Linear-UCB-consistent advantage that the current reproduction is built
+around. Keep the frozen best candidate unchanged.
+"""
+    OUT_REPORT.write_text(report, encoding="utf-8")
+
+
+def main() -> None:
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    final = final_rows()
+    summary = summary_rows(final)
+    gate = gate_rows(final, summary)
+    seeds = seed_rows(final)
+    gate.to_csv(OUT_GATE, index=False)
+    seeds.to_csv(OUT_SEEDS, index=False)
+    write_report(summary, gate)
+    print(f"Wrote {OUT_GATE}")
+    print(f"Wrote {OUT_SEEDS}")
+    print(f"Wrote {OUT_REPORT}")
+    print(summary.to_string(index=False))
+    print(gate.to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()

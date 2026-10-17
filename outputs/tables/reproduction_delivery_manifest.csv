@@ -1,0 +1,71 @@
+artifact_id,role,path,exists,size_bytes
+paper_pdf_evidence_audit,PDF evidence audit for Figure 4a blockers,reports\paper_pdf_evidence_audit.md,yes,3804
+paper_pdf_evidence_audit_csv,PDF evidence audit table for Figure 4a blockers,outputs\tables\paper_pdf_evidence_audit.csv,yes,2879
+paper_method_detail_keyword_audit,PDF keyword-context audit for method detail blockers,reports\paper_method_detail_keyword_audit.md,yes,8720
+paper_method_detail_keyword_audit_csv,PDF keyword-context audit table for method detail blockers,outputs\tables\paper_method_detail_keyword_audit.csv,yes,8231
+paper_url_dependency_audit,PDF embedded URL and dependency audit,reports\paper_url_dependency_audit.md,yes,1902
+paper_url_dependency_audit_csv,PDF embedded URL and dependency audit table,outputs\tables\paper_url_dependency_audit.csv,yes,745
+local_source_artifact_inventory_audit,Local source artifact inventory audit,reports\local_source_artifact_inventory_audit.md,yes,1845
+local_source_artifact_inventory_audit_csv,Local source artifact inventory audit table,outputs\tables\local_source_artifact_inventory_audit.csv,yes,1125
+movielens_protocol_alignment_audit,MovieLens data/protocol alignment audit,reports\movielens_protocol_alignment_audit.md,yes,5418
+movielens_protocol_alignment_audit_csv,MovieLens data/protocol alignment audit table,outputs\tables\movielens_protocol_alignment_audit.csv,yes,3782
+movielens_split_overlap_audit,MovieLens random-vs-official split overlap audit,reports\movielens_split_overlap_audit.md,yes,3227
+movielens_split_overlap_audit_csv,MovieLens random-vs-official split overlap table,outputs\tables\movielens_split_overlap_audit.csv,yes,6972
+gcmc_monti_split_provenance_audit,GCMC/Monti split provenance audit,reports\gcmc_monti_split_provenance_audit.md,yes,4080
+gcmc_monti_split_provenance_audit_csv,GCMC/Monti split provenance audit table,outputs\tables\gcmc_monti_split_provenance_audit.csv,yes,2580
+movielens_official_u1_sensitivity,MovieLens official u1 fold sensitivity diagnostic,reports\movielens_100k_svdpp_official_u1_sensitivity_3seeds_report.md,yes,2118
+movielens_official_u1_sensitivity_summary,MovieLens official u1 fold final summary,outputs\tables\movielens_100k_svdpp_official_u1_sensitivity_3seeds_final_summary.csv,yes,716
+movielens_official_u1_sensitivity_gaps,MovieLens official u1 fold gap table,outputs\tables\movielens_100k_svdpp_official_u1_sensitivity_3seeds_gaps.csv,yes,570
+movielens_official_u1_sensitivity_metrics,MovieLens official u1 fold trajectory metrics,outputs\tables\movielens_100k_svdpp_official_u1_sensitivity_3seeds_metrics.csv,yes,55719
+movielens_official_folds_sensitivity,MovieLens official u1-u5 folds sensitivity diagnostic,reports\movielens_100k_svdpp_official_folds_sensitivity_report.md,yes,2169
+movielens_official_folds_sensitivity_summary,MovieLens official u1-u5 folds final summary,outputs\tables\movielens_100k_svdpp_official_folds_sensitivity_final_summary.csv,yes,705
+movielens_official_folds_sensitivity_gaps,MovieLens official u1-u5 folds gap table,outputs\tables\movielens_100k_svdpp_official_folds_sensitivity_fold_gaps.csv,yes,1410
+movielens_official_folds_sensitivity_metrics,MovieLens official u1-u5 folds trajectory metrics,outputs\tables\movielens_100k_svdpp_official_folds_sensitivity_metrics.csv,yes,92590
+final_handoff,全项目最终状态,reports\final_reproduction_handoff.md,yes,3896
+figure4a_delivery,Figure 4a 可报告数字和 caveat,reports\final_figure4a_caveated_delivery.md,yes,2946
+figure4a_target,DU-Net 对 Linear UCB 的最终目标比较,reports\figure4a_final_target_report.md,yes,2708
+figure4a_user_goal_comparison_brief,Figure 4a user-goal comparison brief,reports\figure4a_user_goal_comparison_brief.md,yes,2925
+figure4a_user_goal_comparison_brief_csv,Figure 4a user-goal comparison brief table,outputs\tables\figure4a_user_goal_comparison_brief.csv,yes,1772
+figure4a_metric_formula_visual_audit,Figure 4a rendered PDF metric formula audit,reports\figure4a_metric_formula_visual_audit.md,yes,2364
+figure4a_metric_formula_visual_audit_csv,Figure 4a rendered PDF metric formula audit table,outputs\tables\figure4a_metric_formula_visual_audit.csv,yes,1203
+figure4a_primary_source,本地 PDF 主来源恢复,reports\figure4a_primary_source_recovery.md,yes,5749
+figure4a_external_source,外部 source/supplement 恢复检查,reports\figure4a_external_source_recovery.md,yes,4799
+public_source_rescan_audit,Latest public source/supplement rescan audit,reports\public_source_rescan_audit.md,yes,3072
+public_source_rescan_audit_csv,Latest public source/supplement rescan audit table,outputs\tables\public_source_rescan_audit.csv,yes,1882
+trigger_status,paper-faithful 复跑触发门控,reports\paper_faithful_trigger_status.md,yes,2638
+paper_quality,三数据集最终 paper-quality 综合,reports\final_paper_quality_results.md,yes,4545
+benchmark_caveat,14+2 benchmark caveat,reports\final_benchmark_claim_freeze.md,yes,1709
+progress_plan,当前进度和下一步计划,reports\reproduction_progress_next_execution.md,yes,67210
+iteration_snapshot,最新迭代状态快照,reports\reproduction_iteration_status_snapshot.md,yes,2484
+figure4a_distance,Figure 4a 复现距离 scorecard,reports\figure4a_distance_scorecard.md,yes,2312
+rerun_readiness,paper-faithful 复跑 readiness checklist,reports\paper_faithful_rerun_readiness.md,yes,2641
+paper_faithful_rerun_playbook,Paper-faithful rerun playbook,reports\paper_faithful_rerun_playbook.md,yes,4188
+paper_faithful_rerun_playbook_csv,Paper-faithful rerun playbook table,outputs\tables\paper_faithful_rerun_playbook.csv,yes,5346
+source_artifact_inspection_protocol,Source artifact inspection protocol,reports\source_artifact_inspection_protocol.md,yes,3369
+source_artifact_inspection_protocol_csv,Source artifact inspection protocol table,outputs\tables\source_artifact_inspection_protocol.csv,yes,2738
+source_trigger_monitor_snapshot,Source trigger monitor snapshot,reports\source_trigger_monitor_snapshot.md,yes,3135
+source_trigger_monitor_snapshot_csv,Source trigger monitor snapshot table,outputs\tables\source_trigger_monitor_snapshot.csv,yes,2234
+source_trigger_intake_check,One-command source trigger intake check,reports\source_trigger_intake_check.md,yes,2241
+source_trigger_intake_check_csv,One-command source trigger intake check table,outputs\tables\source_trigger_intake_check.csv,yes,1367
+source_request_packet,paper-faithful 缺失来源请求清单,reports\paper_source_request_packet.md,yes,3802
+author_source_request_email,Author source request email,reports\author_source_request_email.md,yes,4828
+author_source_request_email_csv,Author source request email table,outputs\tables\author_source_request_email.csv,yes,4341
+remaining_gap_priority_audit,Remaining exact-reproduction gap priority audit,reports\remaining_gap_priority_audit.md,yes,2604
+remaining_gap_priority_audit_csv,Remaining exact-reproduction gap priority table,outputs\tables\remaining_gap_priority_audit.csv,yes,2132
+minimal_diagnostic_protocol,paper-faithful 最小 3-seed 诊断 protocol,reports\minimal_faithful_diagnostic_protocol.md,yes,2833
+continuation_audit,继续执行决策审计,reports\reproduction_continuation_audit.md,yes,2341
+execution_gate_closure_audit,Execution gate closure audit,reports\execution_gate_closure_audit.md,yes,3915
+claim_evidence_index,复现 claim-evidence 索引,reports\reproduction_claim_evidence_index.md,yes,9917
+final_user_brief_zh,当前复现进度中文简报,reports\reproduction_final_user_brief_zh.md,yes,3023
+figure4a_delivery_csv,Figure 4a 交付表,outputs\tables\final_figure4a_caveated_delivery.csv,yes,885
+handoff_csv,全项目 handoff 表,outputs\tables\final_reproduction_handoff.csv,yes,2188
+trigger_status_csv,触发门控表,outputs\tables\paper_faithful_trigger_status.csv,yes,1355
+iteration_snapshot_csv,最新迭代状态快照表,outputs\tables\reproduction_iteration_status_snapshot.csv,yes,1428
+figure4a_distance_csv,Figure 4a 复现距离表,outputs\tables\figure4a_distance_scorecard.csv,yes,1210
+rerun_readiness_csv,paper-faithful 复跑 readiness 表,outputs\tables\paper_faithful_rerun_readiness.csv,yes,1569
+source_request_packet_csv,paper-faithful 缺失来源请求表,outputs\tables\paper_source_request_packet.csv,yes,3036
+minimal_diagnostic_protocol_csv,paper-faithful 最小 3-seed 诊断 protocol 表,outputs\tables\minimal_faithful_diagnostic_protocol.csv,yes,1886
+continuation_audit_csv,继续执行决策审计表,outputs\tables\reproduction_continuation_audit.csv,yes,1332
+execution_gate_closure_audit_csv,Execution gate closure audit table,outputs\tables\execution_gate_closure_audit.csv,yes,2492
+claim_evidence_index_csv,复现 claim-evidence 索引表,outputs\tables\reproduction_claim_evidence_index.csv,yes,8912
+final_user_brief_zh_csv,当前复现进度中文简报表,outputs\tables\reproduction_final_user_brief_zh.csv,yes,1822

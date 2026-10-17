@@ -1,0 +1,4 @@
+figure,local_metric,fit_scope,slope_a,intercept_b,rmse,points
+Figure 4a,standard_mask_rmse,DU-Net + Linear UCB joint,1.7939361276255639,-0.13154829078510005,0.029530583056594138,42
+Figure 4a,w_rmse,DU-Net + Linear UCB joint,0.5642279078528344,1.2491793225650645,0.03084024650181876,42
+Figure 4b,cumulative_reward,DU-Net + Linear UCB joint,1.0722326637133093,12.603319748850712,27.579953582195348,42

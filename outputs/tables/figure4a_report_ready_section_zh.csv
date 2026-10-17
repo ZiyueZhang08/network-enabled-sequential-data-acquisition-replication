@@ -1,0 +1,6 @@
+﻿section,content
+main_result,20-seed 下，DU-Net primary linear reward-norm w-RMSE 为 0.9811，MF-centered Linear UCB proxy 为 1.0018，gap 为 0.0207。
+paper_distance,该 gap 约为论文 Figure 4a 视觉 gap 的 79.5%，仍低于完整视觉目标。
+caveat,conventional RMSE 仍偏向 Linear proxy (-0.0077)，sigmoid-weighted 口径也近似持平且略偏向 comparator (-0.0004)。
+no_network,MovieLens no-network fidelity probe 已拒绝晋级：primary delta -0.0055，reward delta -11.25。
+exp_sampling,exponential-sampling fidelity probe 已拒绝晋级：primary delta -0.2115，reward delta -945.50。

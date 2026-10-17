@@ -1,0 +1,7 @@
+variant,comparator,metric,du_value,comparator_value,gap_favoring_du
+graph_base,mf_linear_ucb_a002,cumulative_reward,2683.6666666666665,2687.6666666666665,-4.0
+graph_base,mf_linear_ucb_a002,rmse,1.1921841461300666,1.1855914099512888,-0.006592736178777869
+graph_base,mf_linear_ucb_a002,w_rmse,0.8206115565911469,0.8289857010927104,0.008374144501563485
+graph_base,mf_linear_ucb_a002,sigmoid_reward_w_rmse,0.9061261304351204,0.9052353090358795,-0.0008908213992409042
+graph_base,mf_linear_ucb_a002,linear_reward_norm_w_rmse,0.994491575481527,1.0094595209622017,0.014967945480674705
+graph_base,mf_linear_ucb_a002,positive_reward_norm_w_rmse,0.9402615690646217,0.9547210972184789,0.014459528153857204

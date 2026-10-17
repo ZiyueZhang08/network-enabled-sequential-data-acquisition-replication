@@ -1,0 +1,2 @@
+variant,paired_seed_count,primary_gap,primary_gap_ci95,primary_seed_wins_vs_linear,primary_win_rate_vs_linear,current_primary_gap,primary_delta_vs_current,primary_seed_wins_vs_current,rmse_gap,mild_gap,medium_gap,reward_delta_vs_current,gate_pass,decision
+entropy_rho010,20,0.009501357672802257,0.006510763488593283,16,0.8,0.0062083085483028546,0.003293049124499403,14,-0.0018089868365960826,0.00024340391226506107,0.00153636437045378,-4.5,False,do not promote; keep as primary-tail diagnostic

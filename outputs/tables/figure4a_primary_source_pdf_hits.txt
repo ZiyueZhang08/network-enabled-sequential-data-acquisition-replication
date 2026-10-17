@@ -1,0 +1,117 @@
+pages 44
+
+--- PAGE 2 HITS ['response'] ---
+datasamplestobeacquired).Inresponsetothischallenge,weintroduceanewandpracticaldata
+
+--- PAGE 14 HITS ['initial set'] ---
+ratingdataandnetworkinformation.Theinitialsetstartswithsparseobservations,simulatinglimitedinitial
+
+--- PAGE 15 HITS ['MovieLens'] ---
+nodesindeterminingthefocalnode’slatentrepresentations.UsingtheMovieLensdataset(Monti
+
+--- PAGE 16 HITS ['homogeneous'] ---
+extensionunderhomogeneousdiffusion.
+
+--- PAGE 20 HITS ['homogenous', 'homogeneous'] ---
+recommendingitem 𝐴𝑐 touser 𝐴𝑟 .Inthispaper,weconsiderahomogenousdiffusionprobability 𝑝,
+Theorem1(Valueofinformationundernetworkeffects.). Underthehomogeneousnetwork
+
+--- PAGE 21 HITS ['homogenous'] ---
+homogenous diffusion rate is more computationally efficient. Alternatively, if diffusion rates are
+
+--- PAGE 22 HITS ['SVDpp', 'SVD'] ---
+toestimate𝑢ˆ and𝑣ˆ (see(WangandZhang2012)forareview).WeuseSVDpp,developedin(Koren
+
+--- PAGE 24 HITS ['MovieLens'] ---
+Flixster, Douban, and MovieLens.9 We choose these datasets for their extensive use in prior
+alsoincludetheMovieLensdatasetcomprisingasimilarity-basednetworkconstructedfromuser
+WepresentthedatastatisticsinTable1.Intermsofusers,Flixster,Douban,andMovieLenshave
+contentrelatedtofilms,books,music,andactivitiesinChinesecities.MovieLensisaweb-basedRSandvirtualcommunitythat
+11Giventhenatureofthenetwork,informationcandiffuseonFlixsterandDouban,butnotonMovieLens;thenetworkuses𝐾-nearest
+
+--- PAGE 25 HITS ['MovieLens', 'initial set', 'test set'] ---
+Data Flixster Douban MovieLens
+Initialsetdensity 0.0682% 0.13% 0.086%
+Testsetdensity 0.038% 0.15% 1.26%
+Douban,andMovieLensyieldapproximately2,341×2,955≈7millionentries,2,999×2,999≈9
+initialsetdensity,whichis0.0682%forFlixster,0.13%forDouban,and0.086%forMovieLens.
+Additionally,thetestsetdensityvaries,withFlixsterat0.038%,Doubanat0.15%,andMovieLens
+Following Monti et al. (2017b), each dataset was partitioned into three subsets: an initial set, a
+candidate acquisition set, and a test set. The initial set comprises data available at the beginning
+sequentially selected throughout the acquisition process. The test set, maintained as a hold-out
+trainingsetfrom(Montietal.2017b)isusedastheinitialset.
+1. We use the initial set, and the acquired data to score each unobserved data point through a
+
+--- PAGE 27 HITS ['w-RMSE', 'weighted root'] ---
+and (2) weighted root mean squared error (w-RMSE) in the implementation phase (Cleger-Tamayo
+We adopt w-RMSE to represent the performance of the implementation period from 𝑡 +1 to
+more influential to future rewards. We opted for the w-RMSE metric to calculate the reward for
+
+--- PAGE 28 HITS ['w-RMSE', 'MovieLens', 'test set', 'Linear UCB'] ---
+w-RMSE provides a robust measure indicative of reward while is unaffected by such time frame.
+Second,usingw-RMSEavoidstheassumptionmadetoconnect.Thismetricalsoguidesparameter
+tuninginSection3.5.1.Thew-RMSEcalculatedforthetestsetw-RMSE isdefinedas:
+w-RMSE = ||Ω ◦(Y−Yˆ)||2,
+whereΩ isthesetofsamplesinthetestset;◦istheHadamardproduct; |·| correspondstothe
+Figures4showtheevolutionofw-RMSEintheimplementationphase(leftpanel)andcumulative
+rewardintheacquisitionphase(rightpanel)over20acquisitioncycleson(a)MovieLens,(b)Flixster,
+4.3.1. Implementation-Phasew-RMSE Ourmethod,DU-Net,outperformsthesixteenbenchmark
+methods significantly in terms of w-RMSE during the implementation phase. These results
+benchmarks, linear UCB stands out for MovieLens and Douban (ranking first among bandits
+the MovieLens and Douban datasets consist of more linear-structured data, so that introducing
+of w-RMSE across all datasets—a sensible outcome given its objective is to reduce uncertainty.
+but struggles with MovieLens, hinting that model fit can vary across datasets. Notably, most
+
+--- PAGE 29 HITS ['w-RMSE', 'MovieLens', 'Linear UCB', 'homogenous', 'response'] ---
+(a)MovieLens(w-RMSE) (b)MovieLens(cumulativeprofit)
+(c)Flixster(w-RMSE) (d)Flixster(cumulativeprofit)
+(e)Douban(w-RMSE) (f)Douban(cumulativeprofit)
+Figure4 PerformanceofDU-Netandthebenchmarksonw-RMSE(leftpanel)andcumulativereward(rightpanel),
+withhomogenousresponserates.The𝑥-axisandthe𝑦-axiscorrespondtothebatchofdataforacquisitionandthe
+thecumulativerewardmeasureonDouban,anditrankssecond onMovieLensandthirdon Flixster.
+OFULperformsthebestonFlixsterwhileLinearUCBperformsthebestonMovieLens.Thegood
+performance of OFUL and Linear UCB on the cumulative reward during the acquisition phase
+
+--- PAGE 30 HITS ['w-RMSE', 'MovieLens', 'Linear UCB', 'response'] ---
+conclusion,thesuperiorperformanceofDU-Netintermsofbothw-RMSEandcumulativereward
+4.3.3. RobustnessAnalysisonHeterogeneousResponseRate Inour robustnessanalysisinFig. 5,
+weexamineheterogeneousresponseratesamongusers,whichareunknowntotheplatform.Inthe
+simulation,weassumeauser’sresponserateispositivelycorrelatedtotheuser’srating:Usersare
+responseasaBernoullidistributionwithparameter (cid:0) 0.8+0.02×(𝑟−𝑟¯) (cid:1) ,where𝑟 istheground-truth
+mentioned above. With heterogeneous response rates, our method outperforms all others in both
+in cumulative rewards for MovieLens and Douban and in w-RMSE for Douban. For Flixster, the
+myopicmethodissecondinbothmetrics.WhileLinearUCBperformswellinourmainanalysisin
+Section4.2,itsperformancedropswithheterogeneousresponserates.Inthemainanalysis,DU-Net
+matchedLinearUCBforMovieLensincumulativeprofit.However,withaheterogeneousresponse
+rate,ourmethodsurpassesboththelow-rankbanditandLinearUCBbyalargermargin.
+rewardduringtheacquisitionphase)andlongertermreward(measuredbyw-RMSE)duringthe
+
+--- PAGE 31 HITS ['w-RMSE', 'MovieLens', 'response'] ---
+(a)MovieLens(w-RMSE) (b)MovieLens(cumulativereward)
+(c)Flixster(w-RMSE) (d)Flixster(cumulativereward)
+(e)Douban(w-RMSE) (f)Douban(cumulativereward)
+Figure5 PerformanceofDU-NetandthebenchmarksusingtheMovielens,Flixster,andDoubandatasetson
+w-RMSE(leftpanel)andcumulativereward(rightpanel),withheterogeneousresponserates.The𝑥-axisand𝑦-axis
+by DLS. Across all datasets and epochs, DLS consistently leads to lower w-RMSE. A U-shaped
+
+--- PAGE 32 HITS ['w-RMSE'] ---
+(entropy-only).Fig.7showshowthegapinw-RMSEevolvesovertheacquisitionepochs:
+failstoreduceuncertaintyinotherpartsofthematrix.Thiscanhurtlong-termw-RMSE,especially
+
+--- PAGE 33 HITS ['w-RMSE', 'MovieLens'] ---
+(a)MovieLens (b)Flixster (c)Douban
+(a)MovieLens (b)Flixster (c)Douban
+Figure7 Δw-RMSEbetweenDU-Netandtwoablations:myopicandinformation-theoreticsampling.
+(a)MovieLens (b)Flixster (c)Douban
+Figure8 Δw-RMSEbetweenconsecutiveepochs.
+additionaldatachangesthroughouttheacquisitionprocess.Figure8plotsthedifferenceinw-RMSE
+(Δw-RMSE)betweenconsecutiveepochsforDU-NetrelativetoUniformRandomSampling(URS).
+
+--- PAGE 35 HITS ['homogenous'] ---
+platformsareeasiertocollectthandataonnon-activeusers.Therefore,consideringnon-homogenous
+
+--- PAGE 42 HITS ['response'] ---
+• 𝑞:responserate
+
+--- PAGE 43 HITS ['SVD'] ---
+1. Thestepofcomputing𝑈ˆ 𝑡 and𝑉ˆ 𝑡:Thecomplexityofsingularvaluedecomposition(SVD)is𝑂(𝑚𝑛min(𝑛,𝑚));

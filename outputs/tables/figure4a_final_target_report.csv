@@ -1,0 +1,8 @@
+comparison,du_net,linear_ucb,linear_minus_du,du_wins,seed_count,scale_ratio_local_du_to_paper_du,interpretation
+paper_visual_w_rmse,1.788,1.814,0.026000000000000023,yes,,,Paper Figure 4a visual endpoint estimate; DU-Net beats Linear UCB.
+local_reward_weighted_w_rmse,0.8249934186517258,0.8332899175106852,0.008296498858959334,yes,20,0.46140571512960055,"Direction matches the paper, but the absolute scale is far lower."
+rmse_all,1.1608006428893725,1.156026444192736,-0.0047741986966362,no,20,0.649217361794951,Strict full-test RMSE does not reproduce the paper ordering; Linear UCB is lower.
+rmse_high_rating_ge4,0.6587321361612581,0.6671444467709332,0.0084123106096749,yes,20,0.3684184206718446,"High-rating region is DU-Net-favored, supporting reward-region consistency."
+rmse_low_rating_le3,1.5773221530918544,1.5650009153381492,-0.0123212377537052,no,20,0.8821712265614399,"Low-rating region is Linear-UCB-favored, explaining why full-test RMSE flips."
+rmse_rating_eq5,1.0055764312590203,1.021531490485163,0.0159550592261423,yes,20,0.5624029257600784,Five-star test ratings are DU-Net-favored.
+sigmoid_reward_w_rmse,0.8976999088977211,0.8975009950693478,-0.0001989138283735,no,20,0.5020693002783675,Paper-like sigmoid reward weighting is a near tie at 20 seeds.

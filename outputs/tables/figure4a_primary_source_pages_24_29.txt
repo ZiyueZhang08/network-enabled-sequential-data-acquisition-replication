@@ -1,0 +1,536 @@
+===== PAGE 22 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          22                                   JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition
+                                                                                    
+           InstantRewardvs.NeighborReward. Recallthat 𝑅ˆ 𝑡 (𝐴) istheinstantrewardpredictorforaction 𝐴
+                                                                                    
+          conditionalonthatuser 𝐴𝑟 hasresponded(withoutconsumernetworkeffect);thatis,𝑅ˆ 𝑡 (𝐴)=𝑢ˆ⊤ 𝐴𝑟 𝑣ˆ𝐴𝑐,
+          where𝑢ˆ and 𝑣ˆ areestimatedusingnoisymatrixcompletion.Theliteratureexplainsdifferentways
+               ·    ·                                                               
+          toestimate𝑢ˆ and𝑣ˆ (see(WangandZhang2012)forareview).WeuseSVDpp,developedin(Koren
+                  ·   ·                                                             
+          et al. 2009), to estimate user and item representations. This method performs well compared to
+          manydeep-learning-basedmethods(Lengetal.2020)andismuchmorecomputationallyefficient.
+          Wethendefinerewardestimator 𝑅ˆnet(𝐴) incorporatingconsumernetworkeffectattime𝑡 asfollows:
+                                𝑡                                                   
+                                            ∑︁                                      
+                             𝑅ˆ 𝑡 net(𝐴):=𝑅ˆ 𝑡 (𝐴)+ 𝑝 𝑡 ·𝑅ˆ 𝑡 (𝐴′),    (3.8)        
+                                          𝐴′∈N𝑡(𝐴)                                  
+          where 𝑝 𝑡 isconsideredahyperparameter,thetuningofwhichisdiscussedinSection3.5.1.
+                                                                                    
+           Integrating Reward and Entropy Having established both (i) the reward that includes network
+          diffusion,and(ii)theentropy-basedinformationvalue(Sections3.3.1–3.3.3),wecannowcompute
+                                                                                    
+          thenetwork-enabledacquisitionweightforanyunobservedentry 𝐴.Thisweight(Eq.(3.5))combines
+                                                                                    
+          immediatepayoff 𝑅ˆNet(𝐴) witha measureof how muchuncertainty theobservationreduces inthe
+                       𝑡                                                            
+          ratingmatrix.Anacquisitionalgorithmthenprioritizesactionsthatbalancelargeexpectedrewards
+          withhighpotentialforuncertaintyreduction.                                 
+            Remark1. Inprinciple,onecouldextendthecascadebeyondonehopifsecond-degreeneighbors
+                                                                                    
+          alsoseetherecommendation,eachwithitsownprobability.Forsimplicity,wefocusonsingle-hop
+          diffusion,thoughmulti-hopdiffusioncanbemodeledbyiteratedprobabilities(Kempeetal.2003)
+                                                                                    
+          atthecostofincreasedcomputationalcomplexity.                              
+            Byaccountingfornetworkinfluenceonbothrewardanduncertainty,theplatformcanstrategically
+                                                                                    
+          query user–item pairs that not only yield immediate gains but also harness social propagation to
+                                                                                    
+          furtherincreasethetotalrewardandreducetheratingmatrix’soveralluncertainty.
+                                                                                    
+          3.5. Algorithm:DU-NetAcquisition                                          
+          WeproposeAlgorithmDU-Netforsequentialdataacquisitionfordigitalplatforms.Ateachtime
+                                                                                    
+          step 𝑡, we first solve the noisy matrix completion problem and obtain an estimated rating matrix
+          Θˆ 𝑡. We calculate the expected joint reward and information value 𝜑 𝑡 (𝐴) for each action 𝐴 ∈ A 𝑡
+                                                                                    
+          using Eqn. (3.5). Then, the acquisition policy acquires 𝐴 according to the acquisition weight
+          𝜑                                                                         
+           𝑡                                                                        
+           net(𝐴;𝜆                                                                  
+                𝑡                                                                   
+                𝐻,𝜎                                                                 
+                   𝑡                                                                
+                   ,𝑝                                                               
+                     𝑡                                                              
+                     ).                                                             
+            We discuss the computational complexity of DU-Net. There are four main steps, including
+          computing𝑈ˆ 𝑡 and𝑉ˆ 𝑡,𝑈 DLS ,observational entropy,and 𝜑 𝑡 net(𝐴;𝜆 𝑡 𝐻).Weanalyzethe computational
+          complexityforeachstepinsequence.TheproofcanbefoundinAppendixB.            
+
+===== PAGE 24 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          24                                   JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition
+                                                                                    
+          reasonable when considering a one-time reward. However, in Eqn. (3.2), we propose a dynamic
+          tuningmethodaimedatmaximizingthecumulativerewardoveragivenperiod𝑇.Becausecomputing
+                                                                                    
+          the reward for unacquired data is impractical, we propose an alternative method. At each time
+                                                                                    
+          step𝑡,werandomlypartitionthecurrentobserveddatasetintoatrainingΩ 𝑜 ,acquisitionΩ 𝑜 ,
+                                                           𝑡,𝑡𝑟𝑎𝑖𝑛      𝑡,𝑎𝑐        
+                      𝑜                                                             
+          and test dataset Ω . We learn the parameters on the training data, acquire the data points on
+                      𝑡,𝑡𝑒𝑠𝑡                                                        
+          theacquisitiondata,andfinallyevaluateonthetestdataset.Thus,let 𝜋∗(Ω 𝑡 𝑜 ,𝑎𝑐 ,Ω 𝑡 𝑜 ,𝑡𝑟𝑎𝑖𝑛 ;𝜆 𝑡 𝐻,𝜎 𝑡 ,𝑝 𝑡 )
+                                                                    𝑜               
+          denote the optimal policy obtained by implementing DU-Net on the training dataset Ω and
+                                                                    𝑡,𝑡𝑟𝑎𝑖𝑛         
+          acquisition dataset Ω 𝑡 𝑜 ,𝑎𝑐 , with parameters {𝜆 𝑡 𝐻,𝜎 𝑡 ,𝑝 𝑡 }. We formulate the following optimization
+          problemateachtimestep𝑡:                                                   
+                                  (cid:16)               (cid:17)                   
+                            min  ℓ 𝜋∗(Ω 𝑡 𝑜 ,𝑎𝑐 ,Ω 𝑡 𝑜 ,𝑡𝑟𝑎𝑖𝑛 ;𝜆 𝑡 𝐻,𝜎 𝑡 ,𝑝 𝑡 );Ω 𝑡 𝑜 ,𝑡𝑒𝑠𝑡 ,
+                          𝜆                                                         
+                           𝑡                                                        
+                           𝐻,𝜎                                                      
+                             𝑡                                                      
+                             ,𝑝                                                     
+                              𝑡                                                     
+                               >0                                                   
+          whereℓ(·;Ω 𝑜 ) denotesthelossfunctionofthedataacquisitionevaluatedonthetestdatasetΩ 𝑜 .
+                  𝑡,𝑡𝑒𝑠𝑡                                                𝑡,𝑡𝑒𝑠𝑡      
+          Weoptimizeoverparameters {𝜆 𝑡 𝐻,𝜎 𝑡 ,𝑝 𝑡 } tominimizethelossfunctionintheacquireddataset,and
+          werepeatthisprocessformultipleacquisitionsteps.                           
+          4. Numerical Experiments                                                  
+          4.1. Datasets                                                             
+          We evaluate the performance using three datasets widely used in the recommendation literature:
+          Flixster, Douban, and MovieLens.9 We choose these datasets for their extensive use in prior
+          studies (Montiet al.2017a, Lenget al.2024)10, aswell astheir inclusionof networkdata. Flixster
+          and Douban have social network data that describe the follower relationships of users on this
+          platform.11 Totest thegeneralizabilityof DLSmechanism fromothertypes ofuser information,we
+          alsoincludetheMovieLensdatasetcomprisingasimilarity-basednetworkconstructedfromuser
+          auxiliaryinformationby(Montietal.2017b).                                  
+            WepresentthedatastatisticsinTable1.Intermsofusers,Flixster,Douban,andMovieLenshave
+          2,341,2,999,and945users,respectively,andintermsofitems,theyhave2,955,2,999,and1,681
+          items,respectively.Consideringhigh-dimensionality ofthe problem,thethree datasetsof Flixster,
+                                                                                    
+          9FlixsterwasanAmericansocialnetworkingmoviewebsitethatenableduserstofindoutaboutnewandexistingmoviesandto
+          meetotheruserswithsimilartastesinmovies,aswellastoviewmovietrailersandtolearnaboutnewandupcomingmoviesat
+          theboxoffice.DoubanisaChinesesocialnetworkingservicewebsitethatallowsregistereduserstorecordinformationandcreate
+          contentrelatedtofilms,books,music,andactivitiesinChinesecities.MovieLensisaweb-basedRSandvirtualcommunitythat
+          recommendsmoviesforuserstowatch,basedontheirfilmpreferences.Itleveragescollaborativefilteringbasedonallmembers’
+          movieratingsandmoviereviews.                                              
+          10https://paperswithcode.com                                              
+          11Giventhenatureofthenetwork,informationcandiffuseonFlixsterandDouban,butnotonMovieLens;thenetworkuses𝐾-nearest
+          neighborsconstructedonthebasisofauxiliaryinformationonusers.              
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 25 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition     25         
+                                                                                    
+                                  Table1 Datacharacteristics                        
+                             Data      Flixster Douban MovieLens                    
+                                                                                    
+                             User      2,341 2,999 943                              
+                             Item      2,955 2,999 1,681                            
+                             Initialsetdensity 0.0682% 0.13% 0.086%                 
+                             Testsetdensity 0.038% 0.15% 1.26%                      
+                                                                                    
+                                                                                    
+          Douban,andMovieLensyieldapproximately2,341×2,955≈7millionentries,2,999×2,999≈9
+          millionentries,and945×1,681≈1.6millionentries.Thesparsityofthedatasetsisreflectedinthe
+                                                                                    
+          initialsetdensity,whichis0.0682%forFlixster,0.13%forDouban,and0.086%forMovieLens.
+                                                                                    
+          Additionally,thetestsetdensityvaries,withFlixsterat0.038%,Doubanat0.15%,andMovieLens
+                                                                                    
+          at1.26%.                                                                  
+                                                                                    
+          4.2. PerformanceSetup                                                     
+                                                                                    
+          Following Monti et al. (2017b), each dataset was partitioned into three subsets: an initial set, a
+                                                                                    
+          candidate acquisition set, and a test set. The initial set comprises data available at the beginning
+          of the acquisition phase, whereas the candidate acquisition set contains data points that can be
+                                                                                    
+          sequentially selected throughout the acquisition process. The test set, maintained as a hold-out
+                                                                                    
+          subset, is utilized exclusively for performance evaluation during implementation. Dataset splits
+          adherestrictlytothosespecifiedby(Montietal.2017b)toensurereproducibility. 
+                                                                                    
+            Forexperimentalpurposesandduetothenatureofourobservationaldata,dataacquisitionwas
+                                                                                    
+          restricted to entries present in the candidateacquisitionset. This approach is standard in research
+          thatusesexistingdatatoevaluateacquisitionpolicies,asobservationsareavailableonlyforasubset
+                                                                                    
+          of the overall data (Cao and Leng 2024). While this restriction is necessary for our experimental
+                                                                                    
+          setup,itdoesnotapplytopracticalimplementationswherebroaderdataacquisitionisoftenpossible.
+                                                                                    
+            Theacquisitionphase beginswiththe initialdataset,and datapointsareadded sequentially from
+          the candidate acquisition set. This design simulates sparse data environments, reflecting real-world
+                                                                                    
+          conditionswhereplatformsmustoperatewithlimitedinitialinformation.Specifically,1%ofthe
+                                                                                    
+          trainingsetfrom(Montietal.2017b)isusedastheinitialset.                    
+            Thesequentialacquisitionprocessconsistsofthreesteps:                    
+                                                                                    
+            1. We use the initial set, and the acquired data to score each unobserved data point through a
+                                                                                    
+          policy,usingAlgorithmDU-Net.Boththerewardandtheinformationvaluearez-normalized.
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 27 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition     27         
+                                                                                    
+          bound from the increasingly-shrunken acquisition set. In addition, since they require each entry to
+                                                                                    
+          beobservedatleastonceatstage1buttheacquisitionperiodismuchsmallerthanthematrixsize,
+          weusethetrainingdataforthematrixestimationfortheinitializationandthenproceedstage2.
+                                                                                    
+            3. Online linear bandit models: Our problem setting differs from that of traditional bandit
+          algorithms; therefore, we adapted various bandit algorithms for our problem.16 We compare our
+                                                                                    
+          approachwithcanonicallinearbanditalgorithms,assumingthattherewardfollowsalinearfunction
+                                                                                    
+          class.ThesemethodsincludeLinUCB(Lietal.2010,Chuetal.2011),OFUL(Abbasi-Yadkorietal.
+          2011)17 LinearThompsonSampling(AgrawalandGoyal2013),andLogisticUCBandThompson
+                                                                                    
+          Sampling(Cortes2018).                                                     
+            4. Stochastic bandits with a finite number of many arms. We have adapted several canonical
+                                                                                    
+          methods18,includingUpperConfidenceBound(Cortes2018,VermorelandMohri2005,Chapelle
+          andLi2011),ThompsonSampling(Cortes2018,ChapelleandLi2011),EpsilonGreedy(Cortes
+                                                                                    
+          2018,VermorelandMohri2005,Yueetal.2012),AdaptiveGreedy(Cortes2018,Chakrabartietal.
+                                                                                    
+          2008),andExplore-Then-Exploit(Cortes2018).                                
+                                                                                    
+           4.2.2. EvaluationMetrics. Weconsidertwometrics: (1)cumulative rewardfor thedatacollected
+          duringtheacquisitionphaseastandardobjectiveinofflinebanditevaluation(Ueharaetal.2022,?);
+                                                                                    
+          and (2) weighted root mean squared error (w-RMSE) in the implementation phase (Cleger-Tamayo
+          etal.2012,JadonandPatil2024).Cumulativerewardisdefinedasfollows:          
+                                                                                    
+                                          𝑡                                         
+                             reward({𝐴 𝑖 } 𝑖 𝑡 = 0 1 )=                             
+                                         ∑︁0                                        
+                                           sigmoid(𝑌 𝑖 −𝑟¯),                        
+                                         𝑖=1                                        
+          where𝑌 𝑖 is the ground-truth rating of the𝑖𝑡ℎ selected data of entry 𝐴 𝑖. Recall that the acquisition
+          phase acquires𝑡 data points in total. Here, we subtract the average of the maximum and minimum
+                    0                                                               
+          possibleratings𝑟¯ (i.e.,𝑟¯=3inourcase)normalizetherating.                 
+            We adopt w-RMSE to represent the performance of the implementation period from 𝑡 +1 to
+                                                                      0             
+          𝑇. The weighted variant of RMSE is selected because data points that have higher rewards are
+          more influential to future rewards. We opted for the w-RMSE metric to calculate the reward for
+          the implementation period instead of using a revenue-based metric for several reasons. First, a
+                                                                                    
+          revenue-based metric can vary based on the length of the implementation period. In contrast,
+                                                                                    
+          16https://github.com/david-cortes/contextualbandits.Similartoitem(IV),weremovetheuser-itempairfromthe
+          acquisitionsetonceithasbeenpulledtoensureuniquedataacquisition.           
+          17Wehaveadaptedthecodeinhttps://github.com/kwangsungjun/lrbandit.         
+          18Asinthepreviousmodels,weremovetheuser-itempairfromtheacquisitionsetafterithasbeenpulled.
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 28 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          28                                   JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition
+                                                                                    
+          w-RMSE provides a robust measure indicative of reward while is unaffected by such time frame.
+                                                                                    
+          Second,usingw-RMSEavoidstheassumptionmadetoconnect.Thismetricalsoguidesparameter
+          tuninginSection3.5.1.Thew-RMSEcalculatedforthetestsetw-RMSE isdefinedas:  
+                                                          test                      
+                                       1  √︃                                        
+                            w-RMSE  =      ||Ω  ◦(Y−Yˆ)||2,                         
+                                  test |Ω |   test     2                            
+                                        test                                        
+          whereΩ  isthesetofsamplesinthetestset;◦istheHadamardproduct; |·| correspondstothe
+                test                                                                
+          cardinalityoftheset;and ||·|| isthe 𝐿 -norm.                              
+                              2     2                                               
+          4.3. MainResults                                                          
+          Figures4showtheevolutionofw-RMSEintheimplementationphase(leftpanel)andcumulative
+          rewardintheacquisitionphase(rightpanel)over20acquisitioncycleson(a)MovieLens,(b)Flixster,
+                                                                                    
+          and (c) Douban. Each line is averaged over 20 random initializations (splits/seeds), with shaded
+          regionsindicatingconfidenceintervals.                                     
+                                                                                    
+           4.3.1. Implementation-Phasew-RMSE Ourmethod,DU-Net,outperformsthesixteenbenchmark
+                                                                                    
+          methods significantly in terms of w-RMSE during the implementation phase. These results
+          demonstrate a substantial performance advantage during the implementation phase. Among the
+                                                                                    
+          benchmarks, linear UCB stands out for MovieLens and Douban (ranking first among bandits
+                                                                                    
+          benchmarks) and performs seventh best out of the sixteen for Flixster. Our supposition is that
+          the MovieLens and Douban datasets consist of more linear-structured data, so that introducing
+                                                                                    
+          the correlation (i.e., linear relationship) between different items and users would improve the
+          performance.                                                              
+                                                                                    
+            Thegap between ourapproach andthe benchmarks widensas moredata areacquired, consistent
+                                                                                    
+          with previous findings (Saar-Tsechansky et al. 2009) that purely myopic data acquisition can fail to
+          maximize cumulative reward. Meanwhile, the information-theoretic methodranks fourth in terms
+                                                                                    
+          of w-RMSE across all datasets—a sensible outcome given its objective is to reduce uncertainty.
+          However, DU-Net surpasses it by leveraging more accurate observational entropy via the DLS
+                                                                                    
+          mechanism.                                                                
+                                                                                    
+            Amongbandit approaches, thelow-rankbanditalgorithmperforms wellonDoubanand Flixster
+          but struggles with MovieLens, hinting that model fit can vary across datasets. Notably, most
+                                                                                    
+          stochasticbanditswithalargefinitearmsetbehavesimilarlytouniformsampling,suggestingthat
+          whenthenumberofarmsfarexceedsthetimehorizon,thesemethodslacksufficientexplorationto
+                                                                                    
+          significantlyoutperformrandomselection.                                   
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 29 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition     29         
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                    (a)MovieLens(w-RMSE)          (b)MovieLens(cumulativeprofit)    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                    (c)Flixster(w-RMSE)            (d)Flixster(cumulativeprofit)    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                     (e)Douban(w-RMSE)              (f)Douban(cumulativeprofit)     
+          Figure4 PerformanceofDU-Netandthebenchmarksonw-RMSE(leftpanel)andcumulativereward(rightpanel),
+          withhomogenousresponserates.The𝑥-axisandthe𝑦-axiscorrespondtothebatchofdataforacquisitionandthe
+                                                                                    
+            averageperformanceover20randomlyinitiatedinstances(i.e.,differentsplitsoftrainingandacquisitionset).
+                                                                                    
+           4.3.2. Acquisition-PhaseCumulativeReward Regardingthe acquisition phase,DU-Net excels in
+                                                                                    
+          thecumulativerewardmeasureonDouban,anditrankssecond onMovieLensandthirdon Flixster.
+                                                                                    
+          OFULperformsthebestonFlixsterwhileLinearUCBperformsthebestonMovieLens.Thegood
+          performance of OFUL and Linear UCB on the cumulative reward during the acquisition phase
+                                                                                    
+          reflects the objective of their algorithm designs, which is to maximize the cumulative reward. In
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 42 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          42                                   JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition
+                                                                                    
+          AppendixA: Notation                                                       
+           • Θ:ratingmatrix                                                         
+                                                                                    
+           • G=(V,E):socialnetwork                                                  
+           • 𝐴=(𝐴𝑟,𝐴𝑐):actionofdataacquisition                                      
+                 𝑘 𝑘                                                                
+           • 𝑅(𝐴):therewardofaction 𝐴                                               
+           • 𝑅ˆ 𝑡(𝐴):theestimatedrewardforaction 𝐴                                  
+           • 𝑅net(𝐴):therewardofaction 𝐴consideringinformationdiffusioneffect       
+           • 𝑅ˆnet(𝐴):theestimatedrewardforaction 𝐴consideringinformationdiffusioneffect
+              𝑡                                                                     
+           • O𝑡:observedentriesinthefirst𝑡 samplingsteps                            
+           • 𝜋=(𝐴                                                                   
+                1                                                                   
+                 ,𝐴                                                                 
+                  2                                                                 
+                   ,···,𝐴 𝑇):acquisitionpolicy                                      
+           • P =𝑈𝑈⊤,P =𝑉𝑉⊤:projectionmatrices                                       
+              U     V                                                               
+           • 𝜇 𝑖(U):coherenceofsubspaceU concerningthe𝑖𝑡ℎ basisvector               
+           • 𝜈 𝑖,𝑖′ (U):cross-coherenceofsubspaceU withrespecttothebasisvectors𝑒 𝑖 and𝑒 𝑖′
+           • 𝐻 𝑡(𝐴):observationalentropyofaction 𝐴attimestep𝑡;                      
+           • 𝜆𝐻 :theparameterthatcontrolstheimportanceoftheuncertaintyintheacquisitionpolicy
+             𝑡                                                                      
+           • N(𝐴):thesetofallneighboring-itempairsof 𝐴                              
+           • 𝑓 𝑡(𝐴):predictorofinstantrewardforaction 𝐴                             
+           • 𝑈ˆ,𝑉ˆ:representationestimatedusingnoisymatrixcompletion                
+           • 𝑞:responserate                                                         
+           • 𝑝:diffusionprobability                                                 
+           • 𝜎:widthoftheGaussiankernel                                             
+           • 𝑈 :noderepresentationlearnedfromthesocialnetwork                       
+              sn                                                                    
+           • 𝑈  :latentrepresentationfromdynamiclocallysmoothmechanism              
+              DLS                                                                   
+          AppendixB: Proofs                                                         
+           ProofofLemma1. DefineR asthefunctionthattransformstheratingtotheexpectedreward,i.e.,
+                                    R(Θ𝑖,𝑗)=E[𝑅((𝑖,𝑗))].                            
+           TheLipschitzcontinuityoftherewardfunctionR(·)impliesthat                 
+                                  |R(𝜃 )−R(𝜃 )|≤𝐿|𝜃 −𝜃 |.                           
+                                     1   2    1  2                                  
+          Suppose 𝐴(Θ∗)=(𝑖∗,𝑗∗)and 𝐴(Θˆ)=(𝑖ˆ,𝑗ˆ)for(𝑖∗,𝑗∗)∈A and(𝑖ˆ,𝑗ˆ)∈A.Thatis,(𝑖∗,𝑗∗)and(𝑖ˆ,𝑗ˆ)correspondtothe
+          entrywiththehighestratinginA whentheunderlyingmatrixisΘ∗andΘˆ,respectively.Notethat
+                                                                                    
+                                   Θ∗ +|Θ∗ −Θˆ |≥Θˆ                                 
+                                    𝑖ˆ,𝑗ˆ 𝑖ˆ,𝑗ˆ 𝑖ˆ,𝑗ˆ 𝑖ˆ,𝑗ˆ                         
+          and                                                                       
+                               Θˆ                                                   
+                                𝑖ˆ,𝑗ˆ                                               
+                                  ≥Θˆ                                               
+                                    𝑖∗,𝑗∗                                           
+                                       ≥Θ∗                                          
+                                         𝑖∗,𝑗∗                                      
+                                           −|Θ∗                                     
+                                              𝑖∗,𝑗∗                                 
+                                                −Θˆ                                 
+                                                  𝑖∗,𝑗∗                             
+                                                    |.                              
+          Therefore,wehave                                                          
+                            Θ∗                                                      
+                             𝑖ˆ,𝑗ˆ                                                  
+                              ≤Θ∗                                                   
+                                 𝑖∗,𝑗∗                                              
+                                   ≤Θ∗                                              
+                                     𝑖ˆ,𝑗ˆ                                          
+                                       +|Θ∗                                         
+                                         𝑖∗,𝑗∗                                      
+                                            −Θˆ                                     
+                                              𝑖∗,𝑗∗                                 
+                                                |+|Θ∗                               
+                                                   𝑖ˆ,𝑗ˆ                            
+                                                    −Θˆ                             
+                                                      𝑖ˆ,𝑗ˆ                         
+                                                        |.                          
+
+===== PAGE 43 =====
+
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          JunyuCao,YanLeng: Network-EnabledSequentialDataAcquisition     43         
+                                                                                    
+          Thentherewardgapcanbeboundedby                                            
+                                                                                    
+                             𝑅(𝐴(Θ∗))−𝑅(𝐴(Θˆ))=R(Θ∗ )−R(Θ∗ )                        
+                                             𝑖∗,𝑗∗ 𝑖ˆ,𝑗ˆ                            
+                            ≤𝐿|Θ∗ 𝑖∗,𝑗∗ −Θ∗ 𝑖ˆ,𝑗ˆ |≤𝐿(|Θ∗ 𝑖∗,𝑗∗ −Θˆ 𝑖∗,𝑗∗ |+|Θ∗ 𝑖ˆ,𝑗ˆ −Θˆ 𝑖ˆ,𝑗ˆ |)
+                            ≤2𝐿∥Θ∗−Θˆ∥ .                                            
+                                   ∞                                                
+           ProofofProposition1. Lemma1inMaketal.(2017)hasshownthat                  
+                                         (cid:18) 𝜂2 (cid:19)                       
+                               𝐻˜(O𝑡∪𝐴)=𝐶det 𝐿                                      
+                                          𝑡+1                                       
+                                            (O𝑡∪𝐴)+                                 
+                                                  𝜎2                                
+                                                    𝐼 ,                             
+          forsome𝐶>0.FromSchurcomplement,foranymatrix𝑀,suchas                       
+                                         (cid:20)𝐴 𝐵(cid:21)                        
+                                       𝑀=    ,                                      
+                                          𝐶 𝐷                                       
+          wehavedet(𝑀)=det(𝐷)det(𝐴−𝐵𝐷−1𝐶).Followingtheblockrepresentationof𝐿 𝑡(O𝑡∪𝐴)that
+                                          𝜂2                                        
+                             𝐿                                                      
+                              𝑡+1                                                   
+                                (O𝑡∪(𝐴𝑟,𝐴𝑐))+                                       
+                                          𝜎2                                        
+                                            𝐼                                       
+                             =                                                      
+                              (cid:34) 𝜇 𝐴𝑟(U)𝜇 𝐴𝑐(V)+                              
+                                         𝜎                                          
+                                         𝜂2                                         
+                                          2                                         
+                                          𝐼 (𝜈 𝐴𝑟(U)◦𝜈 𝐴𝑐(V))⊤ (cid:35)             
+                                𝜈 𝐴𝑟(U)◦𝜈 𝐴𝑐(V) 𝐿 𝑡(O𝑡)+                            
+                                                   𝜎                                
+                                                   𝜂2                               
+                                                    2                               
+                                                    𝐼                               
+          wehave                                                                    
+            𝐻˜(O𝑡∪𝐴)                                                                
+               (cid:18)  𝜂2 (cid:19)                                                
+           =𝐶det 𝐿                                                                  
+                 𝑡+1                                                                
+                  (O𝑡∪𝐴)+                                                           
+                         𝜎2                                                         
+                           𝐼                                                        
+               (cid:18) 𝜂2 (cid:19)(cid:18) 𝜂2           𝜂2             (cid:19)    
+           =𝐶det 𝐿 𝑡(O𝑡)+ 𝐼 𝜇 𝐴𝑟(U)𝜇 𝐴𝑐(V)+ 𝐼−(𝜈 𝐴𝑟(U)◦𝜈 𝐴𝑐(V))⊤(𝐿 𝑡(O𝑡)+ 𝐼)−1·𝜈 𝐴𝑟(U)◦𝜈 𝐴𝑐(V)
+                     𝜎2             𝜎2                   𝜎2                         
+                (cid:18)    𝜂2                   𝜂2            (cid:19)             
+           =𝐻˜(O𝑡) 𝜇 𝐴𝑟(U)𝜇 𝐴𝑐(V)+ 𝐼−(𝜈 𝐴𝑟(U)◦𝜈 𝐴𝑐(V))⊤(𝐿 𝑡(O𝑡)+ 𝐼)−1𝜈 𝐴𝑟(U)◦𝜈 𝐴𝑐(V) .
+                           𝜎2                    𝜎2                                 
+           ProofofTheorem2. Weanalyzethecomputationalcomplexityofeachstepattime𝑡.   
+           1. Thestepofcomputing𝑈ˆ 𝑡 and𝑉ˆ 𝑡:Thecomplexityofsingularvaluedecomposition(SVD)is𝑂(𝑚𝑛min(𝑛,𝑚));
+           2. Thestepofcomputing𝑈 :                                                 
+                           DLS                                                      
+             (a) Compute𝑢ˆ𝑗 forallusers:𝑂(𝑘|E|(𝑑+ℎ)+2𝑘2ℎ+2𝑘𝑑2),where|E|isthenumberedgesinthesocialnetwork,
+          𝑑 isthedimensionofuserembedding𝑈ˆ ∈R𝑚×𝑑 fromthesocialnetwork,𝑘 isthenumberofmaxhopsinthesubgraph,
+          andℎisthesketchsize19(Chamberlainetal.2023);                              
+             (b) Computethelocallysmoothneighborhood𝜔 𝑖𝑗 inEq.(3.3):𝑂(𝑚2𝑑);         
+             (c) AggregatelatentrepresentationsforthefocalnodeinEq.(3.4):𝑂(𝑚2𝑟).    
+          Therefore,bytreating𝑘,ℎ,and𝑑 asconstants,theoverallcomplexityforcomputing𝑈 is
+                                                         DLS                        
+                                      𝑂(|E|+𝑚2𝑟).                                   
+          19Inthiscontext,ℎreferstothesizeofthesketches,whichindicatestheamountofspacethesesketchesoccupyinthehashing
+          techniquesemployedbyChamberlainetal.(2023).Sketchesprovideacompactrepresentationofinformationregardingthesubgraph
+          of nodes and their connections, eliminating the need to track every individual connection. While smaller sketches are more
+          memory-efficient,theymaysacrificeaccuracy;conversely,largersketchescanenhanceaccuracybutrequiremorememory.

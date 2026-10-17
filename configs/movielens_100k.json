@@ -1,0 +1,27 @@
+{
+  "dataset": {
+    "name": "movielens-100k",
+    "raw_dir": "data/raw/ml-100k"
+  },
+  "seeds": [0],
+  "split": {
+    "test_ratio": 0.2,
+    "initial_fraction_of_train": 0.01
+  },
+  "mf": {
+    "rank": 12,
+    "epochs": 8,
+    "learning_rate": 0.035,
+    "regularization": 0.04
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 1.0,
+    "diffusion_prob": 0.01,
+    "sigma": 0.4,
+    "dls_top_k": 30,
+    "selection": "topk",
+    "rating_midpoint": 3.0
+  }
+}

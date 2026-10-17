@@ -1,0 +1,16 @@
+kind,name,available,role,status,variant,reward,w_rmse,entropy_pct,selected_degree
+dependency,node2vec,False,third-party Node2Vec package,missing,,,,,
+dependency,pecanpy,False,fast sparse Node2Vec implementation,missing,,,,,
+dependency,gensim,False,Word2Vec/SGNS backend often used by Node2Vec,missing,,,,,
+dependency,networkx,True,graph utilities; not a Node2Vec trainer by itself,available,,,,,
+dependency,karateclub,False,graph embedding package with Node2Vec-style models,missing,,,,,
+dependency,torch,True,local SGNS trainer backend,available,,,,,
+dependency,torch_geometric,False,PyG backend for ELPH/GraphSAGE-style models,missing,,,,,
+dependency,dgl,False,DGL backend for graph neural models,missing,,,,,
+dependency,ogb,False,Open Graph Benchmark utilities often used by ELPH code,missing,,,,,
+dependency,sklearn,True,classical ML utilities,available,,,,,
+local_method,spectral,True,normalized-adjacency spectral embedding,confirmed strongest Douban candidate,netobs_reliability_spectral,2996.6666666666665,0.6625678339588474,0.5466543854315724,1.2251666666666667
+local_method,sparse_node2vec_bfs,True,dependency-free second-order random walks + PPMI/SVD,close but below spectral,netobs_reliability_node2vec_bfs,2983.333333333333,0.6633105063650949,0.5717085494975264,1.416
+local_method,sparse_node2vec_sgns_bfs,True,second-order random walks + local torch SGNS,new fidelity check,netobs_reliability_node2vec_sgns_bfs,2978.0,0.6642913414121945,0.5622767716320898,1.2701666666666669
+local_method,sparse_node2vec_sgns_dfs,True,outward-biased local torch SGNS,new negative check,netobs_reliability_node2vec_sgns_dfs,2949.333333333333,0.6675941842740992,0.5948908581508741,1.267666666666667
+local_method,elph_role,True,higher-order role/egonet proxy,competitive but below spectral,netobs_reliability_elph_role,2987.0,0.663343426244691,0.5730784261108094,1.3426666666666665

@@ -1,0 +1,6 @@
+candidate,implementation_status,paper_faithfulness,final_standard_rmse,final_w_rmse,final_cumulative_reward,evidence,decision
+contextualbandits.online.LinUCB/default-disjoint,not_installed,candidate_external_protocol,,,,Python package `contextualbandits` availability checked locally without adding dependencies.,Do not add dependency or promote until explicit author-code/package link is recovered.
+lrbandit/OFUL paper-adjacent adapter,not_installed,candidate_external_protocol,,,,Python package `lrbandit` availability checked locally without adding dependencies.,Do not add dependency or promote until explicit author-code/package link is recovered.
+local linucb_concat,implemented_20seed,local_proxy_not_author_protocol,1.1063891359597142,0.9655244892743132,1393.680246352064,Included in tau1 mainline bundle summary.,"Use as comparator range, not exact paper Linear UCB."
+local linucb_mf_interaction,implemented_20seed,local_proxy_not_author_protocol,1.0874219101410705,1.0482635496361028,1206.3700962567325,Included in tau1 mainline bundle summary.,"Use as comparator range, not exact paper Linear UCB."
+local linucb_bias_interaction,implemented_20seed,local_proxy_not_author_protocol,1.1303317140922473,0.9401492150791502,1521.645951182446,Included in tau1 mainline bundle summary.,"Use as comparator range, not exact paper Linear UCB."

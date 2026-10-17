@@ -1,0 +1,74 @@
+{
+  "dataset": {
+    "name": "movielens-100k",
+    "raw_dir": "data/raw/ml-100k",
+    "network_mode": "gcmc_features",
+    "network_embedding_mode": "user_features"
+  },
+  "output_prefix": "paper_faithful_movielens_schur_ablation_3seeds",
+  "variants": [
+    {
+      "label": "schur_reward_only",
+      "policy": "paper_faithful_dunet_no_entropy"
+    },
+    {
+      "label": "schur_entropy_only",
+      "policy": "paper_faithful_dunet_no_reward"
+    },
+    {
+      "label": "schur_reward_entropy_l010",
+      "policy": "paper_faithful_dunet",
+      "acquisition_overrides": {"lambda_entropy": 0.1}
+    },
+    {
+      "label": "schur_reward_entropy_l100",
+      "policy": "paper_faithful_dunet",
+      "acquisition_overrides": {"lambda_entropy": 1.0}
+    },
+    {
+      "label": "linucb_concat",
+      "policy": "linucb_concat",
+      "acquisition_overrides": {"selection": "topk"}
+    }
+  ],
+  "seeds": [0, 1, 2],
+  "split": {
+    "mode": "movielens_u1_fallback_table1_density",
+    "num_users": 943,
+    "num_items": 1681,
+    "initial_size": 1364
+  },
+  "mf": {
+    "rank": 20,
+    "epochs": 20,
+    "learning_rate": 0.015,
+    "regularization": 0.06,
+    "algorithm": "svdpp"
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.1,
+    "diffusion_prob": 0.0,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "dls_neighbor_mode": "graph_edges",
+    "paper_dls_scope": "full",
+    "selection": "topk",
+    "selection_temperature": 1.0,
+    "rating_midpoint": 3.0,
+    "entropy_mode": "schur_conditional_variance",
+    "entropy_score_transform": "none",
+    "entropy_logdet_regularization": 1.0,
+    "paper_entropy_correction_weight": 1.0,
+    "paper_entropy_shortlist_size": 20000,
+    "paper_entropy_batch_size": 4096,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8, 1.6],
+    "adaptive_lambda_grid": [0.05, 0.1, 0.25, 0.5, 1.0],
+    "adaptive_diffusion_prob_grid": [0.0],
+    "paper_tuning_frequency": 0,
+    "paper_tuning_metric": "standard_mask_rmse",
+    "ucb_alpha": 0.8,
+    "ucb_regularization": 1.0
+  }
+}

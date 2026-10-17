@@ -1,0 +1,85 @@
+figure,method,cycle,paper_metric,paper_value,digitization_source,digitization_status
+Figure 4a,DU-Net,0,w_rmse,1.925,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,1,w_rmse,1.885,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,2,w_rmse,1.862,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,3,w_rmse,1.846,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,4,w_rmse,1.836,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,5,w_rmse,1.828,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,6,w_rmse,1.82,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,7,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,8,w_rmse,1.809,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,9,w_rmse,1.806,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,10,w_rmse,1.804,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,11,w_rmse,1.802,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,12,w_rmse,1.8,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,13,w_rmse,1.798,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,14,w_rmse,1.796,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,15,w_rmse,1.794,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,16,w_rmse,1.792,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,17,w_rmse,1.791,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,18,w_rmse,1.79,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,19,w_rmse,1.789,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,DU-Net,20,w_rmse,1.788,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,0,w_rmse,1.925,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,1,w_rmse,1.91,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,2,w_rmse,1.895,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,3,w_rmse,1.88,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,4,w_rmse,1.866,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,5,w_rmse,1.855,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,6,w_rmse,1.847,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,7,w_rmse,1.841,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,8,w_rmse,1.836,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,9,w_rmse,1.832,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,10,w_rmse,1.828,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,11,w_rmse,1.825,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,12,w_rmse,1.822,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,13,w_rmse,1.82,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,14,w_rmse,1.818,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,15,w_rmse,1.817,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,16,w_rmse,1.816,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,17,w_rmse,1.815,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,18,w_rmse,1.8145,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,19,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4a,Linear UCB,20,w_rmse,1.814,tmp/pdfs/figure4a_movielens_wrmse.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,0,cumulative_reward,0.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,1,cumulative_reward,62.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,2,cumulative_reward,128.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,3,cumulative_reward,198.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,4,cumulative_reward,270.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,5,cumulative_reward,345.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,6,cumulative_reward,420.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,7,cumulative_reward,495.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,8,cumulative_reward,570.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,9,cumulative_reward,645.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,10,cumulative_reward,715.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,11,cumulative_reward,785.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,12,cumulative_reward,855.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,13,cumulative_reward,925.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,14,cumulative_reward,990.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,15,cumulative_reward,1055.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,16,cumulative_reward,1120.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,17,cumulative_reward,1175.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,18,cumulative_reward,1225.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,19,cumulative_reward,1275.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,DU-Net,20,cumulative_reward,1325.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,0,cumulative_reward,0.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,1,cumulative_reward,70.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,2,cumulative_reward,142.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,3,cumulative_reward,215.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,4,cumulative_reward,290.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,5,cumulative_reward,365.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,6,cumulative_reward,440.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,7,cumulative_reward,515.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,8,cumulative_reward,590.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,9,cumulative_reward,668.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,10,cumulative_reward,746.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,11,cumulative_reward,824.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,12,cumulative_reward,902.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,13,cumulative_reward,980.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,14,cumulative_reward,1058.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,15,cumulative_reward,1136.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,16,cumulative_reward,1214.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,17,cumulative_reward,1290.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,18,cumulative_reward,1362.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,19,cumulative_reward,1378.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data
+Figure 4b,Linear UCB,20,cumulative_reward,1390.0,tmp/pdfs/figure4b_movielens_cumulative_crop.png,visual_approximation_not_author_data

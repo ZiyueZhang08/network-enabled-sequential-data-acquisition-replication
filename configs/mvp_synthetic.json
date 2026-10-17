@@ -1,0 +1,32 @@
+{
+  "seeds": [0],
+  "synthetic_data": {
+    "num_users": 180,
+    "num_items": 120,
+    "rank": 8,
+    "num_communities": 6,
+    "observed_fraction": 0.18,
+    "within_edge_prob": 0.08,
+    "across_edge_prob": 0.006,
+    "noise_std": 0.35
+  },
+  "split": {
+    "test_ratio": 0.2,
+    "initial_fraction_of_train": 0.01
+  },
+  "mf": {
+    "rank": 12,
+    "epochs": 18,
+    "learning_rate": 0.035,
+    "regularization": 0.035
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 1.0,
+    "diffusion_prob": 0.03,
+    "sigma": 0.4,
+    "dls_top_k": 30,
+    "selection": "topk"
+  }
+}

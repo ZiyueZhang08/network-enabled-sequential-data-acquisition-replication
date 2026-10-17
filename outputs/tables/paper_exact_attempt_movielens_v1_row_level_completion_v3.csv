@@ -1,0 +1,7 @@
+method,available_seed_count,available_seeds,available_cycles,test_row_count,required_seed_count,row_level_scope,status
+schur_loglambda_tuned_full_pool_softmax_tau1_literal,1,0,20,20000,20,final_cycle_only,partial
+linucb_concat,1,0,20,20000,20,final_cycle_only,partial
+linucb_mf_interaction,1,0,20,20000,20,final_cycle_only,partial
+schur_loglambda_tuned_full_pool_softmax_tau0p3,1,0,20,20000,20,final_cycle_only,partial
+schur_tuned_topk,1,0,20,20000,20,final_cycle_only,partial
+lambda0p3_diagnostic,1,0,20,20000,20,final_cycle_only,partial

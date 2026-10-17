@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the original paper for DU-Net and acknowledge this independent replication repository when using its implementation."
+title: "Network-Enabled Sequential Data Acquisition: Independent Replication"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Ziyue
+repository-code: "https://github.com/ZiyueZhang08/network-enabled-sequential-data-acquisition-replication"
+url: "https://github.com/ZiyueZhang08/network-enabled-sequential-data-acquisition-replication"
+preferred-citation:
+  type: report
+  title: "Network-Enabled Sequential Data Acquisition"
+  authors:
+    - family-names: Cao
+      given-names: Junyu
+    - family-names: Leng
+      given-names: Yan
+  year: 2022
+  doi: "10.2139/ssrn.4086999"
+  url: "https://ssrn.com/abstract=4086999"
+  institution:
+    name: SSRN

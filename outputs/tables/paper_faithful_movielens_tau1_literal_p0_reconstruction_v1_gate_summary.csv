@@ -1,0 +1,8 @@
+gate,status,evidence
+Metric,unresolved,metric reconstruction audit v2
+Entropy Eq3.6,closed_cleanroom,explicit observed-kernel Schur complement equivalence note and unit test
+Split,unresolved,fold sensitivity not yet run
+Linear UCB,proxy_set,"concat, mf_interaction, bias_interaction comparators; author library protocol unavailable"
+DU-Net,partial,Schur Eq3.6-equivalent conditional variance + DLS + tau1 selection; ELPH/exact author backend still open
+Figure 4a,strong_pattern_recovery,tau1 lower than linucb_concat and mf_interaction under executable standard RMSE
+Figure 4b,partial,"ranking vs Linear UCB matches paper direction, local reward gap is too large"

@@ -1,0 +1,16 @@
+comparison,metric,value,direction,interpretation
+strict_tune_minus_mainline,standard_mask_rmse,0.0005648401702265105,lower_is_better,"negative favors strict tuning except reward, where positive favors strict tuning"
+strict_tune_minus_mainline,pdf_literal_norm_rmse,3.994023146538725e-06,lower_is_better,"negative favors strict tuning except reward, where positive favors strict tuning"
+strict_tune_minus_mainline,w_rmse,-0.008543666370302017,lower_is_better,"negative favors strict tuning except reward, where positive favors strict tuning"
+strict_tune_minus_mainline,reward_tail_proxy_rmse,-0.012961123441340039,lower_is_better,"negative favors strict tuning except reward, where positive favors strict tuning"
+strict_tune_minus_mainline,cumulative_reward,-3.3295896066624664,higher_is_better,"negative favors strict tuning except reward, where positive favors strict tuning"
+strict_tune_minus_linucb_concat,standard_mask_rmse,-0.02152371313422452,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_concat,pdf_literal_norm_rmse,-0.0001521956351352603,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_concat,w_rmse,0.04790057440856077,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_concat,reward_tail_proxy_rmse,0.07022255752098383,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_concat,cumulative_reward,-48.57578920851165,higher_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_mf_interaction,standard_mask_rmse,-0.007550591013337771,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_mf_interaction,pdf_literal_norm_rmse,-5.339074107497954e-05,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_mf_interaction,w_rmse,-0.03391890443240708,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_mf_interaction,reward_tail_proxy_rmse,-0.04873359450337267,lower_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward
+strict_tune_minus_linucb_mf_interaction,cumulative_reward,129.68657960018936,higher_is_better,negative favors DU-Net for RMSE metrics; positive favors DU-Net for reward

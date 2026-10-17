@@ -1,0 +1,2 @@
+dataset,network_mode,network_embedding_mode,num_users,raw_loaded_num_items,protocol_num_items,user_feature_dim,graph_builder,edge_count_undirected,density,degree_min,degree_mean,degree_median,degree_max,feature_norm_min,feature_norm_mean,feature_norm_max
+movielens-100k,gcmc_features,user_features,943,1682,1681,23,symmetrized_top20_similarity_over_gcmc_user_metadata_features,15404.0,0.03468174255267892,20.0,32.67020148462354,20.0,195.0,1.0045869653314576,1.2246821062031663,1.7086535902244058

@@ -1,0 +1,61 @@
+{
+  "dataset": {
+    "name": "movielens-100k",
+    "raw_dir": "data/raw/ml-100k"
+  },
+  "output_prefix": "movielens_100k_svdpp_figure4a_adaptive_grid_1seed",
+  "variants": [
+    {
+      "label": "du_net_current_seed0",
+      "policy": "du_net"
+    },
+    {
+      "label": "du_net_adaptive_grid_seed0",
+      "policy": "du_net_adaptive_grid"
+    },
+    {
+      "label": "mf_linear_ucb_a002_seed0",
+      "policy": "mf_linear_ucb",
+      "acquisition_overrides": {
+        "ucb_alpha": 0.02
+      }
+    },
+    {
+      "label": "myopic_seed0",
+      "policy": "myopic"
+    }
+  ],
+  "seeds": [0],
+  "split": {
+    "test_ratio": 0.2,
+    "initial_fraction_of_train": 0.01
+  },
+  "mf": {
+    "rank": 12,
+    "epochs": 6,
+    "learning_rate": 0.025,
+    "regularization": 0.04,
+    "algorithm": "svdpp"
+  },
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.25,
+    "diffusion_prob": 0.005,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8],
+    "adaptive_lambda_grid": [0.1, 0.25, 0.5, 1.0],
+    "adaptive_diffusion_prob_grid": [0.0, 0.005, 0.01, 0.03],
+    "adaptive_inner_validation_fraction": 0.15,
+    "adaptive_inner_acquisition_fraction": 0.15,
+    "adaptive_max_refits": 8,
+    "ucb_alpha": 0.8,
+    "ucb_regularization": 1.0,
+    "thompson_noise": 0.08
+  }
+}

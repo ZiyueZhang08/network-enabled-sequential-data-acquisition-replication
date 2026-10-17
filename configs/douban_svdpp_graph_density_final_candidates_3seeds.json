@@ -1,0 +1,55 @@
+{
+  "dataset": {"name": "douban", "raw_dir": "data/raw/gcmc/douban"},
+  "output_prefix": "douban_svdpp_graph_density_final_candidates_3seeds",
+  "seeds": [0, 1, 2],
+  "split": {"test_ratio": 0.0, "initial_fraction_of_train": 0.01, "use_predefined_split": true},
+  "mf": {"rank": 8, "epochs": 2, "learning_rate": 0.025, "regularization": 0.04, "algorithm": "svdpp"},
+  "acquisition": {
+    "cycles": 20,
+    "batch_size": 100,
+    "lambda_entropy": 0.05,
+    "diffusion_prob": 0.01,
+    "sigma": 0.4,
+    "dls_top_k": 20,
+    "selection": "topk",
+    "rating_midpoint": 3.0,
+    "entropy_mode": "hybrid",
+    "entropy_coverage_weight": 0.0,
+    "entropy_logdet_regularization": 1.0,
+    "entropy_logdet_weighting": "none",
+    "entropy_logdet_weight_strength": 1.0,
+    "dls_shrinkage": 0.0,
+    "dls_shrinkage_mode": "adaptive",
+    "network_entropy_max_neighbors": 8,
+    "sigma_grid": [0.1, 0.2, 0.4, 0.8],
+    "diffusion_normalization": "none",
+    "graph_embedding_method": "spectral"
+  },
+  "variants": [
+    {"label": "original_no_dls", "policy": "du_net_no_dls", "graph_transform": {"mode": "none", "rate": 0.0}},
+    {
+      "label": "original_netobs_reliability",
+      "policy": "du_net_shrinkage_dls",
+      "acquisition_overrides": {"entropy_mode": "network_observational", "dls_shrinkage": 0.9, "dls_shrinkage_mode": "reliability"},
+      "graph_transform": {"mode": "none", "rate": 0.0}
+    },
+    {
+      "label": "drop50_netobs_reliability",
+      "policy": "du_net_shrinkage_dls",
+      "acquisition_overrides": {"entropy_mode": "network_observational", "dls_shrinkage": 0.9, "dls_shrinkage_mode": "reliability"},
+      "graph_transform": {"mode": "edge_dropout", "rate": 0.5}
+    },
+    {
+      "label": "rewire50_netobs_reliability",
+      "policy": "du_net_shrinkage_dls",
+      "acquisition_overrides": {"entropy_mode": "network_observational", "dls_shrinkage": 0.9, "dls_shrinkage_mode": "reliability"},
+      "graph_transform": {"mode": "rewiring", "rate": 0.5}
+    },
+    {
+      "label": "densify50_netobs_reliability",
+      "policy": "du_net_shrinkage_dls",
+      "acquisition_overrides": {"entropy_mode": "network_observational", "dls_shrinkage": 0.9, "dls_shrinkage_mode": "reliability"},
+      "graph_transform": {"mode": "densification", "rate": 0.5}
+    }
+  ]
+}

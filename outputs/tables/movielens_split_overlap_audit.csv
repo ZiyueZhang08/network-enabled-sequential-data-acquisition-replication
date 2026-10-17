@@ -1,0 +1,48 @@
+split,kind,count,users,items,rating_mean,rating_std,high_rating_share,low_rating_share,mean_official_jaccard,max_official_jaccard,mean_random_jaccard,interpretation
+official_u1,distribution,20000,459,1410,3.5359,1.153651242793939,0.56175,0.17915,,,,Marginal test-set distribution summary.
+official_u2,distribution,20000,653,1420,3.54345,1.1305361991108467,0.5612,0.1721,,,,Marginal test-set distribution summary.
+official_u3,distribution,20000,869,1423,3.52495,1.1115653365862035,0.5506,0.17035,,,,Marginal test-set distribution summary.
+official_u4,distribution,20000,923,1394,3.52185,1.113248659329981,0.5458,0.17565,,,,Marginal test-set distribution summary.
+official_u5,distribution,20000,927,1407,3.52315,1.1186438564172245,0.5494,0.17675,,,,Marginal test-set distribution summary.
+random_seed_0,distribution,20000,942,1417,3.527,1.1262641786010954,0.55485,0.1761,,,,Marginal test-set distribution summary.
+random_seed_1,distribution,20000,941,1411,3.5292,1.1252765704483498,0.5535,0.1762,,,,Marginal test-set distribution summary.
+random_seed_2,distribution,20000,942,1418,3.5258,1.1206401563392239,0.55245,0.17645,,,,Marginal test-set distribution summary.
+random_seed_3,distribution,20000,943,1401,3.53175,1.1264954227603412,0.55485,0.17235,,,,Marginal test-set distribution summary.
+random_seed_4,distribution,20000,943,1416,3.53505,1.1144826142654716,0.553,0.1703,,,,Marginal test-set distribution summary.
+official_u1_u5,count_range,,,,,,,,,,,count: min=20000.000000; max=20000.000000; spread=0.000000
+official_u1_u5,users_range,,,,,,,,,,,users: min=459.000000; max=927.000000; spread=468.000000
+official_u1_u5,items_range,,,,,,,,,,,items: min=1394.000000; max=1423.000000; spread=29.000000
+official_u1_u5,rating_mean_range,,,,,,,,,,,rating_mean: min=3.521850; max=3.543450; spread=0.021600
+official_u1_u5,rating_std_range,,,,,,,,,,,rating_std: min=1.111565; max=1.153651; spread=0.042086
+official_u1_u5,high_rating_share_range,,,,,,,,,,,high_rating_share: min=0.545800; max=0.561750; spread=0.015950
+official_u1_u5,low_rating_share_range,,,,,,,,,,,low_rating_share: min=0.170350; max=0.179150; spread=0.008800
+random_seed_0_19,count_range,,,,,,,,,,,count: min=20000.000000; max=20000.000000; spread=0.000000
+random_seed_0_19,users_range,,,,,,,,,,,users: min=940.000000; max=943.000000; spread=3.000000
+random_seed_0_19,items_range,,,,,,,,,,,items: min=1382.000000; max=1442.000000; spread=60.000000
+random_seed_0_19,rating_mean_range,,,,,,,,,,,rating_mean: min=3.516250; max=3.547350; spread=0.031100
+random_seed_0_19,rating_std_range,,,,,,,,,,,rating_std: min=1.114483; max=1.132094; spread=0.017611
+random_seed_0_19,high_rating_share_range,,,,,,,,,,,high_rating_share: min=0.549500; max=0.562350; spread=0.012850
+random_seed_0_19,low_rating_share_range,,,,,,,,,,,low_rating_share: min=0.170100; max=0.179350; spread=0.009250
+official_folds_pairwise,overlap,,,,,,,,0.000000,,,Official u1-u5 test folds are designed to be disjoint.
+random_seeds_pairwise,overlap,,,,,,,,,,0.111170,Random seeded test masks overlap as expected for independent 20% samples.
+random_seed_0,random_vs_official_overlap,,,,,,,,0.111112,0.112161,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_1,random_vs_official_overlap,,,,,,,,0.111114,0.113617,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_2,random_vs_official_overlap,,,,,,,,0.111114,0.114548,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_3,random_vs_official_overlap,,,,,,,,0.111112,0.112409,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_4,random_vs_official_overlap,,,,,,,,0.111113,0.113183,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_5,random_vs_official_overlap,,,,,,,,0.111113,0.112780,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_6,random_vs_official_overlap,,,,,,,,0.111113,0.112811,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_7,random_vs_official_overlap,,,,,,,,0.111112,0.112131,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_8,random_vs_official_overlap,,,,,,,,0.111113,0.113741,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_9,random_vs_official_overlap,,,,,,,,0.111113,0.112749,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_10,random_vs_official_overlap,,,,,,,,0.111113,0.112904,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_11,random_vs_official_overlap,,,,,,,,0.111114,0.113276,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_12,random_vs_official_overlap,,,,,,,,0.111112,0.111914,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_13,random_vs_official_overlap,,,,,,,,0.111112,0.112626,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_14,random_vs_official_overlap,,,,,,,,0.111114,0.113462,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_15,random_vs_official_overlap,,,,,,,,0.111112,0.112502,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_16,random_vs_official_overlap,,,,,,,,0.111115,0.114299,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_17,random_vs_official_overlap,,,,,,,,0.111116,0.113431,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_18,random_vs_official_overlap,,,,,,,,0.111112,0.112718,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+random_seed_19,random_vs_official_overlap,,,,,,,,0.111115,0.113896,,"Current random split is not the same mask as any official fold, but overlaps at the expected random-sample level."
+execution_decision,decision,,,,,,,,,,,"Official and random test folds have similar marginal distributions, but exact masks differ; this supports a split caveat, not a full rerun trigger."

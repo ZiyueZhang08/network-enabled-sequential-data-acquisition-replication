@@ -1,0 +1,9 @@
+question,status,du_net,linear_ucb,linear_minus_du,distance_to_goal,decision
+paper_target,reference,1.788,1.814,0.026,visual target from paper Figure 4a,The target favors DU-Net over Linear UCB.
+is_local_du_close_to_paper_du,not_close_in_absolute_scale,0.8250,0.8333,0.0083,DU endpoint scale=46.1%; absolute DU gap=-0.963000,The best local DU-Net-style endpoint is directionally useful but not close to the paper's absolute w-RMSE scale.
+does_linear_ucb_comparison_match_paper_direction,direction_matches,0.8250,0.8333,0.0083,gap_ratio_to_paper=31.9%; relative_improvement_vs_paper=69.5%,Yes under the best reportable reward-weighted metric: DU-Net-style remains below Linear UCB.
+does_full_rmse_match_paper_direction,direction_does_not_match,1.1608,1.1560,-0.0048,gap_ratio_to_paper=-18.5%; direction_matches=False,"No. Full-test conventional RMSE favors Linear UCB, so it blocks exact Figure 4a claims."
+mechanism_support,mechanism_support,0.6587,0.6671,0.0084,high-rating gap ratio=32.3%,High-rating regions support the reward-region mechanism behind the local DU-Net-style advantage.
+paper_like_sigmoid_weight_check,near_tie,0.8977,0.8975,-0.000199,near tie with slight reversal,The paper-like sigmoid-weighted check is not a stable DU-Net win at 20 seeds.
+user_goal_verdict,partially_met,0.8250,0.8333,0.0083,absolute scale not close; reward-weighted Linear-minus-DU gap recovers 31.9% of the paper visual gap,"The reproduction meets the Linear-UCB consistency fallback only as a strong partial result, not as an exact DU-Net Figure 4a estimate."
+execution_decision,blocked_by_missing_source,,,,All rerun triggers are currently absent.,Do not run another local proxy sweep; wait for source-backed metric/split/backend evidence or approved dependency trigger.

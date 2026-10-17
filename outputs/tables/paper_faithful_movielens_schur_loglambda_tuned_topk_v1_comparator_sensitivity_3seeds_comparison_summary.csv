@@ -1,0 +1,4 @@
+comparator,mean_standard_gap,win_rate,wins,seeds,mean_reward_gap
+linucb_bias_interaction,0.036181474409003066,1.0,3,3,-237.1130348283938
+linucb_concat,0.009863703942422752,1.0,3,3,-101.79193193145261
+linucb_mf_interaction,-0.0037936129497043356,0.3333333333333333,1,3,52.98878526170112

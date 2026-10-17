@@ -1,0 +1,5 @@
+variant,selected_avg_rating,selected_rating_5_share,selected_rating_ge4_share,selected_unique_users,selected_unique_items,selected_avg_item_popularity,selected_avg_entropy_percentile,selected_avg_reward_percentile
+schur_tuned_topk,,,,,,,0.9179977451143222,0.5659894319516259
+linucb_concat,,,,,,,,
+linucb_mf_interaction,,,,,,,,
+schur_tuned_full_pool_softmax_tau0p3,3.5129999999999995,0.1983333333333333,0.5508333333333334,18.158225,13.795849999999998,1.1308500000000001,0.07798375286856028,0.5009702696046275
